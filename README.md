@@ -1,110 +1,294 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# WanderList
 
-Welcome USER_NAME,
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **September 1, 2021**
 
-## Gitpod Reminders
+Link to deployed site: []()
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+![GitHub last commit]()
 
-`python3 -m http.server`
 
-A blue button should appear to click: _Make Public_,
+## CONTENTS
 
-Another blue button should appear to click: _Open Browser_.
+* [User Experience](#user-experience)
+  * [Project Goals](#project-goals)
+  * [User Stories](#user-stories)
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+* [Design](#design)
+  * [Colour Scheme](#colour-scheme)
+  * [Typography](#typography)
+  * [Imagery](#imagery)
+  * [Wireframes](#wireframes)
+  * [Database Schema & User Journey](#database-schema--user-journey)
+    * [User Journey](#user-journey)
+    * [First Draft Database Schema](#first-draft-database-schema)
+    * [Final Database Schema](#final-database-schema)
 
-A blue button should appear to click: _Make Public_,
+* [Features](#features)
+  * [Elements Fount on Each Page](#elements-found-on-each-page)
+  * [Future Implementations](#future-implementations)
+  * [Accessibility](#accessibility)
 
-Another blue button should appear to click: _Open Browser_.
+* [Technologies Used](#technologies-used)
+  * [Languages Used](#languages-used)
+  * [Databases Used](#databases-used)
+  * [Frameworks Used](#frameworks-used)
+  * [Libraries & Packages Used](#libraries--packages-used)
+  * [Programs Used](#programs-used)
+    * [API](api)
+    * [Error Handling](#error-handling)
+    * [Defensive Programming](#defensive-programming)
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+* [Deployment & Local Development](#deployment--local-development)
+  * [Deployment](#deployment)
+  * [Local Development](#local-development)
+    * [How to Fork](#how-to-fork)
+    * [How to Clone](#how-to-clone)
 
-To log into the Heroku toolbelt CLI:
+* [Testing](#testing)
+  
+* [Credits](#credits)
+  * [Code Used](#code-used)
+  * [Content](#content)
+  * [Media](#media)
+  * [Acknowledgments](#acknowledgments)
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+- - -
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
+## User Experience
 
-------
+### Project Goals
 
-## Release History
+d.
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+### User Stories
 
-**September 20 2023:** Update Python version to 3.9.17.
+#### __Target Audience__
 
-**September 1 2021:** Remove `PGHOSTADDR` environment variable.
+#### __First Time Visitor Goals__
 
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
 
-**July 2 2021:** Remove extensions that are not available in Open VSX.
 
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
+#### __Returning Visitor Goals__
 
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
 
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
 
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
+#### __Admin User__
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
+- - -
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
+## Design
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
+### Colour Scheme
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
+### Typography
 
-------
+Google Fonts was used to import the chosen fonts for use in the site.
 
-## FAQ about the uptime script
 
-**Why have you added this script?**
 
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
+### Imagery
 
-**How will this affect me?**
 
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
+### Wireframes
 
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
+Wireframes were created for mobile, tablet and desktop using Balsamiq.
 
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
+#### __Home Page__
 
-**So….?**
+![Home Page]()
 
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
+#### __Register Page__
 
-**Can I opt out?**
+![Register Page]()
 
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
+#### __Login Page__
 
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
+![Login Page]()
 
-**Anything more?**
+#### __Profile Page__
 
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
+![Profile Page]()
 
----
+#### __Search Page__
 
-Happy coding!
+![Search Page]()
+
+
+
+
+
+#### __Error Page__
+
+
+
+### Database Schema & User Journey
+
+#### __User Journey__
+
+
+#### __First Draft Database Schema__
+
+
+#### __Final Database Schema__
+
+
+- - -
+
+## Features
+
+
+
+### Elements found on each page
+
+
+
+  __User logged in Navbar__
+
+
+  __User not logged in Navbar__
+
+
+
+- - -
+
+### Home Page
+
+![Home Page](documentation/home-page.png)
+
+### Login Page
+
+![Log in Page](documentation/login-page.png)
+
+### Register Page
+
+![Register Page](documentation/register-page.png)
+
+### Profile Page
+
+![Profile Page](documentation/profile-page.png)
+
+
+### Edit collection? Page
+
+![Edit  Page]()
+
+
+### Add Review Page
+
+![Add Review Page]()
+
+### Edit Review Page
+
+![Edit Review Page]()
+
+
+### Error Page
+
+![Error Page]()
+
+- - -
+
+### Future Implementations
+
+
+### Accessibility
+
+
+- - -
+
+## Technologies Used
+
+### Languages Used
+
+HTML, CSS, Javascript, Python
+
+### Databases Used
+
+[MongoDB](https://www.mongodb.com/) 
+
+[PostgreSQL](https://www.postgresql.org/) 
+
+
+### Frameworks Used
+
+[Flask](https://pypi.org/project/Flask/) - A micro framework.
+
+[Materialize]()
+
+### Libraries & Packages Used
+
+[PyMongo](https://pypi.org/project/pymongo/) - Python Driver for MongoDB.
+
+[SQLAlchemy](https://pypi.org/project/SQLAlchemy/) - Database abstraction library, used to interact with PostgreSQL.
+
+
+### Programs Used
+
+[Pip](https://pypi.org/project/pip/) - Tool for installing python packages.
+
+[Jinja](https://jinja.palletsprojects.com/en/3.1.x/) - Templating engine.
+
+[Balsamiq](https://balsamiq.com/) - Used to create wireframes.
+
+[Git](https://git-scm.com/) - For version control.
+
+[Github](https://github.com/) - To save and store the files for the website.
+
+[Google Fonts](https://fonts.google.com/) - To import the fonts used on the website.
+
+
+[Google Chrome Dev Tools](https://developer.chrome.com/docs/devtools/) - To troubleshoot and test features, solve issues with responsiveness and styling.
+
+[Tiny PNG](https://tinypng.com/) To compress images for use in the readme.
+
+[Birme](https://www.birme.net/) To resize images and convert to webP format for the site.
+
+[Favicon.io](https://favicon.io/) To create the favicon.
+
+[Am I Responsive?](http://ami.responsivedesign.is/) To show the website image on a range of devices.
+
+
+### API
+
+### Error Handling
+
+### Defensive Programming
+
+
+## Deployment & Local Development
+
+### Deployment
+
+
+### Local Development
+
+#### How to Fork
+
+
+
+#### How to Clone
+
+
+
+## Testing
+
+Please see [TESTING.md](TESTING.md) for all testing performed
+- - -
+
+## Credits
+
+### Code Used
+
+
+### Content
+
+
+### Media
+
+
+### Acknowledgments
+
