@@ -108,10 +108,14 @@ I have chosen colours that are vibrant for the website.
 
 Google Fonts was used to import the chosen fonts for use in the site.
 
+
+#### Fredricka The Great
 ![Logo font](/documentation/design/fredrickaTheGreat.png)
 
+#### Caveat Brush
 ![Header font](/documentation/design/caveatBrush.png)
 
+#### Quattrocento
 ![Body font](/documentation/design/quattrocento.png)
 
 ### Imagery
