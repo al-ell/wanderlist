@@ -59,23 +59,41 @@ Link to deployed site: []()
 
 ### Project Goals
 
-d.
+
 
 ### User Stories
 
 #### __Target Audience__
 
+The target audience of the website are people who are planning to travel to other countries. The website will have inspiration from others as well as practical information about different countries. 
+
+
 #### __First Time Visitor Goals__
 
+As a first time visitor to the website I want to:
+
+* Create an account
+* Search for information about different cournties
+* Create and save a list, or multiple lists, of destinations they want to travel to
+* Read other user's travel journal entries
+* Create their own journal entries
 
 
 #### __Returning Visitor Goals__
 
+As a first time visitor to the website I want to:
+
+* Login to the account created
+* Update a country from "want to go" to "travelled to" after a trip
+* Record information about their trip in a travel journal
+* Edit and delete journal entries
 
 
 #### __Admin User__
 
+As an admin user I want to be able to:
 
+* Remove offensive content (pending update)
 
 - - -
 
@@ -83,12 +101,18 @@ d.
 
 ### Colour Scheme
 
+I have chosen colours that are vibrant for the website. 
+![colour pallete](/documentation/design/colorPalette1.png)
 
 ### Typography
 
 Google Fonts was used to import the chosen fonts for use in the site.
 
+![Logo font](/documentation/design/fredrickaTheGreat.png)
 
+![Header font](/documentation/design/caveatBrush.png)
+
+![Body font](/documentation/design/quattrocento.png)
 
 ### Imagery
 
@@ -113,15 +137,25 @@ Wireframes were created for mobile, tablet and desktop using Balsamiq.
 
 ![Profile Page]()
 
-#### __Search Page__
+#### __Journal Feed Page__
 
-![Search Page]()
+![Journal Feed Page]()
 
+#### __Country Search Page__
 
+![Country Search Page]()
 
+#### __Travel to Page__
 
+![Travel to Page]()
+
+#### __Travelled to Page__
+
+![ Travelled to Page]()
 
 #### __Error Page__
+
+
 
 
 
