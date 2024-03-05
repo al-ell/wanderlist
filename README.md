@@ -25,7 +25,7 @@ Link to deployed site: []()
     * [Final Database Schema](#final-database-schema)
 
 * [Features](#features)
-  * [Elements Fount on Each Page](#elements-found-on-each-page)
+  * [Elements Found on Each Page](#elements-found-on-each-page)
   * [Future Implementations](#future-implementations)
   * [Accessibility](#accessibility)
 
@@ -118,16 +118,14 @@ Google Fonts was used to import the chosen fonts for use in the site.
 #### Quattrocento
 ![Body font](/documentation/design/quattrocento.png)
 
+
 ### Imagery
 
+Imagery for the website was created using [Microsoft Bing Copilot (AI)](https://www.bing.com/images/create?FORM=GENILP) 
 
 ### Wireframes
 
 Wireframes were created for mobile, tablet and desktop using Balsamiq.
-
-#### __Home Page__
-
-![Home Page]()
 
 #### __Register Page__
 
@@ -137,31 +135,34 @@ Wireframes were created for mobile, tablet and desktop using Balsamiq.
 
 ![Login Page]()
 
-#### __Profile Page__
+#### __Logged In Home/Profile Page__
 
-![Profile Page]()
+![Home Page](/documentation/wireframes/profile.png)
 
 #### __Journal Feed Page__
 
-![Journal Feed Page]()
+![Journal Feed Page](/documentation/wireframes/read.png)
 
 #### __Country Search Page__
 
-![Country Search Page]()
+![Country Search Page](/documentation/wireframes/find.png)
 
-#### __Travel to Page__
+#### __Add Journal Entry Page__
 
-![Travel to Page]()
+![Add Journal Entry Page](/documentation/wireframes/document.png)
 
-#### __Travelled to Page__
+#### __My Trips Page__
 
-![ Travelled to Page]()
+![My Trips Page](/documentation/wireframes/myTrips.png)
+
+### __Itinerary/ Trip Page__
+
+![Itinerary/ Trip Page](/documentation/wireframes/Itinerary1.png)
+
 
 #### __Error Page__
 
-
-
-
+design
 
 ### Database Schema & User Journey
 
@@ -182,7 +183,9 @@ Wireframes were created for mobile, tablet and desktop using Balsamiq.
 
 ### Elements found on each page
 
+* Favicon - created at favicon.io 
 
+* Navbar. - The Navbar is displayed on all pages from the base.html template. Links to all pages are featured, the links vary depending on the user being logged in.
 
   __User logged in Navbar__
 
@@ -195,19 +198,19 @@ Wireframes were created for mobile, tablet and desktop using Balsamiq.
 
 ### Home Page
 
-![Home Page](documentation/home-page.png)
+![Home Page]()
 
 ### Login Page
 
-![Log in Page](documentation/login-page.png)
+![Log in Page]()
 
 ### Register Page
 
-![Register Page](documentation/register-page.png)
+![Register Page]()
 
 ### Profile Page
 
-![Profile Page](documentation/profile-page.png)
+![Profile Page]()
 
 
 ### Edit collection? Page
@@ -236,6 +239,8 @@ Wireframes were created for mobile, tablet and desktop using Balsamiq.
 ### Accessibility
 
 
+
+
 - - -
 
 ## Technologies Used
@@ -255,7 +260,7 @@ HTML, CSS, Javascript, Python
 
 [Flask](https://pypi.org/project/Flask/) - A micro framework.
 
-[Materialize]()
+[Materialize](https://materializecss.com/)
 
 ### Libraries & Packages Used
 
@@ -278,7 +283,6 @@ HTML, CSS, Javascript, Python
 
 [Google Fonts](https://fonts.google.com/) - To import the fonts used on the website.
 
-
 [Google Chrome Dev Tools](https://developer.chrome.com/docs/devtools/) - To troubleshoot and test features, solve issues with responsiveness and styling.
 
 [Tiny PNG](https://tinypng.com/) To compress images for use in the readme.
@@ -292,24 +296,31 @@ HTML, CSS, Javascript, Python
 
 ### API
 
+I have chosen to use the [Rest Countries API](https://restcountries.com/) provide useful information to website users.
+
+#### __How to Access API__
+
+
 ### Error Handling
+
 
 ### Defensive Programming
 
 
+
 ## Deployment & Local Development
+
 
 ### Deployment
 
 
 ### Local Development
 
+
 #### How to Fork
 
 
-
 #### How to Clone
-
 
 
 ## Testing
@@ -318,6 +329,7 @@ Please see [TESTING.md](TESTING.md) for all testing performed
 - - -
 
 ## Credits
+
 
 ### Code Used
 
