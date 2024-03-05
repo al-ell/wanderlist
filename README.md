@@ -183,7 +183,7 @@ design
 
 ### Elements found on each page
 
-* Favicon - created at favicon.io 
+* Favicon - created at [favicon.io](https://favicon.io/favicon-generator/). I decided to keep it as a simple W from the website's logo.
 
 * Navbar. - The Navbar is displayed on all pages from the base.html template. Links to all pages are featured, the links vary depending on the user being logged in.
 
