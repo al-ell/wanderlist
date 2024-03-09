@@ -1,16 +1,49 @@
-/* Colors */
 
-/* Fonts */
+
+/* Colors & Fonts */
+
+
+.caveat-brush-regular {
+    font-family: "Caveat Brush", cursive;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.quattrocento-regular {
+    font-family: "Quattrocento", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.quattrocento-bold {
+    font-family: "Quattrocento", serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+.fredericka-the-great-regular {
+    font-family: "Fredericka the Great", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+  
+
+* {
+    background-color: #e8eaf6;
+}
 
 .logo {
-    font-family: "Fredricka the Great", sans-serif;
+    font-family: "Fredericka the Great", sans-serif;
     font-style: uppercase;
     font-size: 32em;
 }
 
 nav {
+    color: #043B4E;
     font-family: Quattrocento, sans-serif;
     font-size: 1.2em;
     letter-spacing: 0.1em;
     text-decoration: none;
 }
+
+/* Nav */
