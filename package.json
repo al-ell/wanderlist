@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "psql-api": "^0.9.11"
+  }
+}

@@ -1,0 +1,16 @@
+/* Colors */
+
+/* Fonts */
+
+.logo {
+    font-family: "Fredricka the Great", sans-serif;
+    font-style: uppercase;
+    font-size: 32em;
+}
+
+nav {
+    font-family: Quattrocento, sans-serif;
+    font-size: 1.2em;
+    letter-spacing: 0.1em;
+    text-decoration: none;
+}
