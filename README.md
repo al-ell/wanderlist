@@ -188,11 +188,9 @@ to design
 |  | Country Name | Selected from API |  
 
 
-
 - - -
 
 ## Features
-
 
 
 ### Elements found on each page
