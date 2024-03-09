@@ -108,7 +108,6 @@ I have chosen colours that are vibrant for the website.
 
 Google Fonts was used to import the chosen fonts for use in the site.
 
-
 #### Fredricka The Great
 ![Logo font](/documentation/design/fredrickaTheGreat.png)
 
@@ -162,17 +161,32 @@ Wireframes were created for mobile, tablet and desktop using Balsamiq.
 
 #### __Error Page__
 
-design
+to design
 
 ### Database Schema & User Journey
 
 #### __User Journey__
 
+![User Flow Chart](/documentation/design/websiteFlowChart.png)
 
-#### __First Draft Database Schema__
 
+#### __ Database Plan__
 
-#### __Final Database Schema__
+| Key | Name | Type |
+| --- | --- | --- |
+| `Journal` |
+|  | Trip Name(unique) | TextInput|
+| ForeignKey | Author | User model |
+|  | Trip Rating |  | 
+|  | Where | Select from API data |
+|  | When | DateTime | 
+|  | How | TextInput |
+| ForeignKey | Add to Itinerary | User Model |
+| `Itineraries` | 
+|  | Name(unique) |  |
+| ForeignKey | Author | User model |
+|  | Country Name | Selected from API |  
+
 
 
 - - -
@@ -276,6 +290,8 @@ HTML, CSS, Javascript, Python
 [Jinja](https://jinja.palletsprojects.com/en/3.1.x/) - Templating engine.
 
 [Balsamiq](https://balsamiq.com/) - Used to create wireframes.
+
+[Figma](https://www.figma.com/) - To make flow charts.
 
 [Git](https://git-scm.com/) - For version control.
 
