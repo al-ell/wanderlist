@@ -1,5 +1,6 @@
 import os
-from wanderlist import db
+from wanderlist import app, db
+from api_class import GetCountry
 
 
 class Itineraries(db.Model):

@@ -1,9 +1,8 @@
 import os
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 from wanderlist import app, db
 from wanderlist.models import Itineraries, Journal
-import requests
-import json
+from api_class import GetCountry
 
 
 @app.route("/")
@@ -20,6 +19,7 @@ def journal_entries():
 
 @app.route("/destinations", methods=["GET"])
 def destinations():
-    req = requests.get("https://restcountries.com/v3.1/all")
-    data = json.loads(req.content)
-    return render_template("destinations.html", data=data)
+    country = request.args.get("country")
+    search = GetCountry()
+    country_info = search.each_country(country=country)
+    return render_template("destinations.html", country_list=country_info)

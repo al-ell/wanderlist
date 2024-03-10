@@ -1,5 +1,5 @@
 import os
-from wanderlist import app
+from wanderlist import app, db
 
 
 if __name__ == "__main__":
