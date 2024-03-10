@@ -1,3 +1,4 @@
+import os
 from wanderlist import db
 
 
@@ -9,7 +10,7 @@ class Itineraries(db.Model):
     journal_entry = db.relationship("Journal", backref="itineraries", cascade="all, delete", lazy=True)
 
     def __repr__(self):
-        # __repr__ to represent itself in the form of a string
+        # __repr__ to represent itself in a string
         return self.country_name
 
 
@@ -30,3 +31,5 @@ class Journal(db.Model):
         return "#{0} - Journal: {1} | Been: {2}".format(
             self.id, self.trip_name, self.have_been
         )
+
+
