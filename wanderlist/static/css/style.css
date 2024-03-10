@@ -27,20 +27,35 @@ header {
     top: 0;
 }
 
+/* Colors */
 
+.contact-social-links li a i,
+.social-links li a i:hover {
+    color: #dce775;
+    background-color: #004d40;
+}
 
-/* body {
+.social-links li a i,
+.contact-social-links li a i:hover {
     background-color: #e8eaf6;
-} */
+    color: #004d40;
+}
 
-/* Nav */
+
+body {
+    background-color: #e8eaf6;
+}
+
 
 
 .logo {
+    color: #004d40;
     font-family: "Fredericka the Great", sans-serif;
     font-style: uppercase;
     font-size: 1.2em;
 }
+
+/* Nav */
 
 .sidenav,
 nav ul li a {
@@ -87,6 +102,11 @@ nav ul li a {
     color: #D8DFE9;
 }
 
+.hero-container a {
+    color: #004d40;
+    border-radius: 10px;
+}
+
 .hero-container {
     margin-bottom: 0;
     width: 100%;
@@ -95,3 +115,65 @@ nav ul li a {
 
 
  
+
+/* Footer */
+
+footer {
+    height: 9vh;
+    margin: 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.social-container {
+    display: flex;
+    display: inline;
+    flex-direction: row;
+}
+
+.social-icon {
+    display: flex;
+}
+
+.contact-social-links,
+.social-links {
+    list-style-type: none;
+    display: flex;
+}
+
+.contact-social-links li,
+.social-links li {
+    text-align: center;
+    padding: 1rem;
+    display: flex;
+}
+
+.contact-social-links li a,
+.social-links li a {
+    text-decoration: none;
+}
+
+.contact-social-links li a i,
+.social-links li a i {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    font-size: 20px;
+    line-height: 6px;
+    /*flex added to links themselves, from tutor support*/
+    /* https://css-tricks.com/snippets/css/a-guide-to-flexbox/ */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+    text-decoration: none;
+    /* From Resume project */
+    transition: all 0.35s ease-in-out;
+    -moz-transition: all 0.35s ease-in-out;
+    -webkit-transition: all 0.35s ease-in-out;
+    -o-transition: all 0.35s ease-in-out;
+}
