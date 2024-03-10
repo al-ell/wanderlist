@@ -121,6 +121,16 @@ nav ul li a {
 
 /* Footer */
 
+body {
+    display: flex;
+    min-height: 65vh;
+    flex-direction: column;
+}
+
+main {
+    flex: 1 0 auto;
+}
+
 footer {
     height: 9vh;
     margin: 0;

@@ -11,7 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Caveat+Brush&family=Fredericka+the+Great&family=Quattrocento:wght@400;700&display=swap" rel="stylesheet">
     <!-- Local stylesheet -->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" type="text/css">
-    <link rel="icon" type="image/x-icon" href="/wanderlist/static/favicon/favicon.ico" />
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='favicon/favicon.ico') }}" />
     <title>Wanderlist</title>
 </head>
 <body>
@@ -22,7 +22,7 @@
                     <h1><a href="#" class=" logo teal-text text-darken-4">Wanderlist</a></h1>
                     <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="fas fa-bars"></i></a>
                     <ul class="right hide-on-med-and-down teal-text text-darken-4">
-                        <li><a href="#">Home</a></li>
+                        <li><a href="{{ url_for('home') }}">Home</a></li>
                         <li><a href="#">Profile</a></li>
                         <li><a href="#">Destinations</a></li>
                         <li><a href="#">My Trips</a></li>
@@ -37,7 +37,7 @@
 
     
         <ul class="sidenav teal-text text-darken-4" id="mobile-demo">
-            <li><a href="#">Home</a></li>
+            <li><a href="{{ url_for('home') }}">Home</a></li>
             <li><a href="#">Profile</a></li>
             <li><a href="#">Destinations</a></li>
             <li><a href="#">My Trips</a></li>
@@ -51,7 +51,7 @@
         {% endblock %}
     </main>
 
-    <footer class="footer lime lighten-2">
+    <footer class=" page-footer footer lime lighten-2">
         <div class="social-container">
           <ul class="social-links">
             <li class="list-inline-item social-icon">
@@ -89,6 +89,6 @@
     <!-- Materialize JavaScript CDN -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <!-- Local Javascript File -->
-    <script src="/wanderlist/static/js/script.js"></script>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
 </body>
 </html>
