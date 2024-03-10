@@ -35,13 +35,13 @@
 .logo {
     font-family: "Fredericka the Great", sans-serif;
     font-style: uppercase;
-    font-size: 32em;
+    font-size: 2em;
 }
 
 nav {
     color: #043B4E;
     font-family: Quattrocento, sans-serif;
-    font-size: 1.2em;
+    font-size: 1em;
     letter-spacing: 0.1em;
     text-decoration: none;
 }
