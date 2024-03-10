@@ -1,49 +1,63 @@
+/* Margins */
 
+* {
+    margin: 0;
+}
+
+.wrapper,
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    margin: none;
+    padding: 0;
+}
+
+nav {
+    height: fit-content;
+}
+
+
+header {
+    top: 0;
+}
 
 /* Colors & Fonts */
 
-
-.caveat-brush-regular {
-    font-family: "Caveat Brush", cursive;
-    font-weight: 400;
-    font-style: normal;
-}
-
-.quattrocento-regular {
-    font-family: "Quattrocento", serif;
-    font-weight: 400;
-    font-style: normal;
-}
-
-.quattrocento-bold {
-    font-family: "Quattrocento", serif;
-    font-weight: 700;
-    font-style: normal;
-}
-
-.fredericka-the-great-regular {
-    font-family: "Fredericka the Great", serif;
-    font-weight: 400;
-    font-style: normal;
-}
-  
-
-* {
+/* body {
     background-color: #e8eaf6;
-}
+} */
+
 
 .logo {
     font-family: "Fredericka the Great", sans-serif;
     font-style: uppercase;
-    font-size: 2em;
+    font-size: 1.2em;
+    margin: 0;
+    padding: 10px 30px;
+
 }
 
-nav {
-    color: #043B4E;
+.sidenav,
+nav ul li a {
+    top: 0;
+    color: #004d40;
     font-family: Quattrocento, sans-serif;
     font-size: 1em;
     letter-spacing: 0.1em;
     text-decoration: none;
+    text-align: center;
+    padding: 1em;
+    
+}
+
+.nav-lge {
+    display: ruby-text;
 }
 
 /* Nav */
+
+
+
+
+ 
