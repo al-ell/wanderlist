@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block content %}
+    <div>
+        {% for datas in data %}
+            <span>
+                {{ datas['name']}}
+            </span>
+            <p>{{ datas['reigon'] }}</p>
+        {% endfor %}
+    </div>
+
+{% endblock %}
