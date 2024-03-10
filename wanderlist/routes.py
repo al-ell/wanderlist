@@ -23,3 +23,26 @@ def destinations():
     search = GetCountry()
     country_info = search.each_country(country=country)
     return render_template("destinations.html", country_list=country_info)
+
+
+@app.route("/my_trips")
+def my_trips():
+
+    return render_template("my_trips.html")
+
+
+@app.route("/add_trip")
+def add_trip():
+
+    return render_template("add_trip.html")
+
+
+@app.route("/add_country", methods=["GET", "POST"])
+def add_country():
+    if request.method == "POST":
+        category = Category(category_name=request.form.get("country_name"))
+        db.session.add(category)
+        db.session.commit()
+        return redirect(url_for("my_trips"))
+    return render_template("add_countryy.html")
+
