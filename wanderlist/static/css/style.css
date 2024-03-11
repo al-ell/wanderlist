@@ -47,12 +47,30 @@ body {
 }
 
 
-
 .logo {
     color: #004d40;
     font-family: "Fredericka the Great", sans-serif;
-    font-style: uppercase;
+    text-transform: uppercase;
     font-size: 1.2em;
+}
+
+.page-heading {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.page-heading h2 {
+    color:#004d40;
+    font-family: "Caveat Brush", sans-serif;
+    font-weight: 700;
+    font-size: 2.5em;
+}
+
+.page-heading h3 {
+    font-family: "Quattrocento", sans-serif;
+    font-size: 1.5em;
 }
 
 /* Nav */
@@ -65,6 +83,7 @@ nav ul li a {
     font-size: 1.5rem;
     text-decoration: none;
     text-align: center;
+    text-transform: uppercase;
     padding: 0.5em;
     letter-spacing: 0.02em;
     
@@ -117,7 +136,17 @@ nav ul li a {
 }
 
 
- 
+/* Destinations /Search */
+
+.search-bar,
+.search-bar form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 100%;
+}
+
+
 
 /* Footer */
 
