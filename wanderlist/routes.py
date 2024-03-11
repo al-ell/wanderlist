@@ -1,8 +1,15 @@
 import os
-from flask import Flask, render_template, request
+from flask import Flask, render_template
 from wanderlist import app, db
 from wanderlist.models import Itineraries, Journal
-from api_class import GetCountry
+
+import requests
+
+
+class GetCountry():
+    def __init__(self):
+        self.my_api = "https://restcountries.com/v3.1/region/"
+        self.country_api = "https://restcountries.com/v2/name/"
 
 
 @app.route("/")
