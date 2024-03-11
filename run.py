@@ -1,6 +1,5 @@
 import os
 from wanderlist import app
-from wanderlist import api_class
 
 
 if __name__ == "__main__":
