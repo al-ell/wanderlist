@@ -347,6 +347,10 @@ Please see [TESTING.md](TESTING.md) for all testing performed
 
 ### Code Used
 
+- How to link an API to Flask
+Uses the cat facts api, but I was able to apply this to rest countries api with ease
+(Youtube video)[https://www.youtube.com/watch?v=F_SBxcV335k]
+
 
 ### Content
 

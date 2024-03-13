@@ -8,3 +8,4 @@ psycopg2==2.9.5
 python-restcountries==2.0.0
 SQLAlchemy==1.4.44
 Werkzeug==2.2.2
+requests==2.23.0

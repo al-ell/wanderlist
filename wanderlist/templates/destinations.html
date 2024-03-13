@@ -19,13 +19,15 @@
     </div>
   </div>
 
-  <div class="card-container">
+  <div>
+    {% for datas in data %}
+    <div class="card-container">
       <div class="row">
           <div class="col s12 m6">
             <div class="card">
               <div class="card-image">
                 <img src="#">
-                <span class="card-title">Country Name</span>
+                <span class="card-title">{{ datas['name'] }}</span>
                 <a class="btn-floating halfway-fab waves-effect waves-light lime lighten-2"><i class="fas fa-plus"></i></a>
               </div>
               <div class="card-content">
@@ -35,5 +37,10 @@
           </div>
         </div>
   </div>
+    {% endfor %}
+
+  </div>
+
+  
 
 {% endblock %}

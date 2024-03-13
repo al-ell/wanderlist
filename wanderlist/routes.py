@@ -3,13 +3,8 @@ from flask import Flask, render_template
 from wanderlist import app, db
 from wanderlist.models import Itineraries, Journal
 import requests
+import json
 
-
-class GetCountryInfo():
-    def __init__(self):
-        # self.reigon_api = "https://restcountries.com/v3.1/region/"
-        # self.country_api = "https://restcountries.com/v2/name/"
-        self.card_details = "https://restcountries.com/v3.1/all?fields=name,capital,currencies,lang,reigon,subreigon"
 
 
 @app.route("/")
@@ -26,8 +21,9 @@ def journal_entries():
 
 @app.route("/destinations", methods=["GET"])
 def destinations():
-    
-    return render_template("destinations.html")
+    req = requests.get("https://restcountries.com/v3.1/all")
+    data = json.loads(req.content)
+    return render_template("destinations.html", data=data)
 
 
 @app.route("/my_trips")
