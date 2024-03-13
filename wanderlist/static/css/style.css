@@ -54,23 +54,24 @@ body {
     font-size: 1.2em;
 }
 
-.page-heading {
+.page-heading h2 {
+    color:#004d40;
     text-align: center;
     display: flex;
     flex-direction: column;
-
-}
-
-.page-heading h2 {
-    color:#004d40;
-    font-family: "Caveat Brush", sans-serif;
+    font-family: "Caveat Brush";
     font-weight: 700;
-    font-size: 2.5em;
 }
+
 
 .page-heading h3 {
     font-family: "Quattrocento", sans-serif;
     font-size: 1.5em;
+}
+
+form {
+    font-family: "Quattrocento", sans-serif;
+    font-size: 1em;
 }
 
 /* Nav */
@@ -123,6 +124,7 @@ nav ul li a {
     opacity: 1;
 }
 
+.btn-custom
 .hero-container a {
     color: #004d40;
     font-size: 1.5rem;
@@ -143,8 +145,9 @@ nav ul li a {
     display: flex;
     align-items: center;
     justify-content: center;
-    max-width: 100%;
 }
+
+
 
 
 
