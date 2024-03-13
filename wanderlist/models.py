@@ -5,6 +5,7 @@ from wanderlist import app, db
 class Itineraries(db.Model):
     # schema for the Journal model
     id = db.Column(db.Integer, primary_key=True)
+    trip_name = db.Column(db.String(30), nullable=False)
     country_name = db.Column(db.String(25), unique=True, nullable=False)
     to_go = db.Column(db.Boolean, default=False, nullable=False)
     journal_entry = db.relationship("Journal", backref="itineraries", cascade="all, delete", lazy=True)
@@ -17,7 +18,7 @@ class Itineraries(db.Model):
 class Journal(db.Model):
     # schema for the Journal model
     id = db.Column(db.Integer, primary_key=True)
-    trip_name = db.Column(db.String(50), unique=True, nullable=False)
+    trip_name = db.Column(db.String(30), db.ForeignKey("itineraries.id", ondelete="CASCADE"), nullable=False)
     description = db.Column(db.Text, nullable=False)
     rating = db.Column(db.Integer, nullable=False)
     have_been = db.Column(db.Boolean, default=False, nullable=False)

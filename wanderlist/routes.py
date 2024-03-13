@@ -1,5 +1,5 @@
 import os
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, redirect, url_for
 from wanderlist import app, db
 from wanderlist.models import Itineraries, Journal
 from wanderlist.countries_api import get_countries
@@ -25,14 +25,21 @@ def destinations(country):
     
     return render_template("destinations.html", countries=country_results)
 
+
 @app.route("/my_trips")
 def my_trips():
+
 
     return render_template("my_trips.html")
 
 
-@app.route("/add_country", methods=["GET", "POST"])
-def add_country():
-        
-    return render_template("add_country.html")
+@app.route("/add_trip", methods=["GET", "POST"])
+def add_trip():
+    if request == "POST":
+        trip = Itineraries(trip_name=request.form.get("trip_name"))
+        db.session.add(trip)
+        db.session.commit()
+        return redirect(url_for("my_trips"))
+               
+    return render_template("add_trip.html")
 
