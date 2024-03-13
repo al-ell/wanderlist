@@ -23,7 +23,7 @@
                     <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="fas fa-bars"></i></a>
                     <ul class="right hide-on-med-and-down teal-text text-darken-4">
                         <li><a href="{{ url_for('home') }}">Home</a></li>
-                        <li><a href="{{ url_for('destinations') }}">Destinations</a></li>
+                        <li><a href="{{ url_for('destinations', country='country_results') }}">Destinations</a></li>
                         <li><a href="{{ url_for('my_trips') }}">My Trips</a></li>
                         <li><a href="{{ url_for('journal_entries') }}">Journal Entries</a></li>
                         <li><a href="">Document</a></li>
@@ -38,7 +38,7 @@
     
         <ul class="sidenav teal-text text-darken-4" id="mobile-demo">
             <li><a href="{{ url_for('home') }}">Home</a></li>
-            <li><a href="{{ url_for('destinations') }}">Destinations</a></li>
+            <li><a href="{{ url_for('destinations', country='country_results') }}">Destinations</a></li>
             <li><a href="{{ url_for('my_trips') }}">My Trips</a></li>
             <li><a href="{{ url_for('journal_entries') }}">Journal Entries</a></li>
             <li><a href="#">Document</a></li>
