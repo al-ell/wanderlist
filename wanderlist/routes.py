@@ -68,15 +68,16 @@ def delete_trip(trip_id):
 
 @app.route("/journal")
 def journal():
+    journal = Journal.query.order_by(Journal.id).all()
     
-    return render_template("journal.html")
+    return render_template("journal.html", journal=journal)
 
 
 @app.route("/document", methods=["GET", "POST"])
 def document():
     trips = list(Itineraries.query.order_by(Itineraries.trip_name).all())
     if request.method == "POST":
-        journal_entries = Journal(
+        journals = Journal(
             trip_name=request.form.get("trip_name"),
             description = request.form.get("description"),
             rating = request.form.get("rating"),
@@ -87,7 +88,7 @@ def document():
             itinerary_id = request.form.get("trip_id"),
             created_by=request.form.get("created_by")      
         )
-        db.session.add(journal_entries)
+        db.session.add(journals)
         db.session.commit()
         return redirect(url_for("journal"))
                
