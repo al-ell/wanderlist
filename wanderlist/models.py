@@ -8,6 +8,7 @@ class Itineraries(db.Model):
     trip_name = db.Column(db.String(30), nullable=False)
     country_name = db.Column(db.String(25), unique=True, nullable=False)
     to_go = db.Column(db.Boolean, default=False, nullable=False)
+    created_by = db.Column(db.String, unique=True, primary_key=False)
     journal_entry = db.relationship("Journal", backref="itineraries", cascade="all, delete", lazy=True)
 
     def __repr__(self):
@@ -25,6 +26,7 @@ class Journal(db.Model):
     where = db.Column(db.Text, nullable=False)
     when = db.Column(db.Date, nullable=False)
     how = db.Column(db.String(30), nullable=False)
+    created_by = db.Column(db.String, unique=True, primary_key=False)
     itinerary_id = db.Column(db.Integer, db.ForeignKey("itineraries.id", ondelete="CASCADE"), nullable=False)
 
     def __repr__(self):
@@ -32,5 +34,3 @@ class Journal(db.Model):
         return "#{0} - Journal: {1} | Been: {2}".format(
             self.id, self.trip_name, self.have_been
         )
-
-
