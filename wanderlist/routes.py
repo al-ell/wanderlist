@@ -48,3 +48,15 @@ def add_trip():
                
     return render_template("add_trip.html")
 
+@app.route("/edit_trip/<int:trip_id>", methods=["GET", "POST"])
+def edit_trip(trip_id):
+    trip = Itineraries.query.get_or_404(trip_id)
+    if request.method == "POST":
+        trip.trip_name = request.form.get("trip_name")
+        trip.country_name = request.form.get("country_name")
+        trip.to_go = bool(True if request.form.get("to_go") else False)
+        trip.createde_by = request.form.get("created_by")
+        db.session.commit()
+        return redirect(url_for("trips"))
+    return render_template("edit_trip.html", trip=trip)
+        

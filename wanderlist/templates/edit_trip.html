@@ -1,23 +1,23 @@
 {% extends "base.html" %}
 {% block content %}
     <div class="page-heading">
-        <h2 class="center-align">Add A Trip</h2>
-        <h3>Plan Your Next Adventure</h3>
+        <h2 class="center-align">Edit Trip</h2>
+        <h3></h3>
     </div>
     <div class="row card-panel">
         <div class="col s12">
-            <form class="col" method="POST" action="{{ url_for('add_trip') }}">
+            <form class="col" method="POST" action="{{ url_for('edit_trip', trip_id=trip.id) }}">
                 <div class="row">
                     <div class="input-field">
                         <i class="fas fa-plus prefix"></i>
-                        <input id="trip_name" name="trip_name" minlength="3" maxlength="30" type="text" class="validate">
+                        <input id="trip_name" name="trip_name" value="{{ trip.trip_name }}" minlength="3" maxlength="30" type="text" class="validate">
                         <label for="trip_name">Name it:</label>
                     </div>
                 </div>
                 <div class="row">
                     <div class="input-field">
                         <i class="fas fa-plus prefix"></i>
-                        <input id="country_name" name="country_name" minlength="3" maxlength="25" type="text" class="validate">
+                        <input id="country_name" name="country_name" value="{{ trip.country_name }}" minlength="3" maxlength="25" type="text" class="validate">
                         <label for="country_name">Where:</label>
                     </div>
                 </div>
@@ -26,8 +26,12 @@
                         <div class="switch">
                             <i class="fas fa-suitcase prefix"></i>
                             <label for="to_go">
-                                <input id="to_go" name="to_go" type="checkbox">
-                                <span class="lever"></span>
+                                {% if trip.to_go == True %}
+                                    <input id="to_go" name="to_go" type="checkbox" checked>
+                                {% else %}
+                                    <input id="to_go" name="to_go" type="checkbox">
+                                {% endif %}
+                                    <span class="lever"></span>
                                 To Go
                             </label>
                         </div>
@@ -36,14 +40,14 @@
                 <div class="row">
                     <div class="input-field">
                         <i class="fas fa-plus prefix"></i>
-                        <input id="created_by" name="created_by" minlength="3" maxlength="30" type="text" class="validate">
+                        <input id="created_by" name="created_by" value="{{ trip.created_by }}" minlength="3" maxlength="30" type="text" class="validate">
                         <label for="created_by">Author:</label>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col s6 center-align btn-custom">
                         <button class="waves-effect waves-light btn-large btn-custom" type="submit">
-                            Add
+                            Save
                         </button>
                     </div>
                 </div>

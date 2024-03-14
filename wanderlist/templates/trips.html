@@ -16,7 +16,7 @@
                     <h4 class="card-title">{{ trip.trip_name }}</h4>
                 </div>
                 <div class="card-action">
-                    <a href="#" class="btn btn-custom">Edit</a>
+                    <a href="{{ url_for('edit_trip', trip_id=trip.id) }}" class="btn btn-custom">Edit</a>
                     <a href="#" class="btn btn-custom">Delete</a>
                 </div>
             </div>
