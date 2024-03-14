@@ -12,11 +12,6 @@ def home():
     return render_template("index.html", pics=pics)
 
 
-@app.route("/journal_entries")
-def journal_entries():
-    
-    return render_template("journal_entries.html")
-
 
 @app.route("/destinations/<country>", methods=["GET"])
 def destinations(country):
@@ -69,3 +64,31 @@ def delete_trip(trip_id):
     db.session.commit()
     # add defensive programming - pop up modal to query delete 
     return redirect(url_for("trips"))
+
+
+@app.route("/journal")
+def journal():
+    
+    return render_template("journal.html")
+
+
+@app.route("/document", methods=["GET", "POST"])
+def document():
+    trips = list(Itineraries.query.order_by(Itineraries.trip_name).all())
+    if request.method == "POST":
+        journal_entries = Journal(
+            trip_name=request.form.get("trip_name"),
+            description = request.form.get("description"),
+            rating = request.form.get("rating"),
+            have_been = bool(True if request.form.get("have_been") else False),
+            where = request.form.get("where"),
+            when = request.form.get("when"),
+            how = request.form.get("how"),
+            itinerary_id = request.form.get("trip_id"),
+            created_by=request.form.get("created_by")      
+        )
+        db.session.add(journal_entries)
+        db.session.commit()
+        return redirect(url_for("journal"))
+               
+    return render_template("document.html", trips=trips)

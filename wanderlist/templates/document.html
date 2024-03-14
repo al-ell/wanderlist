@@ -1,5 +1,91 @@
 {% extends "base.html" %}
 {% block content %}
+    <div class="page-heading">
+        <h2 class="center-align">Document Your Trip</h2>
+        <h3>Make a Journal Entry</h3>
+    </div>
+    <div class="row card-panel">
+        <div class="col s12">
+            <form class="col" method="POST" action="{{ url_for('document') }}">
+                <div class="row">
+                    <div class="input-field col s12">
+                        <i class="fas fa-plus prefix"></i>
+                        <input id="trip_name" name="trip_name" minlength="3" maxlength="30" type="text" class="validate" required>
+                        <label for="trip_name">Name it:</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <i class="fas fa-pencil prefix"></i>
+                        <textarea id="description" name="description" minlength="3" maxlength="200"
+                            type="text" class="materialize-textarea validate" required></textarea>
+                        <label for="description">The best bits:</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <div class="switch">
+                            <i class="fas fa-check-circle prefix"></i>
+                            <label for="to_go">
+                                <input id="to_go" name="to_go" type="checkbox">
+                                <span class="lever"></span>
+                                Have Been
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12 m6">
+                        <i class="fas fa-plus prefix"></i>
+                        <input id="where" name="where" minlength="3" maxlength="25" type="text" class="validate" required>
+                        <label for="where">Where you went:</label>
+                    </div>
+                    <div class="input-field col s12 m6">
+                        <i class="fas fa-plus prefix"></i>
+                        <input id="when" name="when" minlength="3"  class="datepicker validate">
+                        <label for="when">When you went:</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12 m6">
+                        <i class="fas fa-plus prefix"></i>
+                        <input id="how" name="how" minlength="3" maxlength="25" type="text" class="validate" required>
+                        <label for="how">How you travelled:</label>
+                    </div>
+                    <div class="input-field col s12 m6">
+                        <i class="fas fa-plus prefix"></i>
+                        <input id="rating" name="rating" minlength="1" maxlength="25" type="text" class="validate">
+                        <label for="rating">Rating:</label>
+                    </div>
+                </div>
 
+                <div class="row">
+                    <div class="input-field col s12">
+                        <i class="fas fa-plus prefix"></i>
+                        <select name="trip_id" id="trip_id" class="validate" required>
+                            <option value="" disabled selected>Choose Trip</option>
+                            {% for trip in trips %}
+                                <option value="{{ trip.id }}">{{ trip.trip_name }}</option>
+                            {% endfor %}
+                        </select>
+                        <label for="trip_id">Trip:</label>
+                    </div>
+                    <div class="input-field col s12">
+                        <i class="fas fa-plus prefix"></i>
+                        <input id="created_by" name="created_by" minlength="3" maxlength="30" type="text" class="validate">
+                        <label for="created_by">Author:</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col s6 center-align btn-custom">
+                        <button class="waves-effect waves-light btn-large btn-custom" type="submit">
+                            Add
+                        </button>
+                    </div>
+                </div>
+            </form>
+
+        </div>
+      </div>
 
 {% endblock %}
