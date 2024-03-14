@@ -48,6 +48,7 @@ def add_trip():
                
     return render_template("add_trip.html")
 
+
 @app.route("/edit_trip/<int:trip_id>", methods=["GET", "POST"])
 def edit_trip(trip_id):
     trip = Itineraries.query.get_or_404(trip_id)
@@ -59,4 +60,12 @@ def edit_trip(trip_id):
         db.session.commit()
         return redirect(url_for("trips"))
     return render_template("edit_trip.html", trip=trip)
-        
+
+
+@app.route("/delete_trip/<int:trip_id>")
+def delete_trip(trip_id):
+    trip = Itineraries.query.get_or_404(trip_id)
+    db.session.delete(trip)
+    db.session.commit()
+    # add defensive programming - pop up modal to query delete 
+    return redirect(url_for("trips"))
