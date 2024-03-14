@@ -35,9 +35,14 @@ def trips():
 
 @app.route("/add_trip", methods=["GET", "POST"])
 def add_trip():
-    if request == "POST":
-        trip = Itineraries(trip_name=request.form.get("trip_name"))
-        db.session.add(trip)
+    if request.method == "POST":
+        trips = Itineraries(
+            trip_name=request.form.get("trip_name"),
+            country_name=request.form.get("country_name"),
+            to_go=bool(True if request.form.get("to_go") else False),
+            created_by=request.form.get("created_by")      
+        )
+        db.session.add(trips)
         db.session.commit()
         return redirect(url_for("trips"))
                

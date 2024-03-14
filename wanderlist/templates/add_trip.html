@@ -5,20 +5,47 @@
         <h3>Plan Your Next Adventure</h3>
     </div>
     <div class="row card-panel">
-        <div class="col s10 m8">
+        <div class="col s12">
             <form class="ccol" method="POST" action="{{ url_for('add_trip') }}">
                 <div class="row">
-                <div class="input-field">
-                    <i class="fas fa-plus prefix"></i>
-                    <input placeholder="Name your next Trip" id="trip_name" name="trip_name" minlength="3" maxlength="30" type="text" class="validate">
-                </div>
+                    <div class="input-field">
+                        <i class="fas fa-plus prefix"></i>
+                        <input id="trip_name" name="trip_name" minlength="3" maxlength="30" type="text" class="validate">
+                        <label for="trip_name">Name it:</label>
+                    </div>
                 </div>
                 <div class="row">
-                <div class="col s6 center-align btn-custom">
-                    <button class="waves-effect waves-light btn-large lime lighten-2 btn-custom" type="submit">
-                        Add
-                    </button>
+                    <div class="input-field">
+                        <i class="fas fa-plus prefix"></i>
+                        <input id="country_name" name="country_name" minlength="3" maxlength="25" type="text" class="validate">
+                        <label for="country_name">Where:</label>
+                    </div>
                 </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <div class="switch">
+                            <i class="fas fa-suitcase prefix"></i>
+                            <label for="to_go">
+                                <input id="to_go" name="to_go" type="checkbox">
+                                <span class="lever"></span>
+                                To Go
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field">
+                        <i class="fas fa-plus prefix"></i>
+                        <input id="created_by" name="created_by" minlength="3" maxlength="30" type="text" class="validate">
+                        <label for="created_by">Author:</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col s6 center-align btn-custom">
+                        <button class="waves-effect waves-light btn-large btn-custom" type="submit">
+                            Add
+                        </button>
+                    </div>
                 </div>
             </form>
 
