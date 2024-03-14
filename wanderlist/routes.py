@@ -26,11 +26,11 @@ def destinations(country):
     return render_template("destinations.html", countries=country_results)
 
 
-@app.route("/my_trips")
-def my_trips():
+@app.route("/trips")
+def trips():
+    trips = list(Itineraries.query.order_by(Itineraries.trip_name).all())
 
-
-    return render_template("my_trips.html")
+    return render_template("trips.html", trips=trips)
 
 
 @app.route("/add_trip", methods=["GET", "POST"])
@@ -39,7 +39,7 @@ def add_trip():
         trip = Itineraries(trip_name=request.form.get("trip_name"))
         db.session.add(trip)
         db.session.commit()
-        return redirect(url_for("my_trips"))
+        return redirect(url_for("trips"))
                
     return render_template("add_trip.html")
 
