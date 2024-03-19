@@ -32,10 +32,10 @@ def trips():
 def add_trip():
     if request.method == "POST":
         trips = Itineraries(
-            trip_name=request.form.get("trip_name"),
-            country_name=request.form.get("country_name"),
-            to_go=bool(True if request.form.get("to_go") else False),
-            created_by=request.form.get("created_by")      
+            trip_name = request.form.get("trip_name"),
+            country_name = request.form.get("country_name"),
+            to_go = bool(True if request.form.get("to_go") else False),
+            created_by = request.form.get("created_by")      
         )
         db.session.add(trips)
         db.session.commit()
@@ -70,15 +70,15 @@ def delete_trip(trip_id):
 def journal():
     journal = Journal.query.order_by(Journal.id).all()
     
-    return render_template("journal.html", journal=journal)
+    return render_template("journal.html", journals=journal)
 
 
 @app.route("/document", methods=["GET", "POST"])
 def document():
     trips = list(Itineraries.query.order_by(Itineraries.trip_name).all())
     if request.method == "POST":
-        journals = Journal(
-            trip_name=request.form.get("trip_name"),
+        journal = Journal(
+            trip_name = request.form.get("trip_name"),
             description = request.form.get("description"),
             rating = request.form.get("rating"),
             have_been = bool(True if request.form.get("have_been") else False),
@@ -86,10 +86,30 @@ def document():
             when = request.form.get("when"),
             how = request.form.get("how"),
             itinerary_id = request.form.get("trip_id"),
-            created_by=request.form.get("created_by")      
+            created_by = request.form.get("created_by")      
         )
-        db.session.add(journals)
+        db.session.add(journal)
         db.session.commit()
         return redirect(url_for("journal"))
                
     return render_template("document.html", trips=trips)
+
+
+@app.route("/edit_document/<int:journal_id>", methods=["GET", "POST"])
+def edit_document(journal_id):
+    journal = Journal.query.get_or_404(journal_id)
+    trips = list(Itineraries.query.order_by(Itineraries.trip_name).all())
+    if request.method == "POST":
+        journal.trip_name = request.form.get("trip_name"),
+        journal.description = request.form.get("description"),
+        journal.rating = int(request.form.get("rating")),
+        journal.have_been = bool(True if request.form.get("have_been") else False),
+        journal.where = request.form.get("where"),
+        journal.when = request.form.get("when"),
+        journal.how = request.form.get("how"),
+        journal.itinerary_id = request.form.get("itinerary_id"),
+        journal.created_by = request.form.get("created_by")
+        db.session.commit()
+        return redirect(url_for("journal"))
+               
+    return render_template("edit_document.html", journal=journal, trips=trips)

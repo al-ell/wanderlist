@@ -3,7 +3,7 @@ from wanderlist import app, db
 
 
 class Itineraries(db.Model):
-    # schema for the Journal model
+    # schema for the Itineraries model
     id = db.Column(db.Integer, primary_key=True)
     trip_name = db.Column(db.String(30), nullable=False)
     country_name = db.Column(db.String(25), unique=True, nullable=False)

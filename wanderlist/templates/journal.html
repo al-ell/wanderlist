@@ -11,21 +11,22 @@
     <div class="row page-content">
         <div class="col s12">            
             <ul class="collapsible">
-                {% for journals in journal|sort(attribute="when") %}
+                {% for journal in journals|sort(attribute="when") %}
                     <li>
                         <div class="collapsible-header"><i class="fas fa-caret-down"></i>
-                            <h4>{{ journals.trip_name }}</h4>
-                            {% if journals.have_been == True %}
+                            <h4>{{ journal.trip_name }}</h4>
+                            {% if journal.have_been == True %}
                                 <span><i class="fas fa-tick">Have Been</i></span>
                             {% endif %}
+                            <span><a href="{{ url_for('edit_document', journal_id=journal.id) }}" class="btn btn-custom">Edit</a></span>
                         </div>
                         <div class="collapsible-body">
-                            <h4>Trip: {{ journals.trip_id }}</h4>
-                            <p>Best bits: {{ journals.description }}</p>
+                            <h4>Trip: {{ journal.trip_id }}</h4>
+                            <p>Best bits: {{ journal.description }}</p>
                             <ul>
-                                <li>Where: {{ journals.where }}</li>
-                                <li>When: {{ journals.when.strftime("%d %B %Y") }}</li>
-                                <li>How: {{ journals.how }}</li>
+                                <li>Where: {{ journal.where }}</li>
+                                <li>When: {{ journal.when.strftime("%d %B %Y") }}</li>
+                                <li>How: {{ journal.how }}</li>
                             </ul>
                         </div>
                     </li>
