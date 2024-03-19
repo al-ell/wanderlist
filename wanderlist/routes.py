@@ -100,16 +100,25 @@ def edit_document(journal_id):
     journal = Journal.query.get_or_404(journal_id)
     trips = list(Itineraries.query.order_by(Itineraries.trip_name).all())
     if request.method == "POST":
-        journal.trip_name = request.form.get("trip_name"),
-        journal.description = request.form.get("description"),
-        journal.rating = int(request.form.get("rating")),
-        journal.have_been = bool(True if request.form.get("have_been") else False),
-        journal.where = request.form.get("where"),
-        journal.when = request.form.get("when"),
-        journal.how = request.form.get("how"),
-        journal.itinerary_id = request.form.get("itinerary_id"),
+        journal.trip_name = request.form.get("trip_name")
+        journal.description = request.form.get("description")
+        journal.rating = request.form.get("rating")
+        journal.have_been = bool(True if request.form.get("have_been") else False)
+        journal.where = request.form.get("where")
+        journal.when = request.form.get("when")
+        journal.how = request.form.get("how")
+        journal.itinerary_id = request.form.get("itinerary_id")
         journal.created_by = request.form.get("created_by")
         db.session.commit()
         return redirect(url_for("journal"))
                
     return render_template("edit_document.html", journal=journal, trips=trips)
+
+
+@app.route("/delete_document/<int:journal_id>")
+def delete_document(journal_id):
+    journal = Journal.query.get_or_404(journal_id)
+    db.session.delete(journal)
+    db.session.commit()
+    # add defensive programming - pop up modal to query delete 
+    return redirect(url_for("journal"))

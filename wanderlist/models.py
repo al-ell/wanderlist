@@ -21,7 +21,7 @@ class Journal(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     trip_name = db.Column(db.String(30), nullable=False)
     description = db.Column(db.Text, nullable=False)
-    rating = db.Column(db.Integer, nullable=False)
+    rating = db.Column(db.String, nullable=False)
     have_been = db.Column(db.Boolean, default=False, nullable=False)
     where = db.Column(db.Text, nullable=False)
     when = db.Column(db.Date, nullable=False)
