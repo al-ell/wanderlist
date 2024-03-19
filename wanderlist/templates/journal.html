@@ -1,39 +1,42 @@
 {% extends "base.html" %}
 {% block content %}
-    <div class="page-heading">
-        <h2 class="center-align">Journal Entries</h2> 
-    </div>
-    <div class="row">
-        <div class="col s3 offset-m8 btn-custom">
-            <a href="{{ url_for('document') }}" class="waves-effect waves-light btn-large lime lighten-2" type="button">Add Entry</a>
+    <div class="row page-heading">
+        <div class="col s9">
+            <h2>Journal Entries</h2> 
+        </div>
+        <div class="col s3 btn-lrg">
+            <a href="{{ url_for('document') }}" class="waves-effect waves-light btn-large" type="button">Add Entry</a>
         </div>
     </div>
-    <div class="row page-content">
-        <div class="col s12">            
-            <ul class="collapsible">
-                {% for journal in journals|sort(attribute="when") %}
-                    <li>
-                        <div class="collapsible-header"><i class="fas fa-caret-down"></i>
-                            <h4>{{ journal.trip_name }}</h4>
-                            {% if journal.have_been == True %}
-                                <span><i class="fas fa-tick">Have Been</i></span>
-                            {% endif %}
-                            <span><a href="{{ url_for('edit_document', journal_id=journal.id) }}" class="btn btn-custom">Edit</a></span>
-                            <span><a href="{{ url_for('delete_document', journal_id=journal.id) }}" class="btn btn-custom">Delete</a></span>
-                        </div>
-                        <div class="collapsible-body">
-                            <h4>Trip: {{ journal.trip_id }}</h4>
-                            <p>Best bits: {{ journal.description }}</p>
-                            <ul>
-                                <li>Where: {{ journal.where }}</li>
-                                <li>When: {{ journal.when.strftime("%d %B %Y") }}</li>
-                                <li>How: {{ journal.how }}</li>
-                            </ul>
-                        </div>
-                    </li>
-                {% endfor %}
-              </ul>
+    <div class="halign-wrapper center-align">
+        <div class="row page-content">
+            <div class="col s12 m8 offset-m2">            
+                <ul class="collapsible journal_entry_container">
+                    {% for journal in journals|sort(attribute="when") %}
+                        <li class="journal_entry lime lighten-4">
+                            <div class="collapsible-header btn-custom journal_header lime lighten-2"><i class="fas fa-caret-down"></i>
+                                <h4>{{ journal.trip_name }}</h4>
+                                {% if journal.have_been == True %}
+                                    <span><i class="fas fa-tick">Have Been</i></span>
+                                {% endif %}
+                                <span><a href="{{ url_for('edit_document', journal_id=journal.id) }}" class="btn right btn-custom">Edit</a></span>
+                                <span><a href="{{ url_for('delete_document', journal_id=journal.id) }}" class="btn right btn-custom">Delete</a></span>
+                            </div>
+                            <div class="collapsible-body journal_entry_details">
+                                <h4>Trip: {{ journal.trip_id }}</h4>
+                                <p>Best bits: {{ journal.description }}</p>
+                                <ul>
+                                    <li>Where: {{ journal.where }}</li>
+                                    <li>When: {{ journal.when.strftime("%d %B %Y") }}</li>
+                                    <li>How: {{ journal.how }}</li>
+                                </ul>
+                            </div>
+                        </li>
+                    {% endfor %}
+                  </ul>
+            </div>
         </div>
     </div>
+    
 
 {% endblock %}
