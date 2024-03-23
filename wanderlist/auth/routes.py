@@ -10,7 +10,7 @@ from flask import (
     session)
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_login import UserMixin, login_user, LoginManager, login_required, logout_user, current_user
-from wanderlist import app, db
+from wanderlist import app, db, routes
 from wanderlist.models import User, Journal, Itineraries
 import json
 
@@ -81,4 +81,14 @@ def login():
 def profile(username):
     username = User.query.get_or_404(username)
 
-    return render_template("profile.html", username=session['user'])
+    if session["user"]:
+        return render_template("profile.html", username=session['user'])
+
+    return redirect(url_for("login"))
+
+
+@auth.logout("/logout")
+def logout():
+    flash("You are logged out!")
+    session.pop("user")
+    return redirect(url_for("/"))

@@ -24,11 +24,14 @@
                     <ul class="right hide-on-med-and-down teal-text text-darken-4">
                         <li><a href="{{ url_for('home') }}">Home</a></li>
                         <li><a href="{{ url_for('destinations', country='country_results') }}">Destinations</a></li>
-                        <li><a href="{{ url_for('trips') }}">My Trips</a></li>
-                        <li><a href="{{ url_for('journal') }}">Journal Entries</a></li>
-                        <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
-                        <li><a href="#">Log Out</a></li>
-                    </ul>
+                        {% if session.user %}
+                          <li><a href="{{ url_for('trips') }}">My Trips</a></li>
+                          <li><a href="{{ url_for('journal') }}">Journal Entries</a></li>
+                          <li><a href="{{ url_for('auth.profile', username=session['user']) }}">Profile</a></li>
+                          <li><a href="{{ url_for('auth.logout') }}">Log Out</a></li>
+                        {% endif %}
+                    
+                      </ul>
                 </div>
             </nav>
         </div>
@@ -38,10 +41,12 @@
         <ul class="sidenav teal-text text-darken-4" id="mobile-demo">
             <li><a href="{{ url_for('home') }}">Home</a></li>
             <li><a href="{{ url_for('destinations', country='country_results') }}">Destinations</a></li>
-            <li><a href="{{ url_for('trips') }}">My Trips</a></li>
-            <li><a href="{{ url_for('journal') }}">Journal Entries</a></li>
-            <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
-            <li><a href="#">Log Out</a></li>
+            {% if session.user %}
+              <li><a href="{{ url_for('trips') }}">My Trips</a></li>
+              <li><a href="{{ url_for('journal') }}">Journal Entries</a></li>
+              <li><a href="{{ url_for('auth.profile', username=session['user']) }}">Profile</a></li>
+              <li><a href="{{ url_for('auth.logout') }}">Log Out</a></li>
+            {% endif %}
         </ul>
     </header>
     <section>
