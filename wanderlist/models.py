@@ -1,4 +1,5 @@
 import os
+from flask_login import UserMixin
 from wanderlist import app, db
 
 
@@ -34,3 +35,9 @@ class Journal(db.Model):
         return "#{0} - Journal: {1} | Been: {2}".format(
             self.id, self.trip_name, self.have_been
         )
+
+
+class User(db.Model, UserMixin):
+    id = db.Column(db.Integer, primary_key=True)
+    username = db.Column(db.String(20), unique=True, nullable=False)
+    password = db.Column(db.String(200), nullable=False)

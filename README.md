@@ -358,6 +358,9 @@ Uses the cat facts api, but I was able to apply this to rest countries api with 
 To update the routing as the project is larger
 [Intro to Flask Blueprints](https://www.youtube.com/watch?v=pjVhrIJFUEs)
 
+- Flask Authentication
+To initiate user login with Flask libraries
+[Learn Flask Login](https://www.youtube.com/watch?v=71EU8gnZqZQ)
 
 ### Content
 

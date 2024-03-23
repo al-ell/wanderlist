@@ -1,7 +1,7 @@
 import os
 from flask import Flask, render_template, request, redirect, url_for
 from wanderlist import app, db
-from wanderlist.models import Itineraries, Journal
+from wanderlist.models import Itineraries, Journal, User
 from wanderlist.countries_api import get_countries
 import json
 
