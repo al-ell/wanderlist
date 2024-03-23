@@ -352,6 +352,11 @@ Uses the cat facts api, but I was able to apply this to rest countries api with 
 (Youtube video)[https://www.youtube.com/watch?v=F_SBxcV335k]
 
 
+- Flask Blueprints
+To update the routing as the project is larger
+[Intro to Flask Blueprints](https://www.youtube.com/watch?v=pjVhrIJFUEs)
+
+
 ### Content
 
 

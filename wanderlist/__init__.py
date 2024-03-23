@@ -12,3 +12,6 @@ app.config["SQLALCHEMY_DATABASE_URI"] = os.environ.get("DB_URL")
 db = SQLAlchemy(app)
 
 from wanderlist import routes  # noqa
+
+from wanderlist.auth.routes import auth
+app.register_blueprint(auth) # noqa
