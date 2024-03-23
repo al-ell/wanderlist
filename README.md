@@ -280,6 +280,8 @@ HTML, CSS, Javascript, Python
 
 [SQLAlchemy](https://pypi.org/project/SQLAlchemy/) - Database abstraction library, used to interact with PostgreSQL.
 
+[Flask Login](https://flask-login.readthedocs.io/en/latest/)
+
 
 ### Programs Used
 
