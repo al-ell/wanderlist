@@ -15,94 +15,97 @@
     <title>Wanderlist</title>
 </head>
 <body>
+  <div id="container">
     <header>
-        <div class="wrapper lime lighten-2">
-            <nav class="main-nav lime lighten-2">
-                <div class="nav-lge">
-                    <h1><a href="#" class=" logo teal-text text-darken-4">Wanderlist</a></h1>
-                    <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="fas fa-bars"></i></a>
-                    <ul class="right hide-on-med-and-down teal-text text-darken-4">
-                        <li><a href="{{ url_for('home') }}">Home</a></li>
-                        <li><a href="{{ url_for('destinations', country='country_results') }}">Destinations</a></li>
-                        {% if session.user %}
-                          <li><a href="{{ url_for('trips') }}">My Trips</a></li>
-                          <li><a href="{{ url_for('journal') }}">Journal Entries</a></li>
-                          <li><a href="{{ url_for('auth.profile') }}">Profile</a></li>
-                          <li><a href="{{ url_for('auth.logout') }}">Log Out</a></li>
-                        {% endif %}
-                    
-                      </ul>
-                </div>
-            </nav>
-        </div>
-
-
-    
-        <ul class="sidenav teal-text text-darken-4" id="mobile-demo">
-            <li><a href="{{ url_for('home') }}">Home</a></li>
-            <li><a href="{{ url_for('destinations', country='country_results') }}">Destinations</a></li>
-            {% if session.user %}
-              <li><a href="{{ url_for('trips') }}">My Trips</a></li>
-              <li><a href="{{ url_for('journal') }}">Journal Entries</a></li>
-              <li><a href="{{ url_for('auth.profile') }}">Profile</a></li>
-              <li><a href="{{ url_for('auth.logout') }}">Log Out</a></li>
-            {% endif %}
+      <div class="wrapper lime lighten-2">
+          <nav class="main-nav lime lighten-2">
+              <div class="nav-lge">
+                  <h1><a href="#" class=" logo teal-text text-darken-4">Wanderlist</a></h1>
+                  <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="fas fa-bars"></i></a>
+                  <ul class="right hide-on-med-and-down teal-text text-darken-4">
+                      <li><a href="{{ url_for('home') }}">Home</a></li>
+                      <li><a href="{{ url_for('destinations', country='country_results') }}">Destinations</a></li>
+                      {% if session.user %}
+                        <li><a href="{{ url_for('trips') }}">My Trips</a></li>
+                        <li><a href="{{ url_for('journal') }}">Journal Entries</a></li>
+                        <li><a href="{{ url_for('auth.profile') }}">Profile</a></li>
+                        <li><a href="{{ url_for('auth.logout') }}">Log Out</a></li>
+                      {% endif %}
+                  
+                    </ul>
+              </div>
+          </nav>
+      </div>
+  
+  
+  
+      <ul class="sidenav teal-text text-darken-4" id="mobile-demo">
+          <li><a href="{{ url_for('home') }}">Home</a></li>
+          <li><a href="{{ url_for('destinations', country='country_results') }}">Destinations</a></li>
+          {% if session.user %}
+            <li><a href="{{ url_for('trips') }}">My Trips</a></li>
+            <li><a href="{{ url_for('journal') }}">Journal Entries</a></li>
+            <li><a href="{{ url_for('auth.profile') }}">Profile</a></li>
+            <li><a href="{{ url_for('auth.logout') }}">Log Out</a></li>
+          {% endif %}
+      </ul>
+  </header>
+  <section>
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        {% for message in messages %}
+          <div class="row flashes">
+            <h3>{{ message }}</h3>
+          </div>
+        {% endfor %}
+      {% endif %}
+    {% endwith %}
+  </section>
+  <main class="halign-wrapper center-align">
+      {% block content %}
+      {% endblock %}
+  </main>
+  
+  <footer class=" page-footer footer lime lighten-2">
+      <div class="social-container">
+        <ul class="social-links">
+          <li class="list-inline-item social-icon">
+            <a target="_blank" href="https://twitter.com/">
+                <i class="fa fa-twitter" aria-hidden="true"></i>
+                <span class="sr-only">Twitter</span>
+            </a>
+            </li>
+          <li class="list-inline-item social-icon">
+            <a target="_blank" href="https://www.youtube.com/">
+              <i class="fa fa-youtube" aria-hidden="true"></i>
+              <span class="sr-only">Youtube</span>
+            </a>
+          </li>
+          <li class="list-inline-item social-icon">
+            <a target="_blank" href="https://en-gb.facebook.com//">
+              <i class="fa fa-facebook" aria-hidden="true"></i>
+              <span class="sr-only">Facebook</span>
+            </a>
+          </li>
+          <li class="list-inline-item social-icon">
+            <a target="_blank" href="https://www.instagram.com/">
+              <i class="fa fa-instagram" aria-hidden="true"></i>
+              <span class="sr-only">Instagram</span>
+            </a>
+          </li>
         </ul>
-    </header>
-    <section>
-      {% with messages = get_flashed_messages() %}
-        {% if messages %}
-          {% for message in messages %}
-            <div class="row flashes">
-              <h3>{{ message }}</h3>
-            </div>
-          {% endfor %}
-        {% endif %}
-      {% endwith %}
-    </section>
-    <main class="halign-wrapper center-align">
-        {% block content %}
-        {% endblock %}
-    </main>
-
-    <footer class=" page-footer footer lime lighten-2">
-        <div class="social-container">
-          <ul class="social-links">
-            <li class="list-inline-item social-icon">
-              <a target="_blank" href="https://twitter.com/">
-                  <i class="fa fa-twitter" aria-hidden="true"></i>
-                  <span class="sr-only">Twitter</span>
-              </a>
-              </li>
-            <li class="list-inline-item social-icon">
-              <a target="_blank" href="https://www.youtube.com/">
-                <i class="fa fa-youtube" aria-hidden="true"></i>
-                <span class="sr-only">Youtube</span>
-              </a>
-            </li>
-            <li class="list-inline-item social-icon">
-              <a target="_blank" href="https://en-gb.facebook.com//">
-                <i class="fa fa-facebook" aria-hidden="true"></i>
-                <span class="sr-only">Facebook</span>
-              </a>
-            </li>
-            <li class="list-inline-item social-icon">
-              <a target="_blank" href="https://www.instagram.com/">
-                <i class="fa fa-instagram" aria-hidden="true"></i>
-                <span class="sr-only">Instagram</span>
-              </a>
-            </li>
-          </ul>
-        </div>
-      </footer>
-    <!-- Font Awesome CDN -->
-    <script
-      src="https://kit.fontawesome.com/fe32e32a81.js"
-      crossorigin="anonymous"
-    ></script>
-    <!-- Materialize JavaScript CDN -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <!-- Local Javascript File -->
-    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+      </div>
+    </footer>
+  </div>
+  <!-- Font Awesome CDN -->
+  <script
+    src="https://kit.fontawesome.com/fe32e32a81.js"
+    crossorigin="anonymous"
+  >
+  </script>
+  <!-- Materialize JavaScript CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <!-- Local Javascript File -->
+  <script src="{{ url_for('static', filename='js/script.js') }}"></script>
 </body>
 </html>
