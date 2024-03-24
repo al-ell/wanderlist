@@ -31,11 +31,16 @@ header {
     height: fit-content;
 }
 
+main {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+    height: 100%;
+}
 
 
-
-
-/* Colors anf Fonts */
+/* Colors and Fonts */
 
 .contact-social-links li a i,
 .social-links li a i:hover {
@@ -94,6 +99,7 @@ form {
     font-size: 3rem;
 }
 
+.prefix,
 .input-field>label {
     color: #004d40;
     font-size: 1rem;
@@ -107,6 +113,17 @@ form {
   .switch label input[type=checkbox]:checked+.lever:after {
     background-color: #004d40;
   }
+
+  .card {
+    overflow: hidden;
+  }
+
+
+  .card.large .card-content {
+    overflow: auto;
+    margin-bottom: 12vh;
+  }
+
 
 /* Nav */
 
@@ -227,7 +244,7 @@ main {
 footer {
     height: 10vh;
     margin: 0;
-    position: fixed;
+    position: absolute;
     bottom: 0;
     width: 100%;
     display: flex;
@@ -292,8 +309,9 @@ footer {
 
 /* Mobile */
 @media screen and (max-width:768px) {
+    
+
     .form-container {
-        max-height: 60vh;
         padding: 15px 0 10px 10px;
         justify-content: center;
         position: relative;
@@ -372,6 +390,11 @@ footer {
 
     footer {
         height: 8vh;
+    }
+
+    .page-footer {
+        bottom: 0;
+        padding-bottom: 2vh;
     }
 }
 

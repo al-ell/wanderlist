@@ -1,101 +1,104 @@
 {% extends "base.html" %}
 {% block content %}
-    <div class="page-heading">
-        <h2 class="center-align">Document Your Trip</h2>
+    <div class="page-heading center-align">
+        <h2>Document Your Trip</h2>
         <h3>Edit Your Journal Entry</h3>
     </div>
-    <div class="row card-panel">
-        <div class="col s12">
-            <form class="col" method="POST" action="{{ url_for('edit_document', journal_id=journal.id) }}">
-                <div class="row">
-                    <div class="input-field col s12">
-                        <i class="fas fa-plus prefix"></i>
-                        <input id="trip_name" name="trip_name" value="{{ journal.trip_name }}" minlength="3" maxlength="30" type="text" class="validate" required>
-                        <label for="trip_name">Name it:</label>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="input-field col s12">
-                        <i class="fas fa-pencil prefix"></i>
-                        <textarea id="description" name="description" minlength="3" maxlength="200"
-                            type="text" class="materialize-textarea validate" required>
-                            {{- journal.description }}                        
-                        </textarea>
-                        <label for="description">The best bits:</label>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="input-field col s12">
-                        <div class="switch">
-                            <i class="fas fa-check-circle prefix"></i>
-                            <label for="to_go">
-                                {% if journal.have_been == True %}
-                                    <input id="have_been" name="have_been" type="checkbox" checked>
-                                {% else %}
-                                    <input id="have_been" name="have_been" type="checkbox">
-                                {% endif %}
-                                <span class="lever"></span>
-                                Have Been
-                            </label>
+    <div class="row center-align">
+        <div class="col s12 m10 l8 offset-m1 offset-l2">
+            <div class="card large">
+                <div class="card-content lime lighten-4">
+                    <form class="col" method="POST" action="{{ url_for('edit_document', journal_id=journal.id) }}">
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <i class="fas fa-pen prefix"></i>
+                                <input id="trip_name" name="trip_name" minlength="3" maxlength="30" value="{{ journal.trip_name }}" type="text" class="validate" required>
+                                <label for="trip_name">Name it:</label>
+                            </div>
                         </div>
-                    </div>
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <i class="fas fa-book prefix"></i>
+                                <textarea id="description" name="description" minlength="3" maxlength="200"
+                                    type="text" class="materialize-textarea validate" required>
+                                    {{- journal.description }}                                
+                                </textarea>
+                                <label for="description">The best bits:</label>
+                            </div>
+                        </div>
+                        <div class="row left-align">
+                            <div class="input-field col s12">
+                                <div class="switch">
+                                    <i class="fas fa-check-circle prefix"></i>
+                                    <label for="to_go">
+                                        {% if journal.have_been == True %}
+                                            <input id="have_been" name="have_been" type="checkbox" checked>
+                                        {% else %}
+                                            <input id="have_been" name="have_been" type="checkbox">
+                                        {% endif %}
+                                        <span class="lever"></span>
+                                        Have Been
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s12 m6">
+                                <i class="fas fa-globe prefix"></i>
+                                <input id="where" name="where" minlength="3" maxlength="25" value="{{ journal.where }}" type="text" class="validate" required>
+                                <label for="where">Where you went:</label>
+                            </div>
+                            <div class="input-field col s12 m6">
+                                <i class="fa fa-calendar prefix"></i>
+                                <input id="when" name="when" value="{{ journal.when.strftime('%d %B, %Y') }}" minlength="3" class="datepicker validate">
+                                <label for="when">When you went:</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s12 m6">
+                                <i class="fas fa-train prefix"></i>
+                                <input id="how" name="how" value="{{ journal.how }}" minlength="3" maxlength="25" type="text" class="validate" required>
+                                <label for="how">How you travelled:</label>
+                            </div>
+                            <div class="input-field col s12 m6">
+                                <i class="fas fa-star prefix"></i>
+                                <input id="rating" name="rating" value="{{ journal.rating }}" minlength="1" maxlength="25" type="text" class="validate">
+                                <label for="rating">Rating:</label>
+                            </div>
+                        </div>
+                        <div class="row left-align">
+                            <div class="input-field col s12">
+                                <i class="fas fa-map prefix"></i>
+                                <select name="itinerary_id" id="itinerary_id" class="validate" required>
+                                    <option value="" disabled selected>Choose Trip</option>
+                                    {% for trip in trips %}
+                                        {% if trip.id == journal.itinerary_id %}
+                                            <option value="{{ trip.id }}" selected>{{ trip.trip_name }}</option>
+                                        {% else %}
+                                            <option value="{{ trip.id }}">{{ trip.trip_name }}</option>
+                                        {% endif %}
+                                    {% endfor %}
+                                </select>
+                                <label for="trip_id">Trip:</label>
+                            </div>
+                            <div class="input-field col s12">
+                                <i class="fas fa-user prefix"></i>
+                                <input id="created_by" name="created_by" value="{{ journal.created_by }}" minlength="3" maxlength="30" type="text" class="validate">
+                                <label for="created_by">Author:</label>
+                            </div>
+                        </div>
+                        <div class="center-align btn-container">
+                            <div class="col s6 offset-s3">
+                                <button class="waves-effect waves-light btn-large btn-custom" type="submit">
+                                    Save
+                                </button>
+                            </div>
+                        </div>
+                    </form>
                 </div>
-                <div class="row">
-                    <div class="input-field col s12 m6">
-                        <i class="fas fa-plus prefix"></i>
-                        <input id="where" name="where" value="{{ journal.where }}" minlength="3" maxlength="25" type="text" class="validate" required>
-                        <label for="where">Where you went:</label>
-                    </div>
-                    <div class="input-field col s12 m6">
-                        <i class="fas fa-plus prefix"></i>
-                        <input id="when" name="when" value="{{ journal.when.strftime('%d %B, %Y') }}" minlength="3"  class="datepicker validate">
-                        <label for="when">When you went:</label>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="input-field col s12 m6">
-                        <i class="fas fa-plus prefix"></i>
-                        <input id="how" name="how" minlength="3" value="{{ journal.how }}" maxlength="25" type="text" class="validate" required>
-                        <label for="how">How you travelled:</label>
-                    </div>
-                    <div class="input-field col s12 m6">
-                        <i class="fas fa-plus prefix"></i>
-                        <input id="rating" name="rating" value="{{ journal.rating }}" minlength="1" maxlength="25" type="text" class="validate">
-                        <label for="rating">Rating:</label>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="input-field col s12">
-                        <i class="fas fa-plus prefix"></i>
-                        <select name="itinerary_id" id="itinerary_id" class="validate" required>
-                            <option value="" disabled selected>Choose Trip</option>
-                            {% for trip in trips %}
-                                {% if trip.id == journal.itinerary_id %}
-                                    <option value="{{ trip.id }}" selected>{{ trip.trip_name }}</option>
-                                {% else %}
-                                    <option value="{{ trip.id }}">{{ trip.trip_name }}</option>
-                                {% endif %}
-                            {% endfor %}
-                        </select>
-                        <label for="trip_id">Trip:</label>
-                    </div>
-                    <div class="input-field col s12">
-                        <i class="fas fa-plus prefix"></i>
-                        <input id="created_by" name="created_by" value="{{ journal.created_by }}" minlength="3" maxlength="30" type="text" class="validate">
-                        <label for="created_by">Author:</label>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col s6 center-align">
-                        <button class="waves-effect waves-light btn-large btn-custom" type="submit">
-                            Edit
-                        </button>
-                    </div>
-                </div>
-            </form>
-
+            </div>                
         </div>
-      </div>
+    </div>
+
 
 {% endblock %}
