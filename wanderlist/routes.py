@@ -1,5 +1,7 @@
 import os
-from flask import Flask, render_template, request, redirect, url_for
+from flask import (
+    Flask, flash, render_template, 
+    request, redirect, url_for, session)
 from wanderlist import app, db
 from wanderlist.models import Itineraries, Journal, User
 from wanderlist.countries_api import get_countries
@@ -35,7 +37,7 @@ def add_trip():
             trip_name = request.form.get("trip_name"),
             country_name = request.form.get("country_name"),
             to_go = bool(True if request.form.get("to_go") else False),
-            created_by = request.form.get("created_by")      
+            created_by = session["user"]      
         )
         db.session.add(trips)
         db.session.commit()
@@ -51,7 +53,7 @@ def edit_trip(trip_id):
         trip.trip_name = request.form.get("trip_name")
         trip.country_name = request.form.get("country_name")
         trip.to_go = bool(True if request.form.get("to_go") else False)
-        trip.createde_by = request.form.get("created_by")
+        trip.created_by = session["user"]
         db.session.commit()
         return redirect(url_for("trips"))
     return render_template("edit_trip.html", trip=trip)
@@ -86,7 +88,7 @@ def document():
             when = request.form.get("when"),
             how = request.form.get("how"),
             itinerary_id = request.form.get("trip_id"),
-            created_by = request.form.get("created_by")      
+            created_by = session["user"]      
         )
         db.session.add(journal)
         db.session.commit()
@@ -108,7 +110,7 @@ def edit_document(journal_id):
         journal.when = request.form.get("when")
         journal.how = request.form.get("how")
         journal.itinerary_id = request.form.get("itinerary_id")
-        journal.created_by = request.form.get("created_by")
+        journal.created_by = session["user"]
         db.session.commit()
         return redirect(url_for("journal"))
                
