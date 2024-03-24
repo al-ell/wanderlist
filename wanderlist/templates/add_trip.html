@@ -6,30 +6,30 @@
     </div>
     <div class="row center-align">
         <div class="col s12 m10 l8 offset-m1 offset-l2">
-            <div class="form-container card-panel lime lighten-4">
-                <div class="card-content">
+            <div class="card large">
+                <div class="card-content lime lighten-4">
                     <form method="POST" action="{{ url_for('add_trip') }}">
                         <div class="row">
                             <div class="col s12 input-field">
-                                <i class="fas fa-plus prefix"></i>
+                                <i class="fas fa-pen prefix"></i>
                                 <input id="trip_name" name="trip_name" minlength="3" maxlength="30" type="text" class="validate">
                                 <label for="trip_name">Name it:</label>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col s12 input-field">
-                                <i class="fas fa-plus prefix"></i>
+                                <i class="fas fa-earth prefix"></i>
                                 <input id="country_name" name="country_name" minlength="3" maxlength="25" type="text" class="validate">
                                 <label for="country_name">Where:</label>
                             </div>
                         </div>
                         <div class="row">
-                            <div class="input-field col s12">
+                            <div class="input-field left-align col s12">
                                 <div class="switch">
                                     <i class="fas fa-suitcase prefix"></i>
                                     <label for="to_go">
                                         <input id="to_go" name="to_go" type="checkbox">
-                                        <span class="lever"></span>
+                                        <span class="lever custom-lever"></span>
                                         To Go
                                     </label>
                                 </div>
@@ -37,21 +37,21 @@
                         </div>
                         <div class="row">
                             <div class="col s12 input-field">
-                                <i class="fas fa-plus prefix"></i>
+                                <i class="fas fa-user prefix"></i>
                                 <input id="created_by" name="created_by" minlength="3" maxlength="30" type="text" class="validate">
                                 <label for="created_by">Author:</label>
                             </div>
                         </div>
                         <div class="center-align btn-container">
-                            <div class="col s6 offset-s3 btn-custom">
-                                <button class="waves-effect waves-light btn-large" type="submit">
+                            <div class="col s6 offset-s3">
+                                <button class="waves-effect waves-light btn-large btn-custom" type="submit">
                                     Add
                                 </button>
                             </div>
                         </div>
                     </form>
                 </div>
-            </div>
+            </div>                
         </div>
     </div>
 

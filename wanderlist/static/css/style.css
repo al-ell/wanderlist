@@ -70,7 +70,7 @@ h4,
     flex-direction: column;
     font-family: "Caveat Brush";
     font-weight: 700;
-    font-size: 1em;
+    font-size: 4rem;
 }
 
 
@@ -93,6 +93,20 @@ form {
 .journal_entry_details h4 {
     font-size: 3rem;
 }
+
+.input-field>label {
+    color: #004d40;
+    font-size: 1rem;
+    height: fit-content;
+}
+
+.switch label input[type=checkbox]:checked+.lever {
+    background-color: #004d40;
+  }
+  
+  .switch label input[type=checkbox]:checked+.lever:after {
+    background-color: #004d40;
+  }
 
 /* Nav */
 
@@ -135,7 +149,10 @@ nav ul li a {
     font-size: 1rem;
     border-radius: 10px;
     background-color: #004d40;
-    margin: 1rem;
+    width: fit-content;
+    height: fit-content;
+    padding: 0.5rem;
+    margin: 0.5rem;
 }
 
 .hero-container a,
@@ -210,12 +227,13 @@ main {
 footer {
     height: 10vh;
     margin: 0;
-    position: absolute;
+    position: fixed;
     bottom: 0;
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
+    z-index: 500;
 }
 
 .social-container {
@@ -344,6 +362,10 @@ footer {
         opacity: 0.4;
     }
 
+    .btn-lrg a {
+        transform: scale(0.7);
+    }
+    
     .social-container li a {
         transform: scale(0.9);
     }
