@@ -26,7 +26,7 @@ def destinations(country):
 @app.route("/trips")
 def trips():
     trips = list(Itineraries.query.order_by(Itineraries.trip_name).all())
-
+    journal = list(Journal.query.order_by(Journal.id).all())
     return render_template("trips.html", trips=trips)
 
 
@@ -70,8 +70,8 @@ def delete_trip(trip_id):
 
 @app.route("/journal")
 def journal():
-    journal = Journal.query.order_by(Journal.id).all()
-    
+    journal = list(Journal.query.order_by(Journal.id).all())
+    trips = list(Itineraries.query.order_by(Itineraries.trip_name).all())
     return render_template("journal.html", journals=journal)
 
 

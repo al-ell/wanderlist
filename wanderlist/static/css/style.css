@@ -96,9 +96,12 @@ h4,
     font-size: 1.5em;
 }
 
+
+
 .journal_entry_details,
-.btn-custom a,
-.btn-lrg a,
+.btn-custom-light,
+.btn-custom-dark,
+.btn-custom,
 form {
     font-family: "Quattrocento", sans-serif;
 }
@@ -172,29 +175,35 @@ nav ul li a {
     z-index: 500;
 }
 
-.btn-custom,
-.btn-custom a {
+.btn-custom-dark {
     color: #dce775;
+    background-color: #004d40;
+}
+
+.btn-custom-light {
+    background-color: #dce775;
+    color: #004d40;
+}
+
+.btn-custom,
+.btn-custom-light,
+.btn-custom-dark {
     font-size: 1rem;
     border-radius: 10px;
-    background-color: #004d40;
     width: fit-content;
     height: fit-content;
     padding: 0.5rem;
     margin: 0.5rem;
+    margin-top: 2rem;
 }
 
-.hero-container a,
-.btn-lrg a {
+.hero-container a {
     background-color: #dce775;
     color: #004d40;
     font-size: 1.5rem;
     border-radius: 10px;
 }
 
-.btn-lrg a {
-    margin-top: 2rem;
-}
 
 .hero-container {
     margin: 0;
@@ -239,6 +248,11 @@ nav ul li a {
     font-size: 1.4rem;
     line-height: 2rem;
 }
+
+
+/* Modal */
+
+
 
 
 /* Footer */
