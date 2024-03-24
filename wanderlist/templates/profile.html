@@ -1,12 +1,17 @@
 {% extends "base.html" %}
 {% block content %}
 
-<div class="row page-heading">
+<div class="row center-align page-heading">
     <div class="col s9">
-        <h2>Welcome {{ auth.username }}!</h2> 
+        <h2>Welcome!</h2> 
     </div>
-    <div class="col s3 btn-lrg">
+</div>
+<div class="row center-align">
+    <div class="col s3 btn-custom">
         <a href="{{ url_for('document') }}" class="waves-effect waves-light btn-large" type="button">Add Entry</a>
+    </div>
+    <div class="col s3 btn-custom">
+        <a href="{{ url_for('add_trip') }}" class="waves-effect waves-light btn-large" type="button">Add a Trip</a>
     </div>
 </div>
 

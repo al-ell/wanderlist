@@ -77,17 +77,14 @@ def login():
     return render_template("login.html")
 
 
-@auth.route("/profile/<username>", methods=["GET", "POST"])
-def profile(username):
-    username = User.query.get_or_404(username)
+@auth.route("/profile")
+def profile():    
 
-    if session["user"]:
-        return render_template("profile.html", username=session['user'])
-
-    return redirect(url_for("login"))
+    return render_template("profile.html")
 
 
-@auth.logout("/logout")
+
+@auth.route("/logout")
 def logout():
     flash("You are logged out!")
     session.pop("user")
