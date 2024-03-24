@@ -21,7 +21,10 @@
                                     <span><i class="fas fa-tick">Have Been</i></span>
                                 {% endif %}
                                 <span><a href="{{ url_for('edit_document', journal_id=journal.id) }}" class="btn right btn-custom">Edit</a></span>
-                                <span><a href="{{ url_for('delete_document', journal_id=journal.id) }}" class="btn right btn-custom">Delete</a></span>
+                                <span>
+                                    <!-- Modal Trigger -->
+                                    <a href="{{ url_for('delete_document', journal_id=journal.id) }}" data-target="modal1" class="btn right btn-custom modal-trigger">Delete</a>
+                                </span>
                             </div>
                             <div class="collapsible-body journal_entry_details">
                                 <h4>Trip: {{ journal.trip_id }}</h4>
@@ -34,6 +37,22 @@
                             </div>
                         </li>
                     </ul>
+                        
+                </div>
+            </div>
+            </div>
+
+            <!-- Modal Structure -->
+            <div id="modal1" class="modal">
+                <div class="modal-content">
+                    <h4>Are You Sure?</h4>
+                </div>
+                <div class="modal-footer">
+                    <a href="{{ url_for('delete_document', journal_id=journal.id) }}" class="btn btn-custom">Delete</a>
+                    <a href="{{url_for('journal')}}" class="modal-close btn btn-custom" aria-label="Cancel">Cancel</a>
+                </div>
+            </div>
+
                 {% endfor %}
             </div>
         </div>
