@@ -88,4 +88,4 @@ def profile():
 def logout():
     flash("You are logged out!")
     session.pop("user")
-    return redirect(url_for("/"))
+    return redirect(url_for("home"))
