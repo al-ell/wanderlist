@@ -44,7 +44,6 @@ def register():
         register = User(
             username=request.form.get("username").lower(),
             name=request.form.get("name").lower(),
-            about=request.form.get("about").lower(),
             password=generate_password_hash(request.form.get("password"))
         )
         db.session.add(register)
@@ -65,7 +64,7 @@ def login():
             if check_password_hash(
                 exisiting_user[0].password, request.form.get("password")):
                 session["user"] = request.form.get("username").lower()
-                return redirect(
+                return rederect(
                     url_for("auth.profile", username=session["user"]))
         
             else:
@@ -82,7 +81,7 @@ def login():
 @auth.route("/profile")
 def profile():
     user = list(User.query.order_by(User.id).all())
-    return render_template("profile.html", user=user)
+    return render_template("profile.html")
 
 
 

@@ -13,7 +13,7 @@ class Itineraries(db.Model):
 
     def __repr__(self):
         # __repr__ to represent itself in a string
-        return self.trip_name
+        return self.trip_name, self.created_by
 
 
 class Journal(db.Model):
@@ -29,7 +29,7 @@ class Journal(db.Model):
 
     def __repr__(self):
         # __repr__ to represent itself in the form of a string
-            self.id, self.trip_name
+            self.id, self.trip_name, self.created_by
 
 
 class User(db.Model, UserMixin):
@@ -37,8 +37,7 @@ class User(db.Model, UserMixin):
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(20), unique=True, nullable=False)
     name = db.Column(db.String(20), nullable=False)
-    about = db.Column(db.Text, nullable=False)
     password = db.Column(db.String(200), nullable=False)
 
     def __repr__(self):
-        return self.user
+        return self.id, self.username
