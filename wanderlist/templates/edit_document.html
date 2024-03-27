@@ -26,22 +26,6 @@
                                 <label for="description">The best bits:</label>
                             </div>
                         </div>
-                        <div class="row left-align">
-                            <div class="input-field col s12">
-                                <div class="switch">
-                                    <i class="fas fa-check-circle prefix"></i>
-                                    <label for="to_go">
-                                        {% if journal.have_been == True %}
-                                            <input id="have_been" name="have_been" type="checkbox" checked>
-                                        {% else %}
-                                            <input id="have_been" name="have_been" type="checkbox">
-                                        {% endif %}
-                                        <span class="lever"></span>
-                                        Have Been
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
                         <div class="row">
                             <div class="input-field col s12 m6">
                                 <i class="fas fa-globe prefix"></i>
@@ -59,13 +43,7 @@
                                 <i class="fas fa-train prefix"></i>
                                 <input id="how" name="how" value="{{ journal.how }}" minlength="3" maxlength="25" type="text" class="validate" required>
                                 <label for="how">How you travelled:</label>
-                            </div>
-                            <div class="input-field col s12 m6">
-                                <i class="fas fa-star prefix"></i>
-                                <input id="rating" name="rating" value="{{ journal.rating }}" minlength="1" maxlength="25" type="text" class="validate">
-                                <label for="rating">Rating:</label>
-                            </div>
-                        </div>
+                            </div>                                
                         <div class="row left-align">
                             <div class="input-field col s12">
                                 <i class="fas fa-map prefix"></i>
@@ -80,11 +58,6 @@
                                     {% endfor %}
                                 </select>
                                 <label for="trip_id">Trip:</label>
-                            </div>
-                            <div class="input-field col s12">
-                                <i class="fas fa-user prefix"></i>
-                                <input id="created_by" name="created_by" value="{{ journal.created_by }}" minlength="3" maxlength="30" type="text" class="validate">
-                                <label for="created_by">Author:</label>
                             </div>
                         </div>
                         <div class="center-align btn-container">

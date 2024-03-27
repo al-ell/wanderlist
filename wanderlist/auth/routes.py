@@ -43,6 +43,8 @@ def register():
         # If not registered, add form data to db
         register = User(
             username=request.form.get("username").lower(),
+            name=request.form.get("name").lower(),
+            about=request.form.get("about").lower(),
             password=generate_password_hash(request.form.get("password"))
         )
         db.session.add(register)
@@ -78,9 +80,9 @@ def login():
 
 
 @auth.route("/profile")
-def profile():    
-
-    return render_template("profile.html")
+def profile():
+    user = list(User.query.order_by(User.id).all())
+    return render_template("profile.html", user=user)
 
 
 
