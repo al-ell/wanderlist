@@ -16,11 +16,13 @@
                     <div class="card lime lighten-2">
                         <h4 class="card-title">{{ trip.trip_name }}</h4>
                         <div class="card-content">
-                            {% for journal in journals %}
-                            {% if trip.id == journal.itinerary_id %}
-                                <h3>{{ journal.trip_name }}</h3>
-                            {% endif %}
-                            {% endfor %}
+                            <ul>
+                                {% for journal in journals %}
+                                    {% if trip.id == journal.itinerary_id %}
+                                        <li><a href="{{ url_for('edit_document', journal_id=journal.id) }}" class="journal-link" type="link">{{ journal.trip_name }}</a></li>
+                                    {% endif %}
+                                {% endfor %}
+                            </ul>
                         </div>
                         <div class="card-action">
                             <a href="{{ url_for('edit_trip', trip_id=trip.id) }}" class="btn-large btn-custom-dark">Edit</a>

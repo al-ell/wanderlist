@@ -42,7 +42,6 @@ header {
 
 
 
-
 /* Colors and Fonts */
 
 .contact-social-links li a i,
@@ -81,9 +80,12 @@ h4,
     font-size: 4rem;
 }
 
-.card-content {
+
+.card-content a {
     font-family: "Quattrocento", sans-serif;
-    font-size: 0.8rem;
+    font-size: 1rem;
+    text-decoration: none;
+    color:#004d40;
 }
 
 
@@ -97,6 +99,10 @@ h4,
 .btn-custom,
 form {
     font-family: "Quattrocento", sans-serif;
+}
+
+.input-field input[type=text]:focus + label {
+    color: #00bfa5;
 }
 
 .journal_entry_details {
@@ -116,28 +122,28 @@ form {
 
 .switch label input[type=checkbox]:checked+.lever {
     background-color: #004d40;
-  }
-  
-  .switch label input[type=checkbox]:checked+.lever:after {
-    background-color: #004d40;
-  }
+}
 
-  .card {
-    overflow: hidden;
-  }
+.switch label input[type=checkbox]:checked+.lever:after {
+background-color: #004d40;
+}
 
-
-  .card.large .card-content {
-    overflow: auto;
-    margin-bottom: 12vh;
-  }
+.card {
+overflow: hidden;
+}
 
 
-  .flash-msg {
-    font-family: "Quattrocento", sans-serif;
-    font-size: 1rem;
-    color: #004d40;
-  }
+.card.large .card-content {
+overflow: auto;
+margin-bottom: 12vh;
+}
+
+
+.flash-msg {
+font-family: "Quattrocento", sans-serif;
+font-size: 1rem;
+color: #004d40;
+}
 
 /* Nav */
 
@@ -146,7 +152,7 @@ nav ul li a {
     top: 0;
     color: #004d40;
     font-family: Quattrocento, sans-serif;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     text-decoration: none;
     text-align: center;
     text-transform: uppercase;
@@ -423,5 +429,9 @@ footer {
 
     nav li {
         flex: 1 1 0;
+    }
+
+    .document-form {
+        width: -webkit-fill-available;
     }
 }
