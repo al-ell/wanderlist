@@ -15,7 +15,6 @@
     <title>Wanderlist</title>
 </head>
 <body>
-  <div id="container">
     <header>
       <div class="wrapper lime lighten-2">
           <nav class="main-nav lime lighten-2">
@@ -26,46 +25,41 @@
                       <li><a href="{{ url_for('home') }}">Home</a></li>
                       <li><a href="{{ url_for('destinations', country='country_results') }}">Destinations</a></li>
                       {% if session.user %}
-                        <li><a href="{{ url_for('trips') }}">My Trips</a></li>
-                        <li><a href="{{ url_for('journal') }}">Journal Entries</a></li>
+                        <li><a href="{{ url_for('trips') }}">Trips</a></li>
+                        <li><a href="{{ url_for('journal') }}">Journal</a></li>
                         <li><a href="{{ url_for('auth.profile') }}">Profile</a></li>
                         <li><a href="{{ url_for('auth.logout') }}">Log Out</a></li>
                       {% endif %}
-                  
                     </ul>
               </div>
           </nav>
       </div>
-  
-  
-  
       <ul class="sidenav teal-text text-darken-4" id="mobile-demo">
           <li><a href="{{ url_for('home') }}">Home</a></li>
           <li><a href="{{ url_for('destinations', country='country_results') }}">Destinations</a></li>
           {% if session.user %}
-            <li><a href="{{ url_for('trips') }}">My Trips</a></li>
-            <li><a href="{{ url_for('journal') }}">Journal Entries</a></li>
+            <li><a href="{{ url_for('trips') }}">Trips</a></li>
+            <li><a href="{{ url_for('journal') }}">Journal</a></li>
             <li><a href="{{ url_for('auth.profile') }}">Profile</a></li>
             <li><a href="{{ url_for('auth.logout') }}">Log Out</a></li>
           {% endif %}
       </ul>
   </header>
-  <section id="body">
-    {% with messages = get_flashed_messages() %}
-      {% if messages %}
-        {% for message in messages %}
-          <div class="row flashes">
-            <h3>{{ message }}</h3>
-          </div>
-        {% endfor %}
-      {% endif %}
-    {% endwith %}
-  </section>
-  <main class="halign-wrapper center-align">
-      {% block content %}
-      {% endblock %}
-  </main>
-  
+  <main id="main" class="halign-wrapper center-align">
+    <section>
+      {% with messages = get_flashed_messages() %}
+        {% if messages %}
+          {% for message in messages %}
+            <div class="row flashes">
+              <h3>{{ message }}</h3>
+            </div>
+          {% endfor %}
+        {% endif %}
+      {% endwith %}
+    </section>
+    {% block content %}
+    {% endblock %}
+  </main>  
   <footer class=" page-footer footer lime lighten-2">
       <div class="social-container">
         <ul class="social-links">
@@ -96,12 +90,10 @@
         </ul>
       </div>
     </footer>
-  </div>
   <!-- Font Awesome CDN -->
   <script
     src="https://kit.fontawesome.com/fe32e32a81.js"
-    crossorigin="anonymous"
-  >
+    crossorigin="anonymous">
   </script>
   <!-- Materialize JavaScript CDN -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
