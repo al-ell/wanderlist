@@ -5,7 +5,7 @@
             <h2 >My Trips</h2> 
         </div>
         <div class="col s2 btn-lrg">
-            <a href="{{ url_for('add_trip') }}" class="waves-effect waves-light btn-large btn-custom-dark" type="button">Add a Trip</a>
+            <a href="{{ url_for('add_trip') }}" class="waves-effect waves-light btn-large btn-custom-dark" type="button" aria-label="Add a Trip">Add a Trip</a>
         </div>
     </div>
     <div class="halign-wrapper center-align">
@@ -14,22 +14,23 @@
                 {% for trip in trips %}
                     <div class="col s12 m8 l4">
                     <div class="card lime lighten-2">
-                        <h4 class="card-title">{{ trip.trip_name }}</h4>
+                        <div class="content-heading">
+                            <h3>{{ trip.trip_name }}</h3>
+                        </div>
                         <div class="card-content">
                             <ul>
                                 {% for journal in journals %}
                                     {% if trip.id == journal.itinerary_id %}
-                                        <li><a href="{{ url_for('edit_document', journal_id=journal.id) }}" class="journal-link" type="link">{{ journal.trip_name }}</a></li>
+                                        <li><a href="{{ url_for('edit_document', journal_id=journal.id) }}" class="journal-link" type="link" aria-label="{{ journal.trip_name }}">{{ journal.trip_name }}</a></li>
                                     {% endif %}
                                 {% endfor %}
                             </ul>
                         </div>
                         <div class="card-action">
-                            <a href="{{ url_for('edit_trip', trip_id=trip.id) }}" class="btn-large btn-custom-dark">Edit</a>
+                            <a href="{{ url_for('edit_trip', trip_id=trip.id) }}" class="btn-large btn-custom-dark" aria-label="Edit">Edit</a>
                             
                             <!-- Modal Trigger -->
-                            <a href="{{ url_for('delete_trip', trip_id=trip.id) }}" data-target="modal1" class="btn-large btn-custom red modal-trigger">Delete</a>
-                        
+                            <a href="{{ url_for('delete_trip', trip_id=trip.id) }}" data-target="modal1" class="btn-large btn-custom delete-btn modal-trigger">Delete</a>
                         </div>
                     </div>
                     </div>
@@ -40,8 +41,8 @@
                             <h4>Are You Sure?</h4>
                         </div>
                         <div class="modal-footer">
-                            <a href="{{ url_for('delete_trip', trip_id=trip.id) }}" class="btn-large btn-custom red">Delete</a>
-                            <a href="{{url_for('trips')}}" class="modal-close btn-large btn-custom-dark" aria-label="Cancel">Cancel</a>
+                            <a href="{{ url_for('delete_trip', trip_id=trip.id) }}" class="btn-large btn-custom delete-btn" aria-label="Delete">Delete</a>
+                            <a href="{{url_for('trips')}}" class="modal-close btn-large btn-custom-light" aria-label="Cancel">Cancel</a>
                         </div>
                     </div>
 
