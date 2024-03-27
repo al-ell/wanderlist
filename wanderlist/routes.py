@@ -41,6 +41,7 @@ def add_trip():
         )
         db.session.add(trips)
         db.session.commit()
+        flash("Trip added!")
         return redirect(url_for("trips"))
                
     return render_template("add_trip.html")
@@ -55,6 +56,7 @@ def edit_trip(trip_id):
         trip.to_go = bool(True if request.form.get("to_go") else False)
         trip.created_by = session["user"]
         db.session.commit()
+        flash("Trip edited!")
         return redirect(url_for("trips"))
     return render_template("edit_trip.html", trip=trip)
 
@@ -64,6 +66,7 @@ def delete_trip(trip_id):
     trip = Itineraries.query.get_or_404(trip_id)
     db.session.delete(trip)
     db.session.commit()
+    flash("Trip deleted!")
     # add defensive programming - pop up modal to query delete 
     return redirect(url_for("trips"))
 
@@ -92,6 +95,7 @@ def document():
         )
         db.session.add(journal)
         db.session.commit()
+        flash("Journal entry added!")
         return redirect(url_for("journal"))
                
     return render_template("document.html", trips=trips)
@@ -112,6 +116,7 @@ def edit_document(journal_id):
         journal.itinerary_id = request.form.get("itinerary_id")
         journal.created_by = session["user"]
         db.session.commit()
+        flash("Journal entry edited!")
         return redirect(url_for("journal"))
                
     return render_template("edit_document.html", journal=journal, trips=trips)
@@ -122,5 +127,6 @@ def delete_document(journal_id):
     journal = Journal.query.get_or_404(journal_id)
     db.session.delete(journal)
     db.session.commit()
+    flash("Journal entry deleted!")
     # add defensive programming - pop up modal to query delete 
     return redirect(url_for("journal"))

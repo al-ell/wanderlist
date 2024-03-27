@@ -131,6 +131,12 @@ form {
   }
 
 
+  .flash-msg {
+    font-family: "Quattrocento", sans-serif;
+    font-size: 1rem;
+    color: #004d40;
+  }
+
 /* Nav */
 
 .sidenav,
