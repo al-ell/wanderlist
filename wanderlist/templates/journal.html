@@ -15,7 +15,7 @@
                     <ul class="collapsible journal_entry_container lime lighten-2">
                         <li class="journal_entry">
                             <div class="collapsible-header lime lighten-2 journal_header">
-                                <i class="fa fa-caret-down"></i>
+                                <i class="fa fa-caret-down caret"></i>
                                 <div class="col s8 content-heading">
                                     <h3>{{ journal.trip_name }}</h3>
                                 </div>
@@ -27,8 +27,12 @@
                                     </span>
                                 </div>
                             </div>
-                            <div class="collapsible-body journal_entry-details">
-                                <h3>Trip: {{ journal.trip_id }}</h3>
+                            <div class="collapsible-body journal-entry-details left-align">
+                                {% for trip in trips %}
+                                    {% if trip.id == journal.itinerary_id %}
+                                        <h4 value="{{ trip.id }}">Trip: {{ trip.trip_name }}</h4>
+                                    {% endif %}
+                                {% endfor %}
                                 <p>Best bits: {{ journal.description }}</p>
                                 <ul>
                                     <li>Where: {{ journal.where }}</li>

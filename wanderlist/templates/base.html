@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Wanderlist - A Space to Plan Your Next Big Trip">
     <!-- Materlialize CDN -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <!-- Google Fonts-->
@@ -20,7 +21,7 @@
           <nav class="main-nav lime lighten-2">
               <div class="nav-lge">
                   <h1><a href="#" class=" logo teal-text text-darken-4">Wanderlist</a></h1>
-                  <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="fas fa-bars"></i></a>
+                  <a href="#" data-target="mobile-demo" class="sidenav-trigger" aria-label="Menu"><i class="fas fa-bars"></i></a>
                   <ul class="right hide-on-med-and-down teal-text text-darken-4">
                       <li><a href="{{ url_for('home') }}">Home</a></li>
                       <li><a href="{{ url_for('destinations', country='country_results') }}">Destinations</a></li>

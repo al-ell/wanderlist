@@ -84,7 +84,7 @@ body {
 }
 
 .page-heading h2 {
-    font-size: 4rem;
+    font-size: 6rem;
 }
 
 .caret,
@@ -126,6 +126,9 @@ form {
 
 .journal-entry-details h4 {
     font-size: 3rem;
+    font-family: "Caveat Brush";
+    font-weight: 700;
+    color: #004d40;
 }
 
 .prefix,
@@ -371,6 +374,7 @@ footer {
     
     .journal_entry_details h4 {
         font-size: 1.5rem;
+
     }
     
     /* Nav */

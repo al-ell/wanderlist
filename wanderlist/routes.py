@@ -75,7 +75,7 @@ def delete_trip(trip_id):
 def journal():
     journal = list(Journal.query.order_by(Journal.id).all())
     trips = list(Itineraries.query.order_by(Itineraries.trip_name).all())
-    return render_template("journal.html", journals=journal)
+    return render_template("journal.html", journals=journal, trip=trips)
 
 
 @app.route("/document", methods=["GET", "POST"])
