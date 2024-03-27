@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block content %}
+    <div class="row page-heading">
+        <div class="col s6 offset-s2">
+            <h2>ERROR</h2> 
+            <h2>error number here?</h2>
+        </div>
+    </div>  
+    <div class="error-main">
+        <div class="error-message">
+        <h3>OH NO!</h3>
+        <p>The page you're looking for isn't here</p>
+        <p>
+            Click <a href="{{url.for('home')}}">HERE</a> to return
+            Home.
+        </p>
+    </div>
+    </div>
+
+
+
+
+{% endblock %}
