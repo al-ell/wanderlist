@@ -81,15 +81,17 @@ h4,
     font-size: 4rem;
 }
 
+.card-content {
+    font-family: "Quattrocento", sans-serif;
+    font-size: 0.8rem;
+}
+
 
 .page-heading h3 {
     font-family: "Quattrocento", sans-serif;
     font-size: 1.5em;
 }
 
-
-
-.journal_entry_details,
 .btn-custom-light,
 .btn-custom-dark,
 .btn-custom,

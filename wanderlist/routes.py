@@ -27,7 +27,7 @@ def destinations(country):
 def trips():
     trips = list(Itineraries.query.order_by(Itineraries.trip_name).all())
     journal = list(Journal.query.order_by(Journal.id).all())
-    return render_template("trips.html", trips=trips, journla=journal)
+    return render_template("trips.html", trips=trips, journals=journal)
 
 
 @app.route("/add_trip", methods=["GET", "POST"])
