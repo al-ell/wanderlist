@@ -1,13 +1,12 @@
 {% extends "base.html" %}
 {% block content %}
-    <div class="hero-container">
-        <div class="hero-text">
-            <h2>A Space to Plan Your Next Big Trip</h2>
-            <a href="{{ url_for('auth.register') }}" class="waves-effect waves-light btn-large btn-custom-light" aria-label="Join">Join</a>
-            <a href="{{ url_for('auth.login') }}" class="waves-effect waves-light btn-large btn-custom-light" aria-label="Sign In">Sign in</a>
+    <section clas="index-main">
+        <div class="hero-container">
+            <div class="hero-text">
+                <h2>A Space to Plan Your Next Big Trip</h2>
+                <a href="{{ url_for('auth.register') }}" class="waves-effect waves-light btn-large btn-custom-light" aria-label="Join">Join</a>
+                <a href="{{ url_for('auth.login') }}" class="waves-effect waves-light btn-large btn-custom-light" aria-label="Sign In">Sign in</a>
+            </div>
         </div>
-    </div>
-
-
-
+    </section>
 {% endblock %}

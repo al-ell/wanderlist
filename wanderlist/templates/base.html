@@ -16,13 +16,17 @@
     <title>Wanderlist</title>
 </head>
 <body>
-    <header>
+    <header id="base-header">
       <div class="wrapper lime lighten-2">
-          <nav class="main-nav lime lighten-2">
-              <div class="nav-lge">
-                  <h1><a href="#" class=" logo teal-text text-darken-4">Wanderlist</a></h1>
-                  <a href="#" data-target="mobile-demo" class="sidenav-trigger" aria-label="Menu"><i class="fas fa-bars"></i></a>
-                  <ul class="right hide-on-med-and-down teal-text text-darken-4">
+          <nav class="main-nav">
+              <div class="nav-lge lime lighten-2">
+                <div class="row">
+                  <div class="col s12 m12 l4 logo-container">
+                    <a href="#" data-target="mobile-demo" class="sidenav-trigger" aria-label="Menu"><i class="fas fa-bars mobile-burger"></i></a>
+                    <h1><a href="#" class="logo teal-text text-darken-4">Wanderlist</a></h1>
+                  </div>
+                  <div class="col s12 m12 l8">
+                    <ul class="right hide-on-med-and-down teal-text text-darken-4">
                       <li><a href="{{ url_for('home') }}">Home</a></li>
                       <li><a href="{{ url_for('destinations', country='country_results') }}">Destinations</a></li>
                       {% if session.user %}
@@ -32,6 +36,8 @@
                         <li><a href="{{ url_for('auth.logout') }}">Logout</a></li>
                       {% endif %}
                     </ul>
+                  </div>
+                </div>
               </div>
           </nav>
       </div>

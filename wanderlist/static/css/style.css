@@ -12,24 +12,23 @@ body {
     overflow: scroll;
 }
 
-
-.wrapper,
-nav {
+header {
     position: sticky;
+    top: 0;
+    z-index: 500;
+}
+
+
+.nav-lge {
+    position: absolute;
     top: 0;
     width: 100%;
     margin: none;
     padding: 0;
+    display: ruby-text;
+    z-index: 500;
 }
 
-nav {
-    height: fit-content;
-}
-
-
-header {
-    top: 0;
-}
 
 .page-content {
     height: fit-content;
@@ -43,6 +42,11 @@ header {
 
 
 /* Colors and Fonts */
+
+.mobile-burger {
+    color:#004d40;
+    font-size: 2.5rem;
+}
 
 .delete-btn {
     background-color: #d50000;
@@ -71,6 +75,8 @@ body {
     font-family: "Fredericka the Great", sans-serif;
     text-transform: uppercase;
     font-size: 1.2em;
+    letter-spacing: 0.5rem;
+    text-align: center;
 }
 
 .content-heading h3,
@@ -92,8 +98,12 @@ body {
     font-size: 3rem;
 }
 
+.register-link h4 {
+    font-size: 2rem;
+}
 
-
+.login-link,
+.register-link,
 .card-content a {
     font-family: "Quattrocento", sans-serif;
     font-size: 1rem;
@@ -167,22 +177,25 @@ nav ul li a {
     top: 0;
     color: #004d40;
     font-family: Quattrocento, sans-serif;
-    font-size: 1.2rem;
+    font-size: 1rem;
+    font-weight: bold;
     text-decoration: none;
     text-align: center;
     text-transform: uppercase;
-    padding: 0.5em;
-    letter-spacing: 0.02em;
+    margin-top: 4vh;
+    padding: 1rem;
+    letter-spacing: 0.1rem;
     
 }
 
-.nav-lge {
-    display: ruby-text;
-}
 
 /* Index */
 
 /* hero image */
+
+    .index-main {
+        overflow: hidden;
+    }
 
   /* Place text in the middle of the image */
   .hero-text {
@@ -192,6 +205,7 @@ nav ul li a {
     position: relative;
     color: #004d40;
     opacity: 1;
+    top: 30vh;
     z-index: 500;
 }
 
@@ -281,7 +295,7 @@ nav ul li a {
 footer {
     height: 10vh;
     margin: 0;
-    position: absolute;
+    position: relative;
     bottom: 0;
     width: 100%;
     display: flex;
@@ -347,7 +361,9 @@ footer {
 
 /* Mobile */
 @media screen and (max-width:768px) {
-    
+    #main {
+        margin-top: 16vh;
+    }
 
     .form-container {
         padding: 15px 0 10px 10px;
@@ -377,7 +393,14 @@ footer {
     }
     
     /* Nav */
+
     
+    .nav-lge {
+        height: 20vh;
+        background-color: #dce775;
+
+    }
+
     .sidenav,
     nav ul li a {
         top: 0;
@@ -434,6 +457,10 @@ footer {
         bottom: 0;
         padding-bottom: 2vh;
     }
+
+    .logo-container {
+        text-align: center;
+    }
 }
 
 /* Tablet and larger */
@@ -446,7 +473,29 @@ footer {
         flex: 1 1 0;
     }
 
+    .nav-lge {
+        height: 12vh;
+    }
+
+    #main {
+        margin-top: 10vh;
+    }
+
     .document-form {
         width: -webkit-fill-available;
     }
+
+    .logo {
+        padding: 3rem;
+    }
+}
+
+
+/* Laptop and larger */
+@media screen and (min-width: 1024px) {
+    
+    .nav-lge {
+        height: 15vh;
+    }
+
 }

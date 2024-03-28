@@ -5,42 +5,46 @@
         <h3>Begin your travel journal!</h3>
     </div>
     <div class="row">
-        <div class="col s12 m10 l8 offset-m1 offset-l2 center-align">
-            <form class="col s12 register-form" method="POST" action="{{ url_for('auth.register') }}">
-                <div class="row">
-                    <div class="center-align col s12">
-                        <h4>Have an Account?</h4>
-                        <a href="{{ url_for('auth.login') }}" aria-label="Login here">Login Here.</a>
-                    </div>
+        <div class="center-align register-link col s12">
+            <h4>Have an Account?</h4>
+            <a href="{{ url_for('auth.login') }}" aria-label="Login here">Login Here.</a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col s12 m10 offset-m1">
+            <div class="card lime lighten-4">
+                <div class="card-content">
+                    <form class="col s12 m10 offset-m1 register-form" method="POST" action="{{ url_for('auth.register') }}">
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <input id="username" name="username" type="text" minlength="5" 
+                                    maxlength="14" pattern="^[a-z0-9]{5,14}$" class="validate" required>
+                                <label for="username">Username</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <input id="name" name="name" type="text" minlength="5" 
+                                    maxlength="14" pattern="^[a-zA-Z' ']{5,14}$" class="validate" required>
+                                <label for="username">Name:</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                        <div class="input-field col s12">
+                            <input id="password" name="password" type="password" minlength="8" 
+                                maxlength="14" pattern="^[a-zA-Z0-9]{8,14}$" class="validate" required>
+                            <label for="password">Password:</label>
+                        </div>
+                        <div class="row">
+                            <div class="col s6 offset-s3">
+                                <button class="waves-effect waves-light btn-large btn-custom-dark" type="submit" aria-label="Register">
+                                    Register
+                                </button>
+                            </div>
+                        </div>
+                    </form>
                 </div>
-                <div class="row">
-                    <div class="input-field col s12">
-                        <input id="username" name="username" type="text" minlength="5" 
-                            maxlength="14" pattern="^[a-z0-9]{5,14}$" class="validate" required>
-                        <label for="username">Username</label>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="input-field col s12">
-                        <input id="name" name="name" type="text" minlength="5" 
-                            maxlength="14" pattern="^[a-zA-Z' ']{5,14}$" class="validate" required>
-                        <label for="username">Name:</label>
-                    </div>
-                </div>
-                <div class="row">
-                <div class="input-field col s12">
-                    <input id="password" name="password" type="password" minlength="8" 
-                        maxlength="14" pattern="^[a-zA-Z0-9]{8,14}$" class="validate" required>
-                    <label for="password">Password:</label>
-                </div>
-                <div class="row">
-                    <div class="col s6 center-align">
-                        <button class="waves-effect waves-light btn-large btn-custom-dark" type="submit" aria-label="Register">
-                            Register
-                        </button>
-                    </div>
-                </div>
-            </form>
+            </div>
         </div>
     </div>
 {% endblock %}

@@ -64,7 +64,7 @@ def login():
             if check_password_hash(
                 exisiting_user[0].password, request.form.get("password")):
                 session["user"] = request.form.get("username").lower()
-                return rederect(
+                return redirect(
                     url_for("auth.profile", username=session["user"]))
         
             else:
