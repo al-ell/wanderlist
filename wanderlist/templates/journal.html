@@ -44,10 +44,11 @@
                     </ul>
 
                     <!-- Modal Structure -->
-                    <div id="modal1" class="modal">
-                        <div class="modal-content">
-                            <h4>Are You Sure?</h4>
-                            <p></p>
+                    <div id="modal1" class="modal lime lighten-2 delete-modal">
+                        <div class="modal-content lime lighten-2">
+                            <h4>Delete Trip?</h4>
+                            <p>This will delete any associated journal entries!</p>
+                            <p>Are you sure?</p>
                         </div>
                         <div class="modal-footer">
                             <a href="{{ url_for('delete_document', journal_id=journal.id) }}" class="btn btn-custom delete-btn" aria-label="Delete">Delete</a>

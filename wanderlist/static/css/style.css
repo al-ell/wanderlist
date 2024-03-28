@@ -96,7 +96,7 @@ body {
     text-align: center;
     display: flex;
     flex-direction: column;
-    font-family: "Caveat Brush";
+    font-family: "Caveat Brush", sans-serif;
     font-weight: 700;
 }
 
@@ -147,7 +147,7 @@ form {
 
 .journal-entry-details h4 {
     font-size: 3rem;
-    font-family: "Caveat Brush";
+    font-family: "Caveat Brush", sans-serif;
     font-weight: 700;
     color: #004d40;
 }
@@ -202,7 +202,7 @@ form {
 nav ul li a {
     top: 0;
     color: #004d40;
-    font-family: Quattrocento, sans-serif;
+    font-family: "Quattrocento", sans-serif;
     font-size: 1rem;
     font-weight: bold;
     text-decoration: none;
@@ -225,7 +225,7 @@ nav ul li a {
 
   /* Place text in the middle of the image */
   .hero-text {
-    font-family: "Fredericka the Great";
+    font-family: "Fredericka the Great", sans-serif;
     font-size: 8rem;
     text-align: center;
     position: relative;
@@ -312,7 +312,39 @@ nav ul li a {
 
 /* Modal */
 
+.delete-modal {
+    border-radius: 5%;
+    padding: 2vh;
+    overflow:  hidden;
+}
 
+.delete-modal h4 {
+    color:#004d40;
+    text-align: center;
+    font-family: "Caveat Brush", sans-serif;
+    font-weight: 700;
+    font-size: 2rem;
+}
+
+.delete-modal p {
+    color:#004d40;
+    text-align: left;
+    font-family: "Quattrocento", sans-serif;
+    font-weight: 700;
+    font-size: 2rem;
+}
+
+.modal-footer a {
+    padding: 2vh;
+    margin-bottom: 4vh;
+}
+
+.modal-footer {
+    display: flex;
+    height: fit-content !important;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+}
 
 
 /* Footer */
@@ -438,7 +470,7 @@ footer {
         top: 0;
         color: #004d40;
         background-color: #dce775;
-        font-family: Quattrocento, sans-serif;
+        font-family: "Quattrocento", sans-serif;
         font-size: 1rem;
         text-decoration: none;
         text-align: center;
