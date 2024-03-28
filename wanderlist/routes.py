@@ -3,6 +3,7 @@ from flask import (
     Flask, flash, render_template, 
     request, redirect, url_for, session)
 from wanderlist import app, db
+from wanderlist.auth import routes
 from wanderlist.models import Itineraries, Journal, User
 from wanderlist.countries_api import get_countries
 import json
@@ -39,11 +40,9 @@ def add_trip():
 
     if request.method == "POST":
         trips = Itineraries(
-            trip_name = request.form.get("trip_name"),
-            country_name = request.form.get("country_name"),
-            to_go = bool(True if request.form.get("to_go") else False),
-            created_by = session["user"]      
-        )
+            trip_name=request.form.get("trip_name"),
+            country_name=request.form.get("country_name"),
+            created_by=session["user"])
         db.session.add(trips)
         db.session.commit()
         flash("Trip added!")
@@ -55,11 +54,13 @@ def add_trip():
 @app.route("/edit_trip/<int:trip_id>", methods=["GET", "POST"])
 def edit_trip(trip_id):
     trip = Itineraries.query.get_or_404(trip_id)
+    if "user" not in session or session["user"] != trip.created_by:
+        alert("You can only edit your own trips!")
+        return redirect(url_for("trips"))
+
     if request.method == "POST":
         trip.trip_name = request.form.get("trip_name")
         trip.country_name = request.form.get("country_name")
-        trip.to_go = bool(True if request.form.get("to_go") else False)
-        trip.created_by = session["user"]
         db.session.commit()
         flash("Trip edited!")
         return redirect(url_for("trips"))
@@ -95,8 +96,6 @@ def document():
         journal = Journal(
             trip_name = request.form.get("trip_name"),
             description = request.form.get("description"),
-            rating = request.form.get("rating"),
-            have_been = bool(True if request.form.get("have_been") else False),
             where = request.form.get("where"),
             when = request.form.get("when"),
             how = request.form.get("how"),
@@ -118,13 +117,10 @@ def edit_document(journal_id):
     if request.method == "POST":
         journal.trip_name = request.form.get("trip_name")
         journal.description = request.form.get("description")
-        journal.rating = request.form.get("rating")
-        journal.have_been = bool(True if request.form.get("have_been") else False)
         journal.where = request.form.get("where")
         journal.when = request.form.get("when")
         journal.how = request.form.get("how")
         journal.itinerary_id = request.form.get("itinerary_id")
-        journal.created_by = session["user"]
         db.session.commit()
         flash("Journal entry edited!")
         return redirect(url_for("journal"))
