@@ -1,13 +1,16 @@
 import os
 from flask_login import UserMixin
+from flask_wtf import FlaskForm
+from wtforms import StringField
+from wtforms.validators import DataRequired
 from wanderlist import app, db
 
 
 class Itineraries(db.Model):
     # schema for the Itineraries model
     id = db.Column(db.Integer, primary_key=True)
-    trip_name = db.Column(db.String(30), nullable=False)
-    country_name = db.Column(db.String(25), unique=True, nullable=False)
+    trip_name = db.Column(db.String(30), unique=True, nullable=False)
+    country_name = db.Column(db.String(25), nullable=False)
     created_by = db.Column(db.String, nullable=False)
     journal_entry = db.relationship("Journal", backref="itineraries", cascade="all, delete", lazy=True)
 

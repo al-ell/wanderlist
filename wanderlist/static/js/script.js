@@ -1,29 +1,30 @@
-// Materlialize JQuery: 
-$(document).ready(function(){
+// Materlialize JS: 
+document.addEventListener('DOMContentLoaded', function() {
     // Mobile side menu
-    $(".sidenav").sidenav({edge: "right"});
+    let sidenav = document.querySelectorAll('.sidenav');
+    M.Sidenav.init(sidenav);
 
     // initialize dropdown
-    $('.dropdown-trigger').dropdown();
+    let dropdown_trigger = document.querySelectorAll('.dropdown-trigger');
+    M.Dropdown.init(dropdown_trigger);
 
     // initialize datepicker
-    $(".datepicker").datepicker({
-        format: "dd mmmm, yyyy",
-        yearRange: 15,
-        maxDate: "1",
-        showClearBtn: true,
-        i18n: {
-            done: "Choose"
-        }
+    let datepicker = document.querySelectorAll('.datepicker');
+    M.Datepicker.init(datepicker, {
+        format: "dd mmm, yyyy",
+        i18n: {done: "Choose"}
     });
 
     // form select initialization
-    $('select').formSelect();
+    let selects = document.querySelectorAll('select');
+    M.FormSelect.init(selects);
 
     // initialize collapsible 
-    $('.collapsible').collapsible();
+    let collapsibles = document.querySelectorAll('.collapsible');
+    M.Collapsible.init(collapsibles);
 
     // initialize modal
-    $('.modal').modal();
+    let modal = document.querySelectorAll('.modal');
+    M.Modal.init(modal);
 
 });

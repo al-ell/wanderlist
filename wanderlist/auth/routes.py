@@ -8,6 +8,9 @@ from flask import (
     url_for,
     flash,
     session)
+from flask_wtf import FlaskForm
+from wtforms import StringField
+from wtforms.validators import DataRequired
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_login import UserMixin, login_user, LoginManager, login_required, logout_user, current_user
 from wanderlist import app, db, routes
@@ -31,8 +34,9 @@ def load_user(user_id):
 
 @auth.route("/register", methods=["GET", "POST"])
 def register():
-
     if request.method == "POST":
+        
+
         #  Check if user already registered
         user = User.query.filter(
             User.username == request.form.get("username").lower()).all()
