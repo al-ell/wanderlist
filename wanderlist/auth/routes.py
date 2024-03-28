@@ -49,6 +49,7 @@ def register():
         db.session.add(register)
         db.session.commit()
         flash("Registration Successful!")
+        # send user to login once profile is made
         return redirect(url_for("auth.login"))
 
     return render_template("register.html")
@@ -57,6 +58,7 @@ def register():
 @auth.route("/login", methods=["GET", "POST"])
 def login():
     if request.method == "POST":
+        # Check if user already exists in the database
         exisiting_user = User.query.filter(
             User.username == request.form.get("username").lower()).all()
 
@@ -80,6 +82,7 @@ def login():
 
 @auth.route("/profile")
 def profile():
+    # redirect to profile on login
     user = list(User.query.order_by(User.id).all())
     return render_template("profile.html")
 
@@ -88,5 +91,6 @@ def profile():
 @auth.route("/logout")
 def logout():
     flash("You are logged out!")
+    # logs user out
     session.pop("user")
     return redirect(url_for("home"))

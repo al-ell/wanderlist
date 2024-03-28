@@ -53,7 +53,9 @@ def add_trip():
 
 @app.route("/edit_trip/<int:trip_id>", methods=["GET", "POST"])
 def edit_trip(trip_id):
+    # Return 404 error if query can't be completed
     trip = Itineraries.query.get_or_404(trip_id)
+     # Check if user created the trip before allowing edit
     if "user" not in session or session["user"] != trip.created_by:
         flash("You can only edit your own trips!")
         return redirect(url_for("trips"))
@@ -69,7 +71,13 @@ def edit_trip(trip_id):
 
 @app.route("/delete_trip/<int:trip_id>")
 def delete_trip(trip_id):
+    # Return 404 error if query can't be completed
     trip = Itineraries.query.get_or_404(trip_id)
+     # Check if user created the trip before allowing delete
+    if "user" not in session or session["user"] != trip.created_by:
+        flash("You can only delete your own trips!")
+        return redirect(url_for("trips"))
+
     db.session.delete(trip)
     db.session.commit()
     flash("Trip deleted!")
@@ -112,8 +120,14 @@ def document():
 
 @app.route("/edit_document/<int:journal_id>", methods=["GET", "POST"])
 def edit_document(journal_id):
+    # Return 404 error if query can't be completed
     journal = Journal.query.get_or_404(journal_id)
     trips = list(Itineraries.query.order_by(Itineraries.trip_name).all())
+    # Check if user created the journal entry before allowing edit
+    if "user" not in session or session["user"] != journal.created_by:
+        flash("You can only edit your own journal enteries!")
+        return redirect(url_for("trips"))
+
     if request.method == "POST":
         journal.trip_name = request.form.get("trip_name")
         journal.description = request.form.get("description")
@@ -130,7 +144,13 @@ def edit_document(journal_id):
 
 @app.route("/delete_document/<int:journal_id>")
 def delete_document(journal_id):
+    # Return 404 error if query can't be completed
     journal = Journal.query.get_or_404(journal_id)
+    # Check if user created the journal entry before allowing delete
+    if "user" not in session or session["user"] != journal.created_by:
+        flash("You can only delete your own journal enteries!")
+        return redirect(url_for("trips"))
+
     db.session.delete(journal)
     db.session.commit()
     flash("Journal entry deleted!")

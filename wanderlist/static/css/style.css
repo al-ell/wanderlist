@@ -178,6 +178,7 @@ form {
 .flash-msg {
     font-family: "Quattrocento", sans-serif;
     font-size: 3rem;
+    text-transform: uppercase;
     color: #004d40;
     padding: 0;
 }
