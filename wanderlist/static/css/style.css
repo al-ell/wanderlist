@@ -177,8 +177,9 @@ form {
 
 .flash-msg {
     font-family: "Quattrocento", sans-serif;
-    font-size: 1rem;
+    font-size: 3rem;
     color: #004d40;
+    padding: 0;
 }
 
 /* Nav */

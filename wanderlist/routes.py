@@ -55,7 +55,7 @@ def add_trip():
 def edit_trip(trip_id):
     trip = Itineraries.query.get_or_404(trip_id)
     if "user" not in session or session["user"] != trip.created_by:
-        alert("You can only edit your own trips!")
+        flash("You can only edit your own trips!")
         return redirect(url_for("trips"))
 
     if request.method == "POST":
