@@ -32,6 +32,11 @@ def trips():
 
 @app.route("/add_trip", methods=["GET", "POST"])
 def add_trip():
+    # Check if a user is logged in before allowing them to add a trip.
+    if "user" not in session:
+        flash("You must be logged in to do that!")
+        return redirect(url_for("auth.login"))
+
     if request.method == "POST":
         trips = Itineraries(
             trip_name = request.form.get("trip_name"),
@@ -81,6 +86,11 @@ def journal():
 @app.route("/document", methods=["GET", "POST"])
 def document():
     trips = list(Itineraries.query.order_by(Itineraries.trip_name).all())
+    # Check that a user is logged in before allowing them to make journal entry
+    if "user" not in session:
+        flash("You must be logged in to do that!")
+        return redirect(url_for("auth.login"))
+
     if request.method == "POST":
         journal = Journal(
             trip_name = request.form.get("trip_name"),
