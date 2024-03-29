@@ -12,7 +12,13 @@ from flask_wtf import FlaskForm
 from wtforms import StringField
 from wtforms.validators import DataRequired
 from werkzeug.security import generate_password_hash, check_password_hash
-from flask_login import UserMixin, login_user, LoginManager, login_required, logout_user, current_user
+from flask_login import (
+    UserMixin,
+    login_user,
+    LoginManager,
+    login_required,
+    logout_user,
+    current_user)
 from wanderlist import app, db, routes
 from wanderlist.models import User, Journal, Itineraries
 import json
@@ -23,7 +29,7 @@ auth = Blueprint("auth", __name__, url_prefix="/auth")
 
 login_manager = LoginManager()
 login_manager.init_app(app)
-login_manager.login_view ="auth.login"
+login_manager.login_view = "auth.login"
 
 
 # https://flask-login.readthedocs.io/en/latest/#how-it-works
@@ -35,8 +41,6 @@ def load_user(user_id):
 @auth.route("/register", methods=["GET", "POST"])
 def register():
     if request.method == "POST":
-        
-
         #  Check if user already registered
         user = User.query.filter(
             User.username == request.form.get("username").lower()).all()
@@ -68,11 +72,12 @@ def login():
 
         if exisiting_user:
             if check_password_hash(
-                exisiting_user[0].password, request.form.get("password")):
+                exisiting_user[0].password,
+                    request.form.get("password")):
                 session["user"] = request.form.get("username").lower()
-                return redirect(
-                    url_for("auth.profile", username=session["user"]))
-        
+                return redirect(url_for("auth.profile",
+                                username=session["user"]))
+
             else:
                 # Invalid password, redirect to login page
                 flash("Wrong Username and/ or Password")
@@ -89,7 +94,6 @@ def profile():
     # redirect to profile on login
     user = list(User.query.order_by(User.id).all())
     return render_template("profile.html")
-
 
 
 @auth.route("/logout")

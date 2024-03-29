@@ -1,6 +1,6 @@
 import os
 from flask import (
-    Flask, flash, render_template, 
+    Flask, flash, render_template,
     request, redirect, url_for, session)
 from wanderlist import app, db
 from wanderlist.auth import routes
@@ -15,12 +15,11 @@ def home():
     return render_template("index.html", pics=pics)
 
 
-
 @app.route("/destinations/<country>", methods=["GET"])
 def destinations(country):
     countries = get_countries()
     country_results = countries.get_countries(country=country)
-    
+
     return render_template("destinations.html", countries=country_results)
 
 
@@ -47,7 +46,7 @@ def add_trip():
         db.session.commit()
         flash("Trip added!")
         return redirect(url_for("trips"))
-               
+
     return render_template("add_trip.html")
 
 
@@ -55,7 +54,7 @@ def add_trip():
 def edit_trip(trip_id):
     # Return 404 error if query can't be completed
     trip = Itineraries.query.get_or_404(trip_id)
-     # Check if user created the trip before allowing edit
+    # Check if user created the trip before allowing edit
     if "user" not in session or session["user"] != trip.created_by:
         flash("You can only edit your own trips!")
         return redirect(url_for("trips"))
@@ -73,7 +72,7 @@ def edit_trip(trip_id):
 def delete_trip(trip_id):
     # Return 404 error if query can't be completed
     trip = Itineraries.query.get_or_404(trip_id)
-     # Check if user created the trip before allowing delete
+    # Check if user created the trip before allowing delete
     if "user" not in session or session["user"] != trip.created_by:
         flash("You can only delete your own trips!")
         return redirect(url_for("trips"))
@@ -81,7 +80,7 @@ def delete_trip(trip_id):
     db.session.delete(trip)
     db.session.commit()
     flash("Trip deleted!")
-    # add defensive programming - pop up modal to query delete 
+    # add defensive programming - pop up modal to query delete
     return redirect(url_for("trips"))
 
 
@@ -102,19 +101,18 @@ def document():
 
     if request.method == "POST":
         journal = Journal(
-            trip_name = request.form.get("trip_name"),
-            description = request.form.get("description"),
-            where = request.form.get("where"),
-            when = request.form.get("when"),
-            how = request.form.get("how"),
-            itinerary_id = request.form.get("trip_id"),
-            created_by = session["user"]      
-        )
+            trip_name=request.form.get("trip_name"),
+            description=request.form.get("description"),
+            where=request.form.get("where"),
+            when=request.form.get("when"),
+            how=request.form.get("how"),
+            itinerary_id=request.form.get("trip_id"),
+            created_by=session["user"])
         db.session.add(journal)
         db.session.commit()
         flash("Journal entry added!")
         return redirect(url_for("journal"))
-               
+
     return render_template("document.html", trips=trips)
 
 
@@ -138,7 +136,7 @@ def edit_document(journal_id):
         db.session.commit()
         flash("Journal entry edited!")
         return redirect(url_for("journal"))
-               
+
     return render_template("edit_document.html", journal=journal, trips=trips)
 
 
@@ -154,5 +152,5 @@ def delete_document(journal_id):
     db.session.delete(journal)
     db.session.commit()
     flash("Journal entry deleted!")
-    # add defensive programming - pop up modal to query delete 
+    # add defensive programming - pop up modal to query delete
     return redirect(url_for("journal"))

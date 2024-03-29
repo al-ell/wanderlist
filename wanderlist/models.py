@@ -12,7 +12,8 @@ class Itineraries(db.Model):
     trip_name = db.Column(db.String(30), unique=True, nullable=False)
     country_name = db.Column(db.String(25), nullable=False)
     created_by = db.Column(db.String, nullable=False)
-    journal_entry = db.relationship("Journal", backref="itineraries", cascade="all, delete", lazy=True)
+    journal_entry = db.relationship("Journal", backref="itineraries",
+                                    cascade="all, delete", lazy=True)
 
     def __repr__(self):
         # __repr__ to represent itself in a string
@@ -28,11 +29,12 @@ class Journal(db.Model):
     when = db.Column(db.Date, nullable=False)
     how = db.Column(db.String(30), nullable=False)
     created_by = db.Column(db.String(20), nullable=False)
-    itinerary_id = db.Column(db.Integer, db.ForeignKey("itineraries.id", ondelete="CASCADE"), nullable=False)
+    itinerary_id = db.Column(db.Integer, db.ForeignKey("itineraries.id",
+                             ondelete="CASCADE"), nullable=False)
 
     def __repr__(self):
         # __repr__ to represent itself in the form of a string
-            self.id, self.trip_name, self.created_by
+        self.id, self.trip_name, self.created_by
 
 
 class User(db.Model, UserMixin):
