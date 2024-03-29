@@ -22,7 +22,7 @@ class Itineraries(db.Model):
 class Journal(db.Model):
     # schema for the Journal model
     id = db.Column(db.Integer, primary_key=True)
-    trip_name = db.Column(db.String(30), nullable=False)
+    trip_name = db.Column(db.String(30), unique=True, nullable=False)
     description = db.Column(db.Text, nullable=False)
     where = db.Column(db.Text, nullable=False)
     when = db.Column(db.Date, nullable=False)
