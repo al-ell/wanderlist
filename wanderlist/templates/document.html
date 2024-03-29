@@ -8,6 +8,7 @@
         <div class="col s12 m10 l8 offset-m1 offset-l2 form-container">
             <div class="card large center-align lime lighten-4">
                 <div class="card-content">
+                    <!-- Form to add journal entry -->
                     <form id="form" class="col document-form" method="POST" action="{{ url_for('document') }}">
                         <div class="row">
                             <div class="input-field col s12">
@@ -21,10 +22,8 @@
                         <div class="row">
                             <div class="input-field col s12">
                                 <i class="fas fa-book prefix"></i>
-                                <textarea id="description" name="description" row="6" cols="50" minlength="10" maxlength="200"
-                                    type="text" class="materialize-textarea validate" pattern="^[a-zA-Z0-9 -_.'!]{10,200}$" 
-                                    title="Ten to 200 characters as a mixture of uppercase and lower case letters numbers,
-                                    special characters and spaces" required></textarea>
+                                <textarea id="description" name="description" minlength="10" maxlength="200"
+                                    class="materialize-textarea validate" required></textarea>
                                 <label for="description">The best bits:</label>
                             </div>
                         </div>
@@ -38,7 +37,7 @@
                             </div>
                             <div class="input-field col s12 m6">
                                 <i class="fa fa-calendar prefix"></i>
-                                <input id="when" name="when" minlength="3"  class="datepicker validate">
+                                <input id="when" name="when"  class="datepicker validate">
                                 <label for="when">When you went:</label>
                             </div>
                         </div>
@@ -50,6 +49,7 @@
                                     special characters and spaces" type="text" class="validate" required>
                                 <label for="how">How you travelled:</label>
                             </div>
+                        </div>
                         <div class="row left-align">
                             <div class="input-field col s12">
                                 <i class="fas fa-map prefix"></i>
@@ -64,6 +64,7 @@
                         </div>
                         <div class="center-align btn-container">
                             <div class="col s6 offset-s3">
+                                <!-- Submit button -->
                                 <button class="waves-effect waves-light btn-large btn-custom-dark" type="submit" aria-label="Add">
                                     Add
                                 </button>
@@ -74,6 +75,4 @@
             </div>                
         </div>
     </div>
-
-
 {% endblock %}

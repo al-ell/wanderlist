@@ -7,6 +7,7 @@
     <div class="row">
         <div class="center-align register-link col s12">
             <h4>Don't Have an Account?</h4>
+            <!-- Register link -->
             <a href="{{ url_for('auth.register') }}" aria-label="To the register page">Register Here.</a>
         </div>
     </div>
@@ -14,6 +15,7 @@
         <div class="col s12 m10 offset-m1">
             <div class="card lime lighten-4">
                 <div class="card-content">
+                    <!-- Form for registered users to login to a session -->
                     <form id="form" class="col s12 m10 l8 offset-m1 offset-l2 center-align" method="POST" action="{{ url_for('auth.login') }}">
                         <div class="row center-align">
                             <div class="input-field col s12 l8">
@@ -22,12 +24,14 @@
                             </div>
                         </div>
                         <div class="row">
-                        <div class="input-field col s12">
-                            <input id="password" name="password" type="password" pattern="^[a-zA-Z0-9]$" title="Eight to 14 characters as a mixture of uppercase and lower case letters, and numbers" class="validate" required>
-                            <label for="password">Password</label>
+                            <div class="input-field col s12">
+                                <input id="password" name="password" type="password" pattern="^[a-zA-Z0-9]$" title="Eight to 14 characters as a mixture of uppercase and lower case letters, and numbers" class="validate" required>
+                                <label for="password">Password</label>
+                            </div>
                         </div>
                         <div class="row center-align">
                             <div class="col s6 offset-s3">
+                                <!-- Submit button -->
                                 <button class="btn-large btn-custom-dark" type="submit" aria-label="Submit">
                                     Login
                                 </button>
@@ -38,5 +42,4 @@
             </div>
         </div>
     </div>
-
 {% endblock %}

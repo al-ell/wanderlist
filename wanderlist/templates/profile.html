@@ -1,21 +1,18 @@
 {% extends "base.html" %}
 {% block content %}
-
-<div class="row page-heading">
-    <div class="col s8 offset-s2">
-        <h2>Welcome!</h2> 
+    <div class="row page-heading">
+        <div class="col s8 offset-s2">
+            <h2>Welcome!</h2> 
+        </div>
     </div>
-</div>
-<div class="row center-align">
-    <div class="col s8 offset-s2">
-        <a href="{{ url_for('document') }}" class="waves-effect waves-light btn-large btn-custom-dark" type="button" aria-label="Add journal entry">Add Journal Entry</a>
-        <a href="{{ url_for('add_trip') }}" class="waves-effect waves-light btn-large btn-custom-light" type="button" aria-label="Add a trip">Add a Trip</a>
+    <div class="row center-align">
+        <!-- Add trip or journal entry -->
+        <div class="col s8 offset-s2">
+            <a href="{{ url_for('document') }}" class="waves-effect waves-light btn-large btn-custom-dark" type="button" aria-label="Add journal entry">Add Journal Entry</a>
+            <a href="{{ url_for('add_trip') }}" class="waves-effect waves-light btn-large btn-custom-light" type="button" aria-label="Add a trip">Add a Trip</a>
+        </div>
     </div>
-</div>
-<div class="profile-section">
-    <h3></h3>
-    <p></p>
-</div>
-
-
+    <!-- Profile section -->
+    <div class="profile-section">
+    </div>
 {% endblock %}

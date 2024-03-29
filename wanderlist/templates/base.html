@@ -12,16 +12,20 @@
     <link href="https://fonts.googleapis.com/css2?family=Caveat+Brush&family=Fredericka+the+Great&family=Quattrocento:wght@400;700&display=swap" rel="stylesheet">
     <!-- Local stylesheet -->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" type="text/css">
-    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='favicon/favicon.ico') }}" />
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='favicon/favicon.ico') }}">
     <title>Wanderlist</title>
 </head>
 <body>
+  <!-- Page header -->
     <header id="base-header">
       <div class="nav-container lime lighten-2">
+        <!-- Navigation -->
         <nav class="main-nav lime lighten-2 z-depth-0">
           <ul class="hide-on-med-and-down nav-links teal-text text-darken-4">
             <li><a href="{{ url_for('home') }}">Home</a></li>
             <li><a href="{{ url_for('destinations', country='country_results') }}">Destinations</a></li>
+            <!-- Prevent user from accessing pages they must be logged in to use -->
             {% if session.user %}
               <li><a href="{{ url_for('trips') }}">Trips</a></li>
               <li><a href="{{ url_for('journal') }}">Journal</a></li>
@@ -30,16 +34,20 @@
             {% endif %}
           </ul>
         </nav>
+        <!-- Mobile menu trigger -->
         <div class="burger-container">
           <a href="#" data-target="mobile-demo" class="sidenav-trigger" aria-label="Menu"><i class="fas fa-bars mobile-burger"></i></a>
         </div>
+        <!-- Logo -->
         <div class="logo-container">
           <h1><a href="{{ url_for('home') }}" class="logo teal-text text-darken-4">Wanderlist</a></h1>
         </div>
       </div>
+      <!-- Mobile navigation -->
       <ul class="sidenav lime lighten-2 teal-text text-darken-4" id="mobile-demo">
           <li><a href="{{ url_for('home') }}">Home</a></li>
           <li><a href="{{ url_for('destinations', country='country_results') }}">Destinations</a></li>
+          <!-- Prevent user from accessing pages they must be logged in to use -->
           {% if session.user %}
             <li><a href="{{ url_for('trips') }}">Trips</a></li>
             <li><a href="{{ url_for('journal') }}">Journal</a></li>
@@ -48,7 +56,9 @@
           {% endif %}
       </ul>
   </header>
+  <!-- Main section -->
   <main id="main" class="halign-wrapper center-align">
+      <!-- Flash messages for user validation -->
       {% with messages = get_flashed_messages() %}
         {% if messages %}
           {% for message in messages %}
@@ -58,10 +68,11 @@
           {% endfor %}
         {% endif %}
       {% endwith %}
-    </section>
+      <!-- Block content begins -->
     {% block content %}
     {% endblock %}
-  </main>  
+  </main>
+  <!-- Footer -->
   <footer class=" page-footer footer lime lighten-2">
       <div class="social-container lime lighten-2">
         <ul class="social-links">

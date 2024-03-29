@@ -1,9 +1,12 @@
 {% extends "base.html" %}
 {% block content %}
     <section clas="index-main">
+        <!-- Background image container -->
         <div class="hero-container">
+            <!-- Hero text container -->
             <div class="hero-text">
                 <h2>A Space to Plan Your Next Big Trip</h2>
+                <!-- Buttons to sign up or sign in -->
                 <a href="{{ url_for('auth.register') }}" class="waves-effect waves-light btn-large btn-custom-light" aria-label="Join">Join</a>
                 <a href="{{ url_for('auth.login') }}" class="waves-effect waves-light btn-large btn-custom-light" aria-label="Sign In">Sign in</a>
             </div>
