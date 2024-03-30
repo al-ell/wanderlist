@@ -21,28 +21,54 @@ Visit the deployed site: []()
   * [Solved Bugs](#solved-bugs)
   * [Known Bugs](#known-bugs)
 
-
-
 - - -
 
 ## AUTOMATED TESTING
 
-### W3C Validator
+### W3C HTML Validator
 
-[W3C](https://validator.w3.org/) 
+[W3C](https://validator.w3.org/) was used to validate the HTML on all pages of the website.
 
+- Base : : No errors or warnings. 
+- Index : No errors or warnings.
+- Trips : No errors or warnings.
+- Add Trip : No errors or warnings.
+- Edit Trip : No errors or warnings.
+- Journal : No errors or warnings.
+- Document : No errors or warnings.
+- Edit Document : No errors or warnings.
+- Login : No errors or warnings.
+- Register : No errors or warnings.
 
 - - -
 
-### JavaScript Validator
+### W3C Jigsaw  Validator
 
+[Jigsaw W3C](https://jigsaw.w3.org/css-validator/) was used to validate the CSS stylesheet.
 
+- css: No errors or warnings.
+
+- - -
+
+### JS Hint Linter
+
+[JSHint](https://jshint.com//) usded to validate Javascript.
+
+- JS :
+- Six warnings relating to use of let
+- One undefined variable "M" (related to use of Materialize syntax)
 
 - - -
 
 ### Python Validator
 
-[PEP8](http://pep8online.com/)
+[PEP8](http://pep8online.com/) Inbuilt PEP8 checker used on Python files.
+
+- __init__ : No errors or warnings.
+- auth/routes : No errors or warnings.
+- routes : No errors or warnings.
+- models : No errors or warnings.
+- run : No errors or warnings.
 
 - - -
 
@@ -50,6 +76,9 @@ Visit the deployed site: []()
 
 
 ### Desktop Results
+
+
+### Mobile Results
 
 - - -
 
