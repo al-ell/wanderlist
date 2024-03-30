@@ -24,7 +24,8 @@
         <nav class="main-nav lime lighten-2 z-depth-0">
           <ul class="hide-on-med-and-down nav-links teal-text text-darken-4">
             <li><a href="{{ url_for('home') }}">Home</a></li>
-            <li><a href="{{ url_for('destinations', country='country_results') }}">Destinations</a></li>
+            <li><a href="{{ url_for('auth.login') }}">Login</a></li>
+            <li><a href="{{ url_for('auth.register') }}">Register</a></li>
             <!-- Prevent user from accessing pages they must be logged in to use -->
             {% if session.user %}
               <li><a href="{{ url_for('trips') }}">Trips</a></li>
@@ -46,7 +47,7 @@
       <!-- Mobile navigation -->
       <ul class="sidenav lime lighten-2 teal-text text-darken-4" id="mobile-demo">
           <li><a href="{{ url_for('home') }}">Home</a></li>
-          <li><a href="{{ url_for('destinations', country='country_results') }}">Destinations</a></li>
+          <li><a href="{{ url_for('auth.login') }}">Login</a></li>
           <!-- Prevent user from accessing pages they must be logged in to use -->
           {% if session.user %}
             <li><a href="{{ url_for('trips') }}">Trips</a></li>

@@ -73,21 +73,19 @@ The target audience of the website are people who are planning to travel to othe
 As a first time visitor to the website I want to:
 
 * Create an account
-* Search for information about different cournties
-* Create and save a list, or multiple lists, of destinations they want to travel to
+* Make a list of trips they are planning
+* Document their own journal entries about their trips
 * Read other user's travel journal entries
-* Create their own journal entries
 
 
 #### __Returning Visitor Goals__
 
-As a first time visitor to the website I want to:
+As a returning time visitor to the website I want to:
 
 * Login to the account created
-* Update a country from "want to go" to "travelled to" after a trip
 * Record information about their trip in a travel journal
-* Edit and delete journal entries
-
+* Edit and delete journal entries and trips
+* Read other user's travel journal entries
 
 #### __Admin User__
 
@@ -125,14 +123,6 @@ Imagery for the website was created using [Microsoft Bing Copilot (AI)](https://
 ### Wireframes
 
 Wireframes were created for mobile, tablet and desktop using Balsamiq.
-
-#### __Register Page__
-
-![Register Page]()
-
-#### __Login Page__
-
-![Login Page]()
 
 #### __Logged In Home/Profile Page__
 
@@ -176,16 +166,20 @@ to design
 | --- | --- | --- |
 | `Journal` |
 |  | Trip Name(unique) | TextInput|
-| ForeignKey | Author | User model |
-|  | Trip Rating |  | 
-|  | Where | Select from API data |
-|  | When | DateTime | 
+|  | Description | TextInput |
+|  | Where | TextInput |
+|  | When | DateTime |
 |  | How | TextInput |
+|  | Author | User model |
 | ForeignKey | Add to Itinerary | User Model |
-| `Itineraries` | 
-|  | Name(unique) |  |
-| ForeignKey | Author | User model |
-|  | Country Name | Selected from API |  
+| `Itineraries` |
+|  | Name(unique) | TextInput |
+|  | Author | User model |
+|  | Country/Area Name | TextInput |
+| `User` |
+|  | Username(unique) | TextInput |
+|  | Name | TextInput | 
+|  | Password | TextInput |
 
 
 - - -
@@ -224,20 +218,24 @@ to design
 
 ![Profile Page]()
 
+### Trips Page
+![Trips Page]()
 
-### Edit collection? Page
+### Add Trip Page
 
-![Edit  Page]()
+![Add Trip Page]()
 
+###  Edit Trips Page
+![Edit Trips Page]()
 
-### Add Review Page
+### Journal Page
+![Journal Page]()
 
-![Add Review Page]()
+### Document Page
+![Document Page]()
 
-### Edit Review Page
-
-![Edit Review Page]()
-
+###  Edit Document Page
+![Edit Document Page]()
 
 ### Error Page
 
@@ -246,6 +244,10 @@ to design
 - - -
 
 ### Future Implementations
+
+- Link the Country option to an RestCountries API to ensure correct use of country option.
+- Use the api to provide useful information about different travel destinations
+- Allow users to follow friends.
 
 
 ### Accessibility
@@ -261,12 +263,13 @@ to design
 
 HTML, CSS, Javascript, Python
 
-### Databases Used
+- - -
 
-[MongoDB](https://www.mongodb.com/) 
+### Databases Used
 
 [PostgreSQL](https://www.postgresql.org/) 
 
+- - -
 
 ### Frameworks Used
 
@@ -274,14 +277,15 @@ HTML, CSS, Javascript, Python
 
 [Materialize](https://materializecss.com/)
 
-### Libraries & Packages Used
+- - -
 
-[PyMongo](https://pypi.org/project/pymongo/) - Python Driver for MongoDB.
+### Libraries & Packages Used
 
 [SQLAlchemy](https://pypi.org/project/SQLAlchemy/) - Database abstraction library, used to interact with PostgreSQL.
 
 [Flask Login](https://flask-login.readthedocs.io/en/latest/)
 
+- - -
 
 ### Programs Used
 
@@ -303,25 +307,17 @@ HTML, CSS, Javascript, Python
 
 [Tiny PNG](https://tinypng.com/) To compress images for use in the readme.
 
-[Birme](https://www.birme.net/) To resize images and convert to webP format for the site.
+[Any webP](https://www.anywebp.com/) To resize images and convert to webP format for the site.
 
 [Favicon.io](https://favicon.io/) To create the favicon.
 
 [Am I Responsive?](http://ami.responsivedesign.is/) To show the website image on a range of devices.
 
 
-### API
-
-I have chosen to use the [Rest Countries API](https://restcountries.com/) provide useful information to website users.
-
-#### __How to Access API__
-
-
 ### Error Handling
 
 
 ### Defensive Programming
-
 
 
 ## Deployment & Local Development
@@ -349,11 +345,6 @@ Please see [TESTING.md](TESTING.md) for all testing performed
 
 ### Code Used
 
-- How to link an API to Flask
-Uses the cat facts api, but I was able to apply this to rest countries api with ease
-(Youtube video)[https://www.youtube.com/watch?v=F_SBxcV335k]
-
-
 - Flask Blueprints
 To update the routing as the project is larger
 [Intro to Flask Blueprints](https://www.youtube.com/watch?v=pjVhrIJFUEs)
@@ -363,6 +354,8 @@ To initiate user login with Flask libraries
 [Learn Flask Login](https://www.youtube.com/watch?v=71EU8gnZqZQ)
 
 ### Content
+
+- Homepage image created using [Bing AI Image genetator](https://www.bing.com/images/create?FORM=GENILP)
 
 
 ### Media
