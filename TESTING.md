@@ -84,6 +84,7 @@ Visit the deployed site: []()
 
 ### WAVE Testing
 
+![Wave font to background result](/documentation/testing/waveResults.png)
 
 - - -
 
@@ -102,7 +103,7 @@ Visit the deployed site: []()
 |`Returning Visitors`|
 | Login | Redirection to login page to allow signin, verification user exists |
 | Make a list of trips they are planning | Add trip is linked to db to record information and dispay it to the user |
-| Record information about their trip in a travel journal
+| Record information about their trip in a travel journal | Document is linked to db to record information and dispay it to the user |
 | Edit and delete journal entries and trips | Edit journal and trip are linked to db to record information and dispay it to the user
 | Read other user's travel journal entries | Use of Journal and trip pages to display the inputted information |
 |`Admin User` |
@@ -187,12 +188,14 @@ Visit the deployed site: []()
 
 ### Solved Bugs
 
-| No | Bug | How I solved the issue |
+| Bug | How I solved the issue | Image |
 | :--- | :--- | :--- |
-
+| Initially installed SQLAlchemy 3, Models would not function correctly or write to database. | Tutor assistance, deleted all installed packages and updated requirements.txt to re-install packages. |
+| Unable to iterate through journal entries | Altered variable name in routes.py |[DataTarget](/documentation/bugs/updataDataTarget.png)
+| User able to enter form with blank spaces or invalid characters | Use of "pattern" and "required" HTML attributes |
 - - -
 
 ### Known Bugs
 
-| No | Bug | |
-| :--- | :--- | :--- |
+| Bug | |
+| :--- | :--- |
