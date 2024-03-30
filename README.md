@@ -73,6 +73,7 @@ The target audience of the website are people who are planning to travel to othe
 As a first time visitor to the website I want to:
 
 * Create an account
+* Login to the accoutn created
 * Make a list of trips they are planning
 * Document their own journal entries about their trips
 * Read other user's travel journal entries
@@ -83,6 +84,7 @@ As a first time visitor to the website I want to:
 As a returning time visitor to the website I want to:
 
 * Login to the account created
+* Make a list of trips they are planning
 * Record information about their trip in a travel journal
 * Edit and delete journal entries and trips
 * Read other user's travel journal entries

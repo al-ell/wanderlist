@@ -91,14 +91,22 @@ Visit the deployed site: []()
 
 ### Testing User Stories
 
-| Goals | How are they achieved? | Image |
-| :--- | :--- | :--- |
+| Goals | How are they achieved? |
+| :--- | :--- |
 | `First Time Visitors` |
-|  |  |  |
+| Create an account | Register form links to db to create session user |
+| Login | Redirection to login page to allow signin, verification user exists |
+| Make a list of trips they are planning | Add trip is linked to db to record information and dispay it to the user |
+| Document their own journal entries about their trips | Document is linked to db to record information and dispay it to the user |
+| Read other user's travel journal entries and trips | Use of Journal and trip pages to display the inputted information |
 |`Returning Visitors`|
-|  |  |  |
+| Login | Redirection to login page to allow signin, verification user exists |
+| Make a list of trips they are planning | Add trip is linked to db to record information and dispay it to the user |
+| Record information about their trip in a travel journal
+| Edit and delete journal entries and trips | Edit journal and trip are linked to db to record information and dispay it to the user
+| Read other user's travel journal entries | Use of Journal and trip pages to display the inputted information |
 |`Admin User` |
-|  |  |  |
+| Remove offensive content (pending update) | Pending |
 
 - - -
 
