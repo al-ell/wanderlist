@@ -1,6 +1,6 @@
 import os
 from flask import Flask
-from wanderlist import app
+from wanderlist import app, db
 
 
 if __name__ == "__main__":

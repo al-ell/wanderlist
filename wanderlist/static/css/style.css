@@ -91,7 +91,15 @@ body {
 }
 
 .content-heading {
-    padding: 1rem;
+    padding: 0.3rem;
+}
+
+.content-heading h3 {
+    font-size: 2.5rem;
+}
+
+.page-heading h2 {
+    font-size: 3rem;
 }
 
 .content-heading h3,
@@ -99,7 +107,6 @@ body {
     color:#004d40;
     text-align: center;
     display: flex;
-    font-size: 3rem;
     flex-direction: column;
     font-family: "Caveat Brush", sans-serif;
     font-weight: 700;
@@ -173,11 +180,35 @@ form {
 }
 
 .card {
-    overflow: auto;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    flex-grow: 1;
+}
+
+.card-content {
+    overflow: scroll;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    justify-content: space-between;
+}
+
+.card-action a {
+    transform: scale(0.9);
 }
 
 .card.large .card-content {
     overflow: auto;
+}
+
+.MuiCard-root{
+    display: flex;
+    flex-direction: column;
+}
+.MuiCardActions-root{
+    margin-top: auto;
 }
 
 .flash-msg {
@@ -567,7 +598,7 @@ footer {
     }
 
     .trip-card {
-        height: 30vh;
+        height: 40vh;
     }
 }
 

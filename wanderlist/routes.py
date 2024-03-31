@@ -5,7 +5,6 @@ from flask import (
 from wanderlist import app, db
 from wanderlist.auth import routes
 from wanderlist.models import Itineraries, Journal, User
-from wanderlist.countries_api import get_countries
 import json
 
 
@@ -13,14 +12,6 @@ import json
 def home():
     pics = ('wanderlist/static/images/')
     return render_template("index.html", pics=pics)
-
-
-@app.route("/destinations/<country>", methods=["GET"])
-def destinations(country):
-    countries = get_countries()
-    country_results = countries.get_countries(country=country)
-
-    return render_template("destinations.html", countries=country_results)
 
 
 @app.route("/trips")

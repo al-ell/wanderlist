@@ -19,13 +19,13 @@
                     <form id="form" class="col s12 m10 l8 offset-m1 offset-l2 center-align" method="POST" action="{{ url_for('auth.login') }}">
                         <div class="row center-align">
                             <div class="input-field col s12 l8">
-                                <input id="username" name="username" type="text" pattern="^[a-zA-Z0-9]$" title="Five to 14 characters as a mixture of lower case letters and numbers, no spaces" class="validate" required>
+                                <input id="username" name="username" type="text" title="Five to 14 characters as a mixture of lower case letters, no spaces" class="validate" required>
                                 <label for="username">Username</label>
                             </div>
                         </div>
                         <div class="row">
                             <div class="input-field col s12">
-                                <input id="password" name="password" type="password" pattern="^[a-zA-Z0-9]$" title="Eight to 14 characters as a mixture of uppercase and lower case letters, and numbers" class="validate" required>
+                                <input id="password" name="password" type="password" title="Eight to 14 characters as a mixture of uppercase and lower case letters, and numbers" class="validate" required>
                                 <label for="password">Password</label>
                             </div>
                         </div>
