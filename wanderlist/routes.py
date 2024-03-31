@@ -56,7 +56,14 @@ def edit_trip(trip_id):
     if "user" not in session or session["user"] != trip.created_by:
         flash("You can only edit your own trips!")
         return redirect(url_for("trips"))
-
+    # Check if trip name already taken, prevents allowing edit to be the same as another
+    trip_name = Itineraries.query.filter(
+            Itineraries.trip_name == request.form.get("trip_name")).all()
+    if trip_name:
+        flash(
+            "This Trip name is already taken. Please choose again.")
+        return redirect(url_for("add_trip"))
+    #  If trip name is not taken add trip details to database.
     if request.method == "POST":
         trip.trip_name = request.form.get("trip_name")
         trip.country_name = request.form.get("country_name")
@@ -96,7 +103,14 @@ def document():
     if "user" not in session:
         flash("You must be logged in to do that!")
         return redirect(url_for("auth.login"))
-
+    # Check if journal entry name already taken
+    journal_name = Journal.query.filter(
+            Journal.trip_name == request.form.get("trip_name")).all()
+    if journal_name:
+        flash(
+            "This Journal Entry name is already taken. Please choose again.")
+        return redirect(url_for("document"))
+    #  If trip name is not taken add trip details to database.
     if request.method == "POST":
         journal = Journal(
             trip_name=request.form.get("trip_name"),
@@ -111,7 +125,7 @@ def document():
         flash("Journal entry added!")
         return redirect(url_for("journal"))
 
-    return render_template("document.html", trips=trips)
+    return render_template("document.html", trip=trips)
 
 
 @app.route("/edit_document/<int:journal_id>", methods=["GET", "POST"])
@@ -123,7 +137,14 @@ def edit_document(journal_id):
     if "user" not in session or session["user"] != journal.created_by:
         flash("You can only edit your own journal enteries!")
         return redirect(url_for("trips"))
-
+    # Check if journal name already taken, prevents allowing edit to be the same as another
+    journal_name = Journal.query.filter(
+            Journal.trip_name == request.form.get("trip_name")).all()
+    if journal_name:
+        flash(
+            "This Journal Entry name is already taken. Please choose again.")
+        return redirect(url_for("edit_document"))
+    #  If trip name is not taken add trip details to database.
     if request.method == "POST":
         journal.trip_name = request.form.get("trip_name")
         journal.description = request.form.get("description")

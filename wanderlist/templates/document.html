@@ -55,7 +55,7 @@
                                 <i class="fas fa-map prefix"></i>
                                 <select name="trip_id" id="trip_id" class="validate" required>
                                     <option value="" disabled selected>Choose Trip</option>
-                                    {% for trip in trips %}
+                                    {% for trips in trip %}
                                         <option value="{{ trip.id }}">{{ trip.trip_name }}</option>
                                     {% endfor %}
                                 </select>
