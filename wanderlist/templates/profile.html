@@ -4,7 +4,7 @@
         <div class="row page-heading">
             <div class="col s8 offset-s2">
             {% for users in user %}
-                <h2>Welcome {{ auth.user.name }}!</h2> 
+                <h2>Welcome {{ users.name.capitalize() }} !</h2> 
             {% endfor %}
             </div>
         </div>

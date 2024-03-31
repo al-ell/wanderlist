@@ -125,14 +125,14 @@ def document():
         flash("Journal entry added!")
         return redirect(url_for("journal"))
 
-    return render_template("document.html", trip=trips)
+    return render_template("document.html", trips=trips)
 
 
 @app.route("/edit_document/<int:journal_id>", methods=["GET", "POST"])
 def edit_document(journal_id):
     # Return 404 error if query can't be completed
     journal = Journal.query.get_or_404(journal_id)
-    trips = list(Itineraries.query.order_by(Itineraries.trip_name).all())
+    trip = list(Itineraries.query.order_by(Itineraries.trip_name).all())
     # Check if user created the journal entry before allowing edit
     if "user" not in session or session["user"] != journal.created_by:
         flash("You can only edit your own journal enteries!")
@@ -156,7 +156,7 @@ def edit_document(journal_id):
         flash("Journal entry edited!")
         return redirect(url_for("journal"))
 
-    return render_template("edit_document.html", journal=journal, trips=trips)
+    return render_template("edit_document.html", journal=journal, trip=trip)
 
 
 @app.route("/delete_document/<int:journal_id>")

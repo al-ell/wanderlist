@@ -92,7 +92,7 @@ def login():
 def profile():
     # redirect to profile on login
     user = list(User.query.order_by(User.id).all())
-    return render_template("profile.html")
+    return render_template("profile.html", user=user)
 
 
 @auth.route("/logout")
