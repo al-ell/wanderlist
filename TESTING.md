@@ -194,9 +194,13 @@ Visit the deployed site: []()
 | Unable to iterate through journal entries | Altered variable name in routes.py |[DataTarget](/documentation/bugs/updataDataTarget.png)
 | User able to enter form with blank spaces or invalid characters | Use of "pattern" and "required" HTML attributes |
 | Card buttons at different places in the card | [Stack overflow](https://community.esri.com/t5/arcgis-hub-questions/dynamically-positioning-a-card-button-based-on-the/m-p/1268762#M5611) use of flexbox, flex direction and space between to fix card-action to bottom of card. |
+| Navbar links overlapping with logo | removed margintop: 4vh | ![Misaligned Nav](/documentation/bugs/misalignedNav.png) |
+| Mobile nav displaying under Materliaize modal | added z-index to sidenav and modal elements to set layered position | ![Nav](/documentation/bugs/navUnderModal.png) |
+
 - - -
 
 ### Known Bugs
 
 | Bug | |
 | :--- | :--- |
+| Had to remove pattern attribute from login page inputs as it was not allowing registered user to login | |

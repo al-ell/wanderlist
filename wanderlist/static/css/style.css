@@ -260,7 +260,6 @@ nav ul li a {
     text-decoration: none;
     text-align: center;
     text-transform: uppercase;
-    margin-top: 4vh;
     padding: 1rem;
     letter-spacing: 0.1rem;
     
@@ -273,6 +272,7 @@ nav ul li a {
 
     .index-main {
         overflow: hidden;
+        margin-top: -4vh;
     }
 
   /* Place text in the middle of the image */
@@ -524,6 +524,14 @@ footer {
         width: 0;
     }
 
+    .sidenav {
+        z-index: 600;
+    }
+
+    .sidenav-overlay {
+        z-index: 10;
+    }
+
     .sidenav,
     nav ul li a {
         top: 0;
@@ -536,6 +544,7 @@ footer {
         text-transform: uppercase;
         padding: 0.5em;
         letter-spacing: 0.02em;
+        max-height: 50vh;
         
     }
 

@@ -24,8 +24,6 @@
         <nav class="main-nav lime lighten-2 z-depth-0">
           <ul class="hide-on-med-and-down nav-links teal-text text-darken-4">
             <li><a href="{{ url_for('home') }}">Home</a></li>
-            <li><a href="{{ url_for('auth.login') }}">Login</a></li>
-            <li><a href="{{ url_for('auth.register') }}">Register</a></li>
             <!-- Prevent user from accessing pages they must be logged in to use -->
             {% if session.user %}
               <li><a href="{{ url_for('trips') }}">Trips</a></li>
@@ -45,7 +43,8 @@
         </div>
       </div>
       <!-- Mobile navigation -->
-      <ul class="sidenav lime lighten-2 teal-text text-darken-4" id="mobile-demo">
+      <div class="sidenav-container">
+        <ul class="sidenav lime lighten-2 teal-text text-darken-4" id="mobile-demo">
           <li><a href="{{ url_for('home') }}">Home</a></li>
           <li><a href="{{ url_for('auth.login') }}">Login</a></li>
           <!-- Prevent user from accessing pages they must be logged in to use -->
@@ -55,7 +54,8 @@
             <li><a href="{{ url_for('auth.profile') }}">Profile</a></li>
             <li><a href="{{ url_for('auth.logout') }}">Log Out</a></li>
           {% endif %}
-      </ul>
+        </ul>
+      </div>
   </header>
   <!-- Main section -->
   <main id="main" class="halign-wrapper center-align">
