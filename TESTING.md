@@ -193,6 +193,7 @@ Visit the deployed site: []()
 | Initially installed SQLAlchemy 3, Models would not function correctly or write to database. | Tutor assistance, deleted all installed packages and updated requirements.txt to re-install packages. |
 | Unable to iterate through journal entries | Altered variable name in routes.py |[DataTarget](/documentation/bugs/updataDataTarget.png)
 | User able to enter form with blank spaces or invalid characters | Use of "pattern" and "required" HTML attributes |
+
 - - -
 
 ### Known Bugs
