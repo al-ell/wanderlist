@@ -12,6 +12,7 @@ document.addEventListener("DOMContentLoaded", function() {
     let datepicker = document.querySelectorAll(".datepicker");
     M.Datepicker.init(datepicker, {
         format: "dd mmm, yyyy",
+        maxDate: new Date(),
         i18n: {done: "Choose"}
     });
 
