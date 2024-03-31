@@ -43,6 +43,7 @@ def register():
             User.username == request.form.get("username").lower()).all()
         if user:
             flash(
+                # If username already registered form will not submit, user is informed
                 "This username is already registered. Please choose again.")
             return redirect(url_for("auth.register"))
         # If not registered, add form data to db

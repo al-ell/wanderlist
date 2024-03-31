@@ -27,7 +27,14 @@ def add_trip():
     if "user" not in session:
         flash("You must be logged in to do that!")
         return redirect(url_for("auth.login"))
-
+    # Check if trip name already taken
+    trip_name = Itineraries.query.filter(
+            Itineraries.trip_name == request.form.get("trip_name")).all()
+    if trip_name:
+        flash(
+            "This Trip name is already taken. Please choose again.")
+        return redirect(url_for("add_trip"))
+    #  If trip name is not taken add trip details to database.
     if request.method == "POST":
         trips = Itineraries(
             trip_name=request.form.get("trip_name"),
