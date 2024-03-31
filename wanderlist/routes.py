@@ -72,7 +72,8 @@ def edit_trip(trip_id):
     if "user" not in session or session["user"] != trip.created_by:
         flash("You can only edit your own trips!")
         return redirect(url_for("trips"))
-    # Check if trip name already taken, prevents allowing edit to be the same as another
+    # Check if trip name already taken,
+    # prevents allowing edit to be the same as another
     trip_name = Itineraries.query.filter(
             Itineraries.trip_name == request.form.get("trip_name")).all()
     if trip_name:
@@ -180,7 +181,8 @@ def edit_document(journal_id):
         flash("You can only edit your own journal enteries!")
         # Return user to journals page
         return redirect(url_for("journal"))
-    # Check if journal name already taken, prevents allowing edit to be the same as another
+    # Check if journal name already taken,
+    # prevents allowing edit to be the same as another
     journal_name = Journal.query.filter(
             Journal.trip_name == request.form.get("trip_name")).all()
     if journal_name:
