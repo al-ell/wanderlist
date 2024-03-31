@@ -1,78 +1,80 @@
 {% extends "base.html" %}
 {% block content %}
-    <div class="center-align page-heading">
-        <h2>Document Your Trip</h2>
-        <h3>Make a Journal Entry</h3>
-    </div>
-    <div class="row center-align">
-        <div class="col s12 m10 l8 offset-m1 offset-l2 form-container">
-            <div class="card large center-align lime lighten-4">
-                <div class="card-content">
-                    <!-- Form to add journal entry -->
-                    <form id="form" class="col document-form" method="POST" action="{{ url_for('document') }}">
-                        <div class="row">
-                            <div class="input-field col s12">
-                                <i class="fas fa-pen prefix"></i>
-                                <input id="trip_name" name="trip_name" minlength="3" maxlength="30" pattern="^[a-zA-Z0-9 -_.'!]{5,14}$"
-                                    title="Five to 14 characters as a mixture of uppercase and lower case letters numbers, 
-                                    special characters and spaces" type="text" class="validate" required>
-                                <label for="trip_name">Name it:</label>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="input-field col s12">
-                                <i class="fas fa-book prefix"></i>
-                                <textarea id="description" name="description" minlength="10" maxlength="200"
-                                    class="materialize-textarea validate" required></textarea>
-                                <label for="description">The best bits:</label>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="input-field col s12 m6">
-                                <i class="fas fa-globe prefix"></i>
-                                <input id="where" name="where" minlength="3" maxlength="25" pattern="^[A-Za-z' '-]" 
-                                    title="A mixture of uppercase and lower case letters, spaces and hiphens" 
-                                    type="text" class="validate" required>
-                                <label for="where">Where you went:</label>
-                            </div>
-                            <div class="input-field col s12 m6">
-                                <i class="fa fa-calendar prefix"></i>
-                                <input id="when" name="when"  class="datepicker validate" required>
-                                <label for="when" class="when-label">When you went:</label>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="input-field col s12 m6">
-                                <i class="fas fa-train prefix"></i>
-                                <input id="how" name="how" minlength="3" maxlength="25" pattern="^[a-zA-Z0-9 -_.'!]{5,20}$" 
-                                    title="Five to 20 characters as a mixture of uppercase and lower case letters numbers,
-                                    special characters and spaces" type="text" class="validate" required>
-                                <label for="how">How you travelled:</label>
-                            </div>
-                        </div>
-                        <div class="row left-align">
-                            <div class="input-field col s12">
-                                <i class="fas fa-map prefix"></i>
-                                <select name="trip_id" id="trip_id" class="validate" required>
-                                    <option value="" disabled selected>Choose Trip</option>
-                                    {% for trips in trip %}
-                                        <option value="{{ trip.id }}">{{ trip.trip_name }}</option>
-                                    {% endfor %}
-                                </select>
-                                <label for="trip_id">Trip:</label>
-                            </div>
-                        </div>
-                        <div class="center-align btn-container">
-                            <div class="col s6 offset-s3">
-                                <!-- Submit button -->
-                                <button class="waves-effect waves-light btn-large btn-custom-dark" type="submit" aria-label="Add">
-                                    Add
-                                </button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>                
+    <section class="main-section">
+        <div class="center-align page-heading">
+            <h2>Document Your Trip</h2>
+            <h3>Make a Journal Entry</h3>
         </div>
-    </div>
+        <div class="row center-align">
+            <div class="col s12 m10 l8 offset-m1 offset-l2 form-container">
+                <div class="card large center-align lime lighten-4">
+                    <div class="card-content">
+                        <!-- Form to add journal entry -->
+                        <form id="form" class="col document-form" method="POST" action="{{ url_for('document') }}">
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <i class="fas fa-pen prefix"></i>
+                                    <input id="trip_name" name="trip_name" minlength="3" maxlength="30" pattern="^[a-zA-Z0-9 -_.'!]{5,14}$"
+                                        title="Five to 14 characters as a mixture of uppercase and lower case letters numbers, 
+                                        special characters and spaces" type="text" class="validate" required>
+                                    <label for="trip_name">Name it:</label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <i class="fas fa-book prefix"></i>
+                                    <textarea id="description" name="description" minlength="10" maxlength="200"
+                                        class="materialize-textarea validate" required></textarea>
+                                    <label for="description">The best bits:</label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="input-field col s12 m6">
+                                    <i class="fas fa-globe prefix"></i>
+                                    <input id="where" name="where" minlength="3" maxlength="25" pattern="^[A-Za-z' '-]" 
+                                        title="A mixture of uppercase and lower case letters, spaces and hiphens" 
+                                        type="text" class="validate" required>
+                                    <label for="where">Where you went:</label>
+                                </div>
+                                <div class="input-field col s12 m6">
+                                    <i class="fa fa-calendar prefix"></i>
+                                    <input id="when" name="when"  class="datepicker validate" required>
+                                    <label for="when" class="when-label">When you went:</label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="input-field col s12 m6">
+                                    <i class="fas fa-train prefix"></i>
+                                    <input id="how" name="how" minlength="3" maxlength="25" pattern="^[a-zA-Z0-9 -_.'!]{5,20}$" 
+                                        title="Five to 20 characters as a mixture of uppercase and lower case letters numbers,
+                                        special characters and spaces" type="text" class="validate" required>
+                                    <label for="how">How you travelled:</label>
+                                </div>
+                            </div>
+                            <div class="row left-align">
+                                <div class="input-field col s12">
+                                    <i class="fas fa-map prefix"></i>
+                                    <select name="trip_id" id="trip_id" class="validate" required>
+                                        <option value="" disabled selected>Choose Trip</option>
+                                        {% for trips in trip %}
+                                            <option value="{{ trip.id }}">{{ trip.trip_name }}</option>
+                                        {% endfor %}
+                                    </select>
+                                    <label for="trip_id">Trip:</label>
+                                </div>
+                            </div>
+                            <div class="center-align btn-container">
+                                <div class="col s6 offset-s3">
+                                    <!-- Submit button -->
+                                    <button class="waves-effect waves-light btn-large btn-custom-dark" type="submit" aria-label="Add">
+                                        Add
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>                
+            </div>
+        </div>
+    </section>
 {% endblock %}

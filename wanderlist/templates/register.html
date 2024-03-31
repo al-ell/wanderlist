@@ -1,54 +1,56 @@
 {% extends "base.html" %}
 {% block content %}
-    <div class="center-align page-heading">
-        <h2>Register</h2>
-        <h3>Begin your travel journal!</h3>
-    </div>
-    <div class="row">
-        <div class="center-align register-link col s12">
-            <h4>Have an Account?</h4>
-            <!-- link to login if user has an account -->
-            <a href="{{ url_for('auth.login') }}" aria-label="Login here">Login Here.</a>
+    <section class="main-section">
+        <div class="center-align page-heading">
+            <h2>Register</h2>
+            <h3>Begin your travel journal!</h3>
         </div>
-    </div>
-    <div class="row">
-        <div class="col s12 m10 offset-m1">
-            <div class="card lime lighten-4">
-                <div class="card-content">
-                    <!-- Form to create a profile/session user -->
-                    <form id="register-form" class="col s12 m10 offset-m1 register-form" method="POST" action="{{ url_for('auth.register') }}">
-                        <div class="row">
-                            <div class="input-field col s12">
-                                <input id="username" name="username" type="text" minlength="5" 
-                                    maxlength="14"  title="Five to 14 characters as a mixture of lower case letters and numbers, no spaces" class="validate" required>
-                                <label for="username">Username</label>
+        <div class="row">
+            <div class="center-align register-link col s12">
+                <h4>Have an Account?</h4>
+                <!-- link to login if user has an account -->
+                <a href="{{ url_for('auth.login') }}" aria-label="Login here">Login Here.</a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col s12 m10 offset-m1">
+                <div class="card lime lighten-4">
+                    <div class="card-content">
+                        <!-- Form to create a profile/session user -->
+                        <form id="register-form" class="col s12 m10 offset-m1 register-form" method="POST" action="{{ url_for('auth.register') }}">
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <input id="username" name="username" type="text" minlength="5" 
+                                        maxlength="14"  title="Five to 14 characters as a mixture of lower case letters and numbers, no spaces" class="validate" required>
+                                    <label for="username">Username</label>
+                                </div>
                             </div>
-                        </div>
-                        <div class="row">
-                            <div class="input-field col s12">
-                                <input id="name" name="name" type="text" minlength="5" 
-                                    maxlength="14" pattern="^[a-zA-Z -]{5,14}$" title="Five to 14 characters as a mixture of uppercase and lower case letters, including spaces and hiphens" class="validate" required>
-                                <label for="username">Name:</label>
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <input id="name" name="name" type="text" minlength="5" 
+                                        maxlength="14" pattern="^[a-zA-Z -]{5,14}$" title="Five to 14 characters as a mixture of uppercase and lower case letters, including spaces and hiphens" class="validate" required>
+                                    <label for="username">Name:</label>
+                                </div>
                             </div>
-                        </div>
-                        <div class="row">
-                            <div class="input-field col s12">
-                                <input id="password" name="password" type="password" minlength="8" 
-                                    maxlength="14" pattern="^[a-zA-Z0-9]{8,14}$" title="Eight to 14 characters as a mixture of uppercase and lower case letters, and numbers" class="validate" required>
-                                <label for="password">Password:</label>
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <input id="password" name="password" type="password" minlength="8" 
+                                        maxlength="14" pattern="^[a-zA-Z0-9]{8,14}$" title="Eight to 14 characters as a mixture of uppercase and lower case letters, and numbers" class="validate" required>
+                                    <label for="password">Password:</label>
+                                </div>
                             </div>
-                        </div>
-                        <div class="row">
-                            <div class="col s6 offset-s3">
-                                <!-- Submit button -->
-                                <button class="waves-effect waves-light btn-large btn-custom-dark" type="submit" aria-label="Register">
-                                    Register
-                                </button>
+                            <div class="row">
+                                <div class="col s6 offset-s3">
+                                    <!-- Submit button -->
+                                    <button class="waves-effect waves-light btn-large btn-custom-dark" type="submit" aria-label="Register">
+                                        Register
+                                    </button>
+                                </div>
                             </div>
-                        </div>
-                    </form>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 {% endblock %}

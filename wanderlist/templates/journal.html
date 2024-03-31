@@ -1,64 +1,66 @@
 {% extends "base.html" %}
 {% block content %}
-    <div class="row page-heading">
-        <div class="col s12 m8 l6 offset-l1">
-            <h2>Journal Entries</h2> 
-        </div>
-        <div class="col s12 m4 btn-lrg">
-            <a href="{{ url_for('document') }}" class="waves-effect waves-light btn-large btn-custom-dark" type="button" aria-label="Add an entry">Add Entry</a>
-        </div>
-    </div>
-    <div class="halign-wrapper center-align">
-        <div class="row page-content">
-            <div class="col s10 m8 offset-s1 offset-m2">
-                <!-- Display journal entries in order of date added -->
-                {% for journal in journals|sort(attribute="when") %}
-                    <ul class="collapsible journal_entry_container lime lighten-2">
-                        <li class="journal_entry">
-                            <div class="collapsible-header lime lighten-2 journal_header">
-                                <i class="fa fa-caret-down caret"></i>
-                                <div class="col s8 content-heading">
-                                    <h3>{{ journal.trip_name }}</h3>
-                                </div>
-                                <div class="col s4">
-                                    <span><a href="{{ url_for('edit_document', journal_id=journal.id) }}" class="btn right btn-custom-dark" aria-label="Edit">Edit</a></span>
-                                    <span>
-                                        <!-- Modal Trigger to confirm delete -->
-                                        <a href="{{ url_for('delete_document', journal_id=journal.id) }}" data-target="modal1" class="btn right btn-custom delete-btn modal-trigger">Delete</a>
-                                    </span>
-                                </div>
-                            </div>
-                            <!-- Collapsible with journal entry details -->
-                            <div class="collapsible-body journal-entry-details left-align">
-                                {% for trip in trips %}
-                                    {% if trip.id == journal.itinerary_id %}
-                                        <h4>Trip: {{ trip.trip_name }}</h4>
-                                    {% endif %}
-                                {% endfor %}
-                                <p>Best bits: {{ journal.description }}</p>
-                                <ul>
-                                    <li>Where: {{ journal.where }}</li>
-                                    <li>When: {{ journal.when.strftime("%d %B %Y") }}</li>
-                                    <li>How: {{ journal.how }}</li>
-                                </ul>
-                            </div>
-                        </li>
-                    </ul>
-                    <!-- Delete confirmation modal structure -->
-                    <div id="modal1" class="modal lime lighten-2 delete-modal">
-                        <div class="modal-content lime lighten-2">
-                            <h4>Delete Trip?</h4>
-                            <p>This will delete any associated journal entries!</p>
-                            <p>Are you sure?</p>
-                        </div>
-                        <!-- Delete and cancel buttons -->
-                        <div class="modal-footer">
-                            <a href="{{ url_for('delete_document', journal_id=journal.id) }}" class="btn btn-custom delete-btn" aria-label="Delete">Delete</a>
-                            <a href="{{url_for('journal')}}" class="modal-close btn btn-custom-light" aria-label="Cancel">Cancel</a>
-                        </div>
-                    </div>
-                {% endfor %}
+    <section class="main-section">
+        <div class="row page-heading">
+            <div class="col s12 m8 l6 offset-l1">
+                <h2>Journal Entries</h2> 
+            </div>
+            <div class="col s12 m4 btn-lrg">
+                <a href="{{ url_for('document') }}" class="waves-effect waves-light btn-large btn-custom-dark" type="button" aria-label="Add an entry">Add Entry</a>
             </div>
         </div>
-    </div>
+        <div class="halign-wrapper center-align">
+            <div class="row page-content">
+                <div class="col s10 m8 offset-s1 offset-m2">
+                    <!-- Display journal entries in order of date added -->
+                    {% for journal in journals|sort(attribute="when") %}
+                        <ul class="collapsible journal_entry_container lime lighten-2">
+                            <li class="journal_entry">
+                                <div class="collapsible-header lime lighten-2 journal_header">
+                                    <i class="fa fa-caret-down caret"></i>
+                                    <div class="col s8 content-heading">
+                                        <h3>{{ journal.trip_name }}</h3>
+                                    </div>
+                                    <div class="col s4">
+                                        <span><a href="{{ url_for('edit_document', journal_id=journal.id) }}" class="btn right btn-custom-dark" aria-label="Edit">Edit</a></span>
+                                        <span>
+                                            <!-- Modal Trigger to confirm delete -->
+                                            <a href="{{ url_for('delete_document', journal_id=journal.id) }}" data-target="modal1" class="btn right btn-custom delete-btn modal-trigger">Delete</a>
+                                        </span>
+                                    </div>
+                                </div>
+                                <!-- Collapsible with journal entry details -->
+                                <div class="collapsible-body journal-entry-details left-align">
+                                    {% for trips in trip %}
+                                        {% if trip.id == journal.itinerary_id %}
+                                            <h4>Trip: {{ trip.trip_name }}</h4>
+                                        {% endif %}
+                                    {% endfor %}
+                                    <p>Best bits: {{ journal.description }}</p>
+                                    <ul>
+                                        <li>Where: {{ journal.where }}</li>
+                                        <li>When: {{ journal.when.strftime("%d %B %Y") }}</li>
+                                        <li>How: {{ journal.how }}</li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                        <!-- Delete confirmation modal structure -->
+                        <div id="modal1" class="modal lime lighten-2 delete-modal">
+                            <div class="modal-content lime lighten-2">
+                                <h4>Delete Trip?</h4>
+                                <p>This will delete any associated journal entries!</p>
+                                <p>Are you sure?</p>
+                            </div>
+                            <!-- Delete and cancel buttons -->
+                            <div class="modal-footer">
+                                <a href="{{ url_for('delete_document', journal_id=journal.id) }}" class="btn btn-custom delete-btn" aria-label="Delete">Delete</a>
+                                <a href="{{url_for('journal')}}" class="modal-close btn btn-custom-light" aria-label="Cancel">Cancel</a>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </section>
 {% endblock %}

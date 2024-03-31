@@ -1,48 +1,49 @@
 {% extends "base.html" %}
 {% block content %}
-    <div class="page-heading center-align">
-        <h2>Add A Trip</h2>
-        <h3>Plan Your Next Adventure</h3>
-    </div>
-    <div class="row center-align">
-        <div class="col s12 m10 offset-m1">
-            <div class="card large lime lighten-4">
-                <div class="card-content">
-                    <!-- Form to add trip details -->
-                    <form id="form" method="POST" action="{{ url_for('add_trip') }}">
-                        <div class="row">
-                            <div class="col s12 input-field">
-                                <i class="fas fa-pen prefix"></i>
-                                <input id="trip_name" name="trip_name" minlength="3" maxlength="30" type="text" 
-                                    pattern="^[a-zA-Z0-9 -_.'! ]{5,14}$" title="Five to 14 characters as a 
-                                        mixture of uppercase and lower case letters numbers, special characters and spaces" 
-                                    class="validate" required>
-                                <label for="trip_name">Name it:</label>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col s12 input-field">
-                                <i class="fas fa-earth prefix"></i>
-                                <input id="country_name" name="country_name" minlength="3" maxlength="25"  
-                                    pattern="^[A-Za-z -]" title="A mixture of uppercase and lower case letters, 
-                                    spaces and hiphens" type="text" class="validate" required>
-                                <label for="country_name">Where:</label>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="center-align btn-container">
-                                <div class="col s6 offset-s3">
-                                    <!-- Submit button -->
-                                    <button class="waves-effect waves-light btn-large btn-custom-dark" type="submit" aria-label="Add">
-                                        Add
-                                    </button>
+    <section class="main-section">
+        <div class="page-heading center-align">
+            <h2>Add A Trip</h2>
+            <h3>Plan Your Next Adventure</h3>
+        </div>
+        <div class="row center-align">
+            <div class="col s12 m10 offset-m1">
+                <div class="card large lime lighten-4">
+                    <div class="card-content">
+                        <!-- Form to add trip details -->
+                        <form id="form" method="POST" action="{{ url_for('add_trip') }}">
+                            <div class="row">
+                                <div class="col s12 input-field">
+                                    <i class="fas fa-pen prefix"></i>
+                                    <input id="trip_name" name="trip_name" minlength="3" maxlength="30" type="text" 
+                                        pattern="^[a-zA-Z0-9 -_.'! ]{5,14}$" title="Five to 14 characters as a 
+                                            mixture of uppercase and lower case letters numbers, special characters and spaces" 
+                                        class="validate" required>
+                                    <label for="trip_name">Name it:</label>
                                 </div>
                             </div>
-                        </div>
-                    </form>
-                </div>
-            </div>                
+                            <div class="row">
+                                <div class="col s12 input-field">
+                                    <i class="fas fa-earth prefix"></i>
+                                    <input id="country_name" name="country_name" minlength="3" maxlength="25"  
+                                        pattern="^[A-Za-z -]" title="A mixture of uppercase and lower case letters, 
+                                        spaces and hiphens" type="text" class="validate" required>
+                                    <label for="country_name">Where:</label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="center-align btn-container">
+                                    <div class="col s6 offset-s3">
+                                        <!-- Submit button -->
+                                        <button class="waves-effect waves-light btn-large btn-custom-dark" type="submit" aria-label="Add">
+                                            Add
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>                
+            </div>
         </div>
-    </div>
-
+    </section>
 {% endblock %}

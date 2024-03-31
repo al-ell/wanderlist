@@ -1,58 +1,60 @@
 {% extends "base.html" %}
 {% block content %}
-    <div class="row page-heading">
-        <div class="col s12 m8 l6 offset-l1">
-            <h2>Trips</h2> 
-        </div>
-        <div class="col s12 m4 btn-lrg">
-            <!-- Button to add a new trip -->
-            <a href="{{ url_for('add_trip') }}" class="waves-effect waves-light btn-large btn-custom-dark" type="button" aria-label="Add a Trip">Add a Trip</a>
-        </div>
-    </div>
-    <div class="halign-wrapper center-align">
-        <div class="row page-content">
-            <div class="col s12 m8 offset-m2"> 
-                <!-- To display the trips entered into the dabase -->
-                {% for trip in trips %}
-                    <div class="col s12 m6 l4">
-                    <div class="card trip-card lime lighten-2">
-                        <div class="content-heading">
-                            <h3>{{ trip.trip_name }}</h3>
-                        </div>
-                        <div class="card-content">
-                            <ul>
-                                <!-- To show the linked journal entries -->
-                                {% for journal in journals %}
-                                    {% if trip.id == journal.itinerary_id %}
-                                        <li><a href="{{ url_for('edit_document', journal_id=journal.id) }}" class="journal-link" type="link" aria-label="{{ journal.trip_name }}">{{ journal.trip_name }}</a></li>
-                                    {% endif %}
-                                {% endfor %}
-                            </ul>
-                        </div>
-                        <div class="card-action">
-                            <!-- Button to edit trip -->
-                            <a href="{{ url_for('edit_trip', trip_id=trip.id) }}" class="btn-large btn-custom-dark" aria-label="Edit">Edit</a>
-                            
-                            <!-- Delete modal Trigger -->
-                            <a href="{{ url_for('delete_trip', trip_id=trip.id) }}" data-target="modal1" class="btn-large btn-custom delete-btn modal-trigger">Delete</a>
-                        </div>
-                    </div>
-                    </div>
-                    <!-- Delete confirmation modal tructure -->
-                    <div id="modal1" class="modal delete-modal lime lighten-2">
-                        <div class="modal-content lime lighten-2">
-                            <h4>Delete Trip?</h4>
-                            <p>This will delete any associated journal entries!</p>
-                            <p>Are you sure?</p>
-                        </div>
-                        <div class="modal-footer lime lighten-2">
-                            <!-- Delete and cancel buttons -->
-                            <a href="{{ url_for('delete_trip', trip_id=trip.id) }}" class="btn-large btn-custom delete-btn" aria-label="Delete">Delete</a>
-                            <a href="{{url_for('trips')}}" class="modal-close btn-large btn-custom-dark" aria-label="Cancel">Cancel</a>
-                        </div>
-                    </div>
-                {% endfor %}
+    <section class="main-section">
+        <div class="row page-heading">
+            <div class="col s12 m8 l6 offset-l1">
+                <h2>Trips</h2> 
+            </div>
+            <div class="col s12 m4 btn-lrg">
+                <!-- Button to add a new trip -->
+                <a href="{{ url_for('add_trip') }}" class="waves-effect waves-light btn-large btn-custom-dark" type="button" aria-label="Add a Trip">Add a Trip</a>
             </div>
         </div>
-    </div>
+        <div class="halign-wrapper center-align">
+            <div class="row page-content">
+                <div class="col s12 m8 offset-m2"> 
+                    <!-- To display the trips entered into the dabase -->
+                    {% for trip in trips %}
+                        <div class="col s12 m6 l4">
+                        <div class="card trip-card lime lighten-2">
+                            <div class="content-heading">
+                                <h3>{{ trip.trip_name }}</h3>
+                            </div>
+                            <div class="card-content">
+                                <ul>
+                                    <!-- To show the linked journal entries -->
+                                    {% for journal in journals %}
+                                        {% if trip.id == journal.itinerary_id %}
+                                            <li><a href="{{ url_for('edit_document', journal_id=journal.id) }}" class="journal-link" type="link" aria-label="{{ journal.trip_name }}">{{ journal.trip_name }}</a></li>
+                                        {% endif %}
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                            <div class="card-action">
+                                <!-- Button to edit trip -->
+                                <a href="{{ url_for('edit_trip', trip_id=trip.id) }}" class="btn-large btn-custom-dark" aria-label="Edit">Edit</a>
+                                
+                                <!-- Delete modal Trigger -->
+                                <a href="{{ url_for('delete_trip', trip_id=trip.id) }}" data-target="modal1" class="btn-large btn-custom delete-btn modal-trigger">Delete</a>
+                            </div>
+                        </div>
+                        </div>
+                        <!-- Delete confirmation modal tructure -->
+                        <div id="modal1" class="modal delete-modal lime lighten-2">
+                            <div class="modal-content lime lighten-2">
+                                <h4>Delete Trip?</h4>
+                                <p>This will delete any associated journal entries!</p>
+                                <p>Are you sure?</p>
+                            </div>
+                            <div class="modal-footer lime lighten-2">
+                                <!-- Delete and cancel buttons -->
+                                <a href="{{ url_for('delete_trip', trip_id=trip.id) }}" class="btn-large btn-custom delete-btn" aria-label="Delete">Delete</a>
+                                <a href="{{url_for('trips')}}" class="modal-close btn-large btn-custom-dark" aria-label="Cancel">Cancel</a>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </section>
 {% endblock %}
