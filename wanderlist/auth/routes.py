@@ -21,9 +21,11 @@ from wanderlist.models import User, Journal, Itineraries
 import json
 
 
+# Blueprint created to allow seperate route for authentication.
 auth = Blueprint("auth", __name__, url_prefix="/auth")
 
 
+#  Use of login manager extension to allow user to login
 login_manager = LoginManager()
 login_manager.init_app(app)
 login_manager.login_view = "auth.login"
@@ -35,15 +37,16 @@ def load_user(user_id):
     return User.get(user_id)
 
 
+# Route for registration
 @auth.route("/register", methods=["GET", "POST"])
 def register():
     if request.method == "POST":
-        #  Check if user already registered
+        #  Check if user already exists in db, filter through existing users
         user = User.query.filter(
             User.username == request.form.get("username").lower()).all()
         if user:
             flash(
-                # If username already registered form will not submit, user is informed
+                # User feedback: username already registered form will not submit
                 "This username is already registered. Please choose again.")
             return redirect(url_for("auth.register"))
         # If not registered, add form data to db
@@ -52,53 +55,63 @@ def register():
             name=request.form.get("name").lower(),
             password=generate_password_hash(request.form.get("password"))
         )
+        # Commit to database
         db.session.add(register)
         db.session.commit()
+        # User feedback
         flash("Registration Successful!")
         # send user to login once profile is made
         return redirect(url_for("auth.login"))
-
+    # Render register page
     return render_template("register.html")
 
 
+# Route to login
 @auth.route("/login", methods=["GET", "POST"])
 def login():
     if request.method == "POST":
         # Check if user already exists in the database
         exisiting_user = User.query.filter(
             User.username == request.form.get("username").lower()).all()
-
+        #  If user exists check password is correct
         if exisiting_user:
             if check_password_hash(
                 exisiting_user[0].password,
                     request.form.get("password")):
                 session["user"] = request.form.get("username").lower()
+                # Variable to target to hide register/login from session user
                 session['logged_in'] = True
+                # Take user to profile after login
                 return redirect(url_for("auth.profile",
                                 username=session["user"]))
-
+            # If user doesn't exist or username and/or passowrd is incorrect:
             else:
-                # Invalid password, redirect to login page
+                # User feedback: invalid password, redirect to login page
                 flash("Wrong Username and/ or Password")
                 return redirect(url_for("auth.login"))
         else:
-            # Username doesn't exist
+            # User feedback: username doesn't exist
             flash("Wrong Username and/ or Password")
-
+    # Render login page
     return render_template("login.html")
 
 
+# Route for profile
 @auth.route("/profile")
 def profile():
-    # redirect to profile on login
+    # Filter through users in db to display registered name
     user = list(User.query.order_by(User.id).all())
+    #  Render profile page
     return render_template("profile.html", user=user)
 
 
+# Route ot logout
 @auth.route("/logout")
 def logout():
+    #  User feedback: user logged out
     flash("You are logged out!")
     # logs user out
     session.pop("user")
     session['logged_out'] = True
+    # Take user to homepage once logged out
     return redirect(url_for("home"))

@@ -8,21 +8,31 @@ from flask_login import (
     logout_user,
     current_user)
 import os
+
+
+# If app exists import data from env.py
 if os.path.exists("env.py"):
     import env  # noqa
 
 
+# Create app
 app = Flask(__name__)
 app.config["SECRET_KEY"] = os.environ.get("SECRET_KEY")
 app.config["SQLALCHEMY_DATABASE_URI"] = os.environ.get("DB_URL")
 
+
 db = SQLAlchemy(app)
+
 
 login_manager = LoginManager()
 login_manager.init_app(app)
 login_manager.login_view = "login"
 
+
+# Import db after loading frameworks to prevent load error
 from wanderlist import routes  # noqa
 
+
+# Blueprintsn used to create seperate authenication route for user db
 from wanderlist.auth.routes import auth
 app.register_blueprint(auth)  # noqa

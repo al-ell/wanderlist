@@ -151,7 +151,7 @@ form {
 }
 
 .input-field input[type=text]:focus + label {
-    color: #00bfa5;
+    color: #004d40;
 }
 
 .journal-entry-details p,
@@ -311,6 +311,16 @@ nav ul li a:hover {
 }
 
 .btn-custom-dark {
+    color: #dce775;
+    background-color: #004d40;
+}
+
+.btn-custom-dark:hover {
+    background-color: #dce775;
+    color: #004d40;
+}
+
+.btn-custom-light:hover {
     color: #dce775;
     background-color: #004d40;
 }
