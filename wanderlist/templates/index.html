@@ -1,12 +1,12 @@
 {% extends "base.html" %}
 {% block content %}
-    <section clas="index-main">
+    <section class="index-main">
         <!-- Background image container -->
         <div class="hero-container">
             <!-- Hero text container -->
             <div class="hero-text">
                 <h2>A Space to Plan Your Next Big Trip</h2>
-                <!-- Only display uttons to sign up or sign in if user not logged in -->
+                <!-- Only display buttons to sign up or sign in if user not logged in -->
                 {% if session['logged_in'] %}
                 {% else %}
                     <a href="{{ url_for('auth.register') }}" class="waves-effect waves-light btn-large btn-custom-light" aria-label="Join">Join</a>
