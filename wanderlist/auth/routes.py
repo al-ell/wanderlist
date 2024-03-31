@@ -73,6 +73,7 @@ def login():
                 exisiting_user[0].password,
                     request.form.get("password")):
                 session["user"] = request.form.get("username").lower()
+                session['logged_in'] = True
                 return redirect(url_for("auth.profile",
                                 username=session["user"]))
 
@@ -99,4 +100,5 @@ def logout():
     flash("You are logged out!")
     # logs user out
     session.pop("user")
+    session['logged_out'] = True
     return redirect(url_for("home"))
