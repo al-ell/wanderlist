@@ -23,13 +23,13 @@
         <!-- Navigation -->
         <nav class="main-nav lime lighten-2 z-depth-0">
           <ul class="hide-on-med-and-down nav-links teal-text text-darken-4">
-            <li><a href="{{ url_for('home') }}">Home</a></li>
+            <li><a href="{{ url_for('home') }}" class="{{ 'nav__link--active' if request.path == url_for('home') }}">Home</a></li>
             <!-- Prevent user from accessing pages they must be logged in to use -->
             {% if session.user %}
-              <li><a href="{{ url_for('trips') }}">Trips</a></li>
-              <li><a href="{{ url_for('journal') }}">Journal</a></li>
-              <li><a href="{{ url_for('auth.profile') }}">Profile</a></li>
-              <li><a href="{{ url_for('auth.logout') }}">Logout</a></li>
+              <li><a href="{{ url_for('trips') }}" class="{{ 'nav__link--active' if request.path == url_for('trips') }}">Trips</a></li>
+              <li><a href="{{ url_for('journal') }}" class="{{ 'nav__link--active' if request.path == url_for('journal') }}">Journal</a></li>
+              <li><a href="{{ url_for('auth.profile') }}" class="{{ 'nav__link--active' if request.path == url_for('auth.profile') }}">Profile</a></li>
+              <li><a href="{{ url_for('auth.logout') }}" class="{{ 'nav__link--active' if request.path == url_for('auth.logout') }}">Logout</a></li>
             {% endif %}
           </ul>
         </nav>
@@ -45,14 +45,13 @@
       <!-- Mobile navigation -->
       <div class="sidenav-container">
         <ul class="sidenav lime lighten-2 teal-text text-darken-4" id="mobile-demo">
-          <li><a href="{{ url_for('home') }}">Home</a></li>
-          <li><a href="{{ url_for('auth.login') }}">Login</a></li>
+          <li><a href="{{ url_for('home') }}" class="{{ 'nav__link--active' if request.path == url_for('home') }}">Home</a></li>
           <!-- Prevent user from accessing pages they must be logged in to use -->
           {% if session.user %}
-            <li><a href="{{ url_for('trips') }}">Trips</a></li>
-            <li><a href="{{ url_for('journal') }}">Journal</a></li>
-            <li><a href="{{ url_for('auth.profile') }}">Profile</a></li>
-            <li><a href="{{ url_for('auth.logout') }}">Log Out</a></li>
+            <li><a href="{{ url_for('trips') }}" class="{{ 'nav__link--active' if request.path == url_for('trips') }}">Trips</a></li>
+            <li><a href="{{ url_for('journal') }}" class="{{ 'nav__link--active' if request.path == url_for('journal') }}">Journal</a></li>
+            <li><a href="{{ url_for('auth.profile') }}" class="{{ 'nav__link--active' if request.path == url_for('auth.profile') }}">Profile</a></li>
+            <li><a href="{{ url_for('auth.logout') }}" class="{{ 'nav__link--active' if request.path == url_for('auth.logout') }}">Log Out</a></li>
           {% endif %}
         </ul>
       </div>
