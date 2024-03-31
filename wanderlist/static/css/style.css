@@ -1,10 +1,9 @@
-/* Margins */
+/* Special Margins and Padding */
 .container,
 * {
     margin: 0;
 }
 
-html,
 body {
     margin: 0;
     padding: 0;
@@ -17,7 +16,6 @@ header {
     top: 0;
     z-index: 500;
 }
-
 
 .main-section {
     margin-top: 10vh;
@@ -32,8 +30,6 @@ header {
     z-index: 500;
 }
 
-
-
 .page-content {
     height: fit-content;
 }
@@ -43,7 +39,6 @@ header {
     position: relative;
     margin-top: -4vh;
 }
-
 
 
 /* Colors and Fonts */
@@ -69,28 +64,8 @@ header {
     color: #004d40;
 }
 
-
 body {
     background-color: #e8eaf6;
-}
-
-.logo-container {
-    display: flex;
-    justify-content: center;
-    align-content: center;
-    padding-bottom: 2rem;
-    margin-top: 2rem;
-}
-
-
-.logo {
-    color: #004d40;
-    font-family: "Fredericka the Great", sans-serif;
-    text-transform: uppercase;
-    font-size: 5rem;
-    letter-spacing: 0.5rem;
-    text-align: center;
-    padding-bottom: 4rem;
 }
 
 .content-heading {
@@ -167,15 +142,18 @@ form {
     color: #004d40;
 }
 
-.confirmation-btns button {
-    color: #004d40;
-}
 
+/* Colors for datepicker elements */
 .datepicker-table td.is-selected,
 .datepicker-date-display {
     background-color: #004d40;
 }
 
+.confirmation-btns button {
+    color: #004d40;
+}
+
+/* Color for icon prefixes */
 .prefix,
 .input-field>label {
     color: #004d40;
@@ -183,15 +161,7 @@ form {
     height: fit-content;
 }
 
-.switch label input[type=checkbox]:checked+.lever {
-    background-color: #004d40;
-}
-
-.switch label input[type=checkbox]:checked+.lever:after {
-    background-color: #004d40;
-}
-
-
+/* Overrid Materialize presets */
 /* Get card-action buttons to sit at bottom of card:  */
 .card {
     overflow: hidden;
@@ -234,6 +204,8 @@ form {
     margin-top: auto;
 }
 
+/* Flash Message */
+
 .flash-msg {
     font-family: "Quattrocento", sans-serif;
     font-size: 3rem;
@@ -241,6 +213,26 @@ form {
     color: #004d40;
     margin-top: 8vh;
     padding: 0.5rem;
+}
+
+/* Logo */
+
+.logo-container {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    padding-bottom: 2rem;
+    margin-top: 2rem;
+}
+
+.logo {
+    color: #004d40;
+    font-family: "Fredericka the Great", sans-serif;
+    text-transform: uppercase;
+    font-size: 5rem;
+    letter-spacing: 0.5rem;
+    text-align: center;
+    padding-bottom: 4rem;
 }
 
 /* Nav */
@@ -283,22 +275,45 @@ nav ul li a {
     font-size: 1.5rem;
 }
 
+/* To indicate acive page */
 .nav__link--active,
 nav ul li a:hover {
     color:#e8eaf6;
     background-color: #cddc39;
 }
 
-
 /* Index */
 
 /* hero image */
-
 .index-main {
     overflow: hidden;
 }
 
-  /* Place text in the middle of the image */
+.hero-container {
+    margin: 0;
+    padding: 0;
+    top: 0;
+    background-size: cover;
+    position: relative;
+    width: auto;
+    display: contents;
+}
+
+/* Use of ::before so hero text is not translucent */
+.hero-container::before {
+    content: "";
+    background: url("/static/images/hero4.webp") no-repeat center top;
+    background-size: cover;
+    position: absolute;
+    height: 100%;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    opacity: 0.4;
+}
+
+/* Place text in the middle of the image */
 .hero-text {
     font-family: "Fredericka the Great", sans-serif;
     font-size: 8rem;
@@ -307,9 +322,12 @@ nav ul li a:hover {
     color: #004d40;
     opacity: 1;
     top: 30vh;
+    /* ensure text sits above image */
     z-index: 450;
 }
 
+
+/* Custom buttons  */
 .btn-custom-dark {
     color: #dce775;
     background-color: #004d40;
@@ -349,43 +367,6 @@ nav ul li a:hover {
     font-size: 1.5rem;
     border-radius: 10px;
 }
-
-
-.hero-container {
-    margin: 0;
-    padding: 0;
-    top: 0;
-    background-size: cover;
-    position: relative;
-    width: auto;
-    display: contents;
-}
-
-.hero-container::before {
-    content: "";
-    background: url("/static/images/hero4.webp") no-repeat center top;
-    background-size: cover;
-    position: absolute;
-    height: 100%;
-    top: 0px;
-    right: 0px;
-    bottom: 0px;
-    left: 0px;
-    opacity: 0.4;
-}
-
-
-/* Destinations /Search */
-
-.search-bar,
-.search-bar form {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-
-/* Trips Page */
 
 
 /* Journal Page */
@@ -434,9 +415,7 @@ nav ul li a:hover {
     justify-content: space-around;
 }
 
-
 /* Footer */
-
 
 footer {
     height: 10vh;
@@ -508,46 +487,24 @@ footer {
 
 /* Mobile */
 @media screen and (max-width:768px) {
-
+    /* Custom buttons */
     .btn-custom-dark,
     .btn-custom-light,
     btn.btn-custom {
         transform: scale(0.8);
     }
+    .btn-lrg a {
+        transform: scale(0.7);
+    }
 
+    /* Form containers */
     .form-container {
         padding: 15px 0 10px 10px;
         justify-content: center;
         position: relative;
     }
 
-    .logo {
-        font-size: 2.5rem;
-    }
-
-    .logo-container h1 {
-        margin-top: 0;
-    }
-    
-    h4 {
-        font-size: 4rem;
-    }
-    
-    .page-heading h3 {
-        font-size: 1em;
-    }
-
-    .journal_entry_details {
-        font-size: 1rem;
-    }
-    
-    .journal_entry_details h4 {
-        font-size: 1.5rem;
-
-    }
-    
-    /* Nav */
-
+    /* Nav and Logo */
     .nav-container {
         height: 20vh;
     }
@@ -566,7 +523,7 @@ footer {
     }
 
     .sidenav,
-    nav ul li a {
+    .sidenav ul li a {
         top: 0;
         color: #004d40;
         background-color: #dce775;
@@ -581,7 +538,39 @@ footer {
         
     }
 
-    /* Place text in the middle of the image */
+    .logo-container {
+        text-align: center;
+    }
+
+    .logo {
+        font-size: 2.5rem;
+    }
+
+    .logo-container h1 {
+        margin-top: 0;
+    }
+    
+    /* Headings */
+    h4 {
+        font-size: 4rem;
+    }
+    
+    .page-heading h3 {
+        font-size: 1em;
+    }
+
+    /* Journal Page */
+    .journal_entry_details {
+        font-size: 1rem;
+    }
+    
+    .journal_entry_details h4 {
+        font-size: 1.5rem;
+
+    }
+
+    /* Index */
+    /* make hero text smaller */
     .hero-text {
         font-size: 1rem;
         transform: scale(0.8);
@@ -593,6 +582,7 @@ footer {
         width: auto;
     }
 
+    /* Display different he image on smaller screen sizes */
     .hero-container::before {
         content: "";
         background: url("/static/images/hero2mobile.webp") no-repeat center top;
@@ -604,15 +594,12 @@ footer {
         left: 0px;
         opacity: 0.4;
     }
-
-    .btn-lrg a {
-        transform: scale(0.7);
-    }
     
     .social-container li a {
         transform: scale(0.9);
     }
 
+    /* Footer */
     footer {
         height: 8vh;
     }
@@ -621,14 +608,11 @@ footer {
         bottom: 0;
         padding-bottom: 2vh;
     }
-
-    .logo-container {
-        text-align: center;
-    }
 }
 
 /* Tablet and larger */
 @media screen and (min-width: 768px) {
+    /* Nav and Logo */
     nav ul {
         justify-content: center;
         align-items: center;
@@ -643,12 +627,13 @@ footer {
         height: 20vh;
     }
 
-    .document-form {
-        width: -webkit-fill-available;
-    }
-
     .logo {
         padding: 3rem;
+    }
+
+    /* Form adjustments */
+    .document-form {
+        width: -webkit-fill-available;
     }
 
     .trip-card {
@@ -656,18 +641,15 @@ footer {
     }
 }
 
+/* Laptop and Larger */
 @media screen and (min-width: 1024px) {
+    /* Hide mobile side menu */
     .burger-container {
         display: none;
     }
-    
-}
 
-/* Laptop and larger */
-@media screen and (min-width: 1024px) {
-    
+    /* Nav */
     .nav-container {
         height: 25vh;
     }
-
 }
