@@ -22,9 +22,9 @@ def home():
 def trips():
     # filter through db entries to display current information
     trips = list(Itineraries.query.order_by(Itineraries.trip_name).all())
-    journal = list(Journal.query.order_by(Journal.id).all())
+    journals = list(Journal.query.order_by(Journal.id).all())
     #  Render trips template
-    return render_template("trips.html", trips=trips, journals=journal)
+    return render_template("trips.html", trips=trips, journals=journals)
 
 
 # Route for add trip form

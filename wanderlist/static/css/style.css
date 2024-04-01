@@ -76,6 +76,10 @@ body {
     font-size: 2.5rem;
 }
 
+.content-heading p {
+    font-size: 2rem;
+}
+
 .page-heading h2 {
     font-size: 3rem;
 }
@@ -103,6 +107,7 @@ body {
     font-size: 2rem;
 }
 
+
 .login-link,
 .register-link,
 .card-content a {
@@ -112,10 +117,11 @@ body {
     color:#004d40;
 }
 
-
+.content-heading p,
 .page-heading h3 {
     font-family: "Quattrocento", sans-serif;
     font-size: 1.5em;
+    color: #004d40;
 }
 
 .btn-custom-light,
@@ -318,10 +324,12 @@ nav ul li a:hover {
     font-family: "Fredericka the Great", sans-serif;
     font-size: 8rem;
     text-align: center;
-    position: relative;
+    position: absolute;
     color: #004d40;
     opacity: 1;
-    top: 30vh;
+    top: 10vh;
+    left: 50%;
+    transform: translate(-50%, 50%);
     /* ensure text sits above image */
     z-index: 450;
 }
