@@ -211,8 +211,8 @@ form {
 }
 
 .card.large {
-    min-height: 30vh;
-    max-height: 50vh;
+    min-height: 110vh;
+    max-height: 150vh;
 }
 
 .large .card-content {
@@ -274,7 +274,7 @@ form {
     background-size: cover;
     position: absolute;
     width: 100%;
-    height: 15vh;
+    height: 32vh;
     opacity: 0.4;
     text-align: left;
 }
@@ -424,13 +424,14 @@ nav ul li a:hover {
 .btn-custom,
 .btn-custom-light,
 .btn-custom-dark {
-    font-size: 1rem;
+    font-size: 1.3rem;
+    font-style: bold;
     border-radius: 10px;
     width: fit-content;
     height: fit-content;
     padding: 0.5rem;
     margin: 0.5rem;
-    margin-top: 2rem;
+    margin-top: 0;
     min-width: 10rem;
 }
 
@@ -732,6 +733,6 @@ footer {
 
     /* Nav */
     .nav-container {
-        height: 25vh;
+        height: 30vh;
     }
 }
