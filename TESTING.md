@@ -75,6 +75,7 @@ Visit the deployed site: []()
 ### Lighthouse
 
 
+
 ### Desktop Results
 
 
@@ -83,6 +84,8 @@ Visit the deployed site: []()
 - - -
 
 ### WAVE Testing
+
+Wave testing completed on all pages. No contrast errors, aria labels present on all features.
 
 ![Wave font to background result](/documentation/testing/waveResults.png)
 

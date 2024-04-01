@@ -19,7 +19,7 @@
                         <div class="card trip-card lime lighten-2">
                             <div class="content-heading">
                                 <h3>{{ trip.trip_name }}</h3>
-                                <p>{{ trip.country_name }}</p>
+                                <h4>{{ trip.country_name }}</h4>
                             </div>
                             <div class="card-content">
                                 <ul>
@@ -36,7 +36,7 @@
                                 <a href="{{ url_for('edit_trip', trip_id=trip.id) }}" class="btn-large btn-custom-dark" aria-label="Edit">Edit</a>
                                 
                                 <!-- Delete modal Trigger -->
-                                <a href="{{ url_for('delete_trip', trip_id=trip.id) }}" data-target="modal1" class="btn-large btn-custom delete-btn modal-trigger">Delete</a>
+                                <a href="{{ url_for('delete_trip', trip_id=trip.id) }}" data-target="modal1" class="btn-large btn-custom delete-btn modal-trigger" aria-label="Delete">Delete</a>
                             </div>
                         </div>
                         </div>
