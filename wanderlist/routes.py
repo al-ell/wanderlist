@@ -124,7 +124,7 @@ def journal():
     journal = list(Journal.query.order_by(Journal.id).all())
     trips = list(Itineraries.query.order_by(Itineraries.trip_name).all())
     #  Render template for journal page
-    return render_template("journal.html", journals=journal, trip=trips)
+    return render_template("journal.html", journals=journal, trips=trips)
 
 
 # Route to add document to db
@@ -174,7 +174,7 @@ def edit_document(journal_id):
     # Query db to retrieve journal and trips data,
     # Return 404 error if query can't be completed
     journal = Journal.query.get_or_404(journal_id)
-    trip = list(Itineraries.query.order_by(Itineraries.trip_name).all())
+    trips = list(Itineraries.query.order_by(Itineraries.trip_name).all())
     # Check if user created the journal entry before allowing edit
     if "user" not in session or session["user"] != journal.created_by:
         # User feedback: cannot edit another users journal entries
@@ -206,7 +206,7 @@ def edit_document(journal_id):
         # Return user to journals page
         return redirect(url_for("journal"))
     # Render template for edit document
-    return render_template("edit_document.html", journal=journal, trip=trip)
+    return render_template("edit_document.html", journal=journal, trips=trips)
 
 
 # Route for delete document
