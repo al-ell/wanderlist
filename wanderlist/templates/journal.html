@@ -31,7 +31,7 @@
                                 </div>
                                 <!-- Collapsible with journal entry details -->
                                 <div class="collapsible-body journal-entry-details left-align">
-                                    {% for trips in trip %}
+                                    {% for trip in trips %}
                                         {% if trip.id == journal.itinerary_id %}
                                             <h4>Trip: {{ trip.trip_name }}</h4>
                                         {% endif %}

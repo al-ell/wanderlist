@@ -190,13 +190,14 @@ Visit the deployed site: []()
 
 | Bug | How I solved the issue | Image |
 | :--- | :--- | :--- |
-| Initially installed SQLAlchemy 3, Models would not function correctly or write to database. | Tutor assistance, deleted all installed packages and updated requirements.txt to re-install packages. |
-| Unable to iterate through journal entries | Altered variable name in routes.py |[DataTarget](/documentation/bugs/updataDataTarget.png)
-| User able to enter form with blank spaces or invalid characters | Use of "pattern" and "required" HTML attributes |
-| Card buttons at different places in the card | [Stack overflow](https://community.esri.com/t5/arcgis-hub-questions/dynamically-positioning-a-card-button-based-on-the/m-p/1268762#M5611) use of flexbox, flex direction and space between to fix card-action to bottom of card. |
+| Initially installed SQLAlchemy 3, Models would not function correctly or write to database. | Tutor assistance, deleted all installed packages and updated requirements.txt to re-install packages. | |
+| Unable to iterate through journal entries | Altered variable name in routes.py |[DataTarget](/documentation/bugs/updataDataTarget.png) | |
+| User able to enter form with blank spaces or invalid characters | Use of "pattern" and "required" HTML attributes | |
+| Card buttons at different places in the card | [Stack overflow](https://community.esri.com/t5/arcgis-hub-questions/dynamically-positioning-a-card-button-based-on-the/m-p/1268762#M5611) use of flexbox, flex direction and space between to fix card-action to bottom of card. | |
 | Navbar links overlapping with logo | removed margintop: 4vh | ![Misaligned Nav](/documentation/bugs/misalignedNav.png) |
 | Mobile nav displaying under Materliaize modal | added z-index to sidenav and modal elements to set layered position | ![Nav](/documentation/bugs/navUnderModal.png) |
 | User's name wasn't displaying on profile page | Jinja templating data target changed | |
+| Trip for loop wasn't displaying trip details | Changed variable names to match both jinja templating and python file | |
 
 - - -
 

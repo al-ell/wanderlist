@@ -141,6 +141,13 @@ form {
     font-family: "Quattrocento", sans-serif;
 }
 
+.profile-section p,
+.dropdown-content li>a, .dropdown-content li>span {
+    color: #004d40;
+    font-family: "Quattrocento", sans-serif;
+    font-size: 2rem;
+}
+
 .journal-entry-details h4 {
     font-size: 3rem;
     font-family: "Caveat Brush", sans-serif;
@@ -332,6 +339,12 @@ nav ul li a:hover {
     transform: translate(-50%, 50%);
     /* ensure text sits above image */
     z-index: 450;
+}
+
+/* Profile */
+
+.profile-section {
+    padding: 10vh;
 }
 
 
