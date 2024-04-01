@@ -53,9 +53,9 @@
                             <p>Are you sure?</p>
                         </div>
                         <!-- Delete and cancel buttons -->
-                        <div class="modal-footer">
+                        <div class="modal-footer lime lighten-2">
                             <a href="{{ url_for('delete_document', journal_id=journal.id) }}" class="btn btn-custom delete-btn" aria-label="Delete">Delete</a>
-                            <a href="{{url_for('journal')}}" class="modal-close btn btn-custom-light" aria-label="Cancel">Cancel</a>
+                            <a href="{{url_for('journal')}}" class="modal-close btn btn-custom-dark" aria-label="Cancel">Cancel</a>
                         </div>
                     </div>
                 {% endfor %}

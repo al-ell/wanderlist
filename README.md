@@ -194,49 +194,39 @@ to design
 
 * Navbar. - The Navbar is displayed on all pages from the base.html template. Links to all pages are featured, the links vary depending on the user being logged in.
 
-  __User logged in Navbar__
-
-
-  __User not logged in Navbar__
-
-
-
 - - -
 
-### Home Page
+### User Logged Out Home Page
+![Home Page](/documentation/features/indexLogOut.png)
 
-![Home Page]()
+### User Logged In Home Page
+![Home Page](/documentation/features/index.png)
 
 ### Login Page
-
-![Log in Page]()
+![Log in Page](/documentation/features/login.png)
 
 ### Register Page
-
-![Register Page]()
+![Register Page](/documentation/features/register.png)
 
 ### Profile Page
-
-![Profile Page]()
+![Profile Page](/documentation/features/profile.png)
 
 ### Trips Page
-![Trips Page]()
+![Trips Page](/documentation/features/tripsFull.png)
 
 ### Add Trip Page
 
-![Add Trip Page]()
-
-###  Edit Trips Page
-![Edit Trips Page]()
+![Add Trip Page](/documentation/features/addTrip.png)
 
 ### Journal Page
-![Journal Page]()
+![Journal Page](/documentation/features/journal.png)
 
 ### Document Page
-![Document Page]()
+![Document Page](/documentation/features/addJournalEntry.png)
 
-###  Edit Document Page
-![Edit Document Page]()
+### Delete Modal
+
+![Delete Modal](/documentation/features/deleteModal.png)
 
 ### Error Page
 
