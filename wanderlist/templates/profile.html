@@ -1,23 +1,29 @@
 {% extends "base.html" %}
 {% block content %}
     <section class="main-section">
-        <div class="row page-heading">
-            <div class="col s8 offset-s2">
-            {% for users in user %}
-                <h2>Welcome {{ users.name.capitalize() }} !</h2> 
-            {% endfor %}
+        <div class="page-heading">
+            <div class="row">
+                <div class="col s12 m6 offset-m3 page-title">
+                    {% for users in user %}
+                        <h2>Welcome {{ users.name.capitalize() }} !</h2> 
+                    {% endfor %}
+                </div>
+                <!-- Add trip or journal entry -->
+                <div class="col s12  m6 offset-m6 center-align btn-lrg">
+                    <a href="{{ url_for('document') }}" class="waves-effect waves-light btn-large btn-custom-dark" type="button" aria-label="Add journal entry">Add Journal Entry</a>
+                    <a href="{{ url_for('add_trip') }}" class="waves-effect waves-light btn-large btn-custom-light" type="button" aria-label="Add a trip">Add a Trip</a>
+                </div>
             </div>
         </div>
-        <div class="row center-align">
-            <!-- Add trip or journal entry -->
-            <div class="col s8 offset-s2">
-                <a href="{{ url_for('document') }}" class="waves-effect waves-light btn-large btn-custom-dark" type="button" aria-label="Add journal entry">Add Journal Entry</a>
-                <a href="{{ url_for('add_trip') }}" class="waves-effect waves-light btn-large btn-custom-light" type="button" aria-label="Add a trip">Add a Trip</a>
+        <div class="halign-wrapper">
+            <div class="row center-align">
+                <div class="row profile-section">
+                    <!-- Profile section -->
+                    <div class="col s12 center-align">
+                        <p>Check back soon to make a profile section!</p>
+                    </div>
+                </div>
             </div>
-        </div>
-        <!-- Profile section -->
-        <div class="profile-section">
-            <p>Check back soon to make a profile section!</p>
         </div>
     </section>
 {% endblock %}
