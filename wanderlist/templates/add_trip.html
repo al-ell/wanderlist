@@ -15,7 +15,7 @@
                                 <div class="col s12 input-field">
                                     <i class="fas fa-pen prefix"></i>
                                     <input id="trip_name" name="trip_name" minlength="3" maxlength="30" type="text" 
-                                        pattern="^[a-zA-Z0-9 -_.'! ]{5,30}$" title="Five to 30 characters as a 
+                                        pattern="([^\s][A-z0-9À-ž\s]+){5,30}" title="Five to 30 characters as a 
                                             mixture of uppercase and lower case letters numbers, special characters and spaces" 
                                         class="validate" required>
                                     <label for="trip_name">Name it:</label>
@@ -25,7 +25,7 @@
                                 <div class="col s12 input-field">
                                     <i class="fas fa-earth prefix"></i>
                                     <input id="country_name" name="country_name" minlength="3" maxlength="25"  
-                                        pattern="^[A-Za-z -]" title="A mixture of uppercase and lower case letters, 
+                                        pattern="([^\s][A-z0-9À-ž\s]+)" title="A mixture of uppercase and lower case letters, 
                                         spaces and hiphens" type="text" class="validate" required>
                                     <label for="country_name">Where:</label>
                                 </div>
