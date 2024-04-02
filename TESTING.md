@@ -201,6 +201,8 @@ Wave testing completed on all pages. No contrast errors, aria labels present on 
 | Mobile nav displaying under Materliaize modal | added z-index to sidenav and modal elements to set layered position | ![Nav](/documentation/bugs/navUnderModal.png) |
 | User's name wasn't displaying on profile page | Jinja templating data target changed | |
 | Trip for loop wasn't displaying trip details | Changed variable names to match both jinja templating and python file | |
+| User not allowed to update task or journal entries without changing the name | Removed if statement to check if it is the same as previous entries | |
+
 
 - - -
 

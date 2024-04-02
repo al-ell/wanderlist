@@ -85,17 +85,7 @@ def edit_trip(trip_id):
     if "user" not in session or session["user"] != trip.created_by:
         flash("You can only edit your own trips!")
         return redirect(url_for("trips"))
-    # Check if trip name already taken,
-    # prevents allowing edit to be the same as another
-    trip_name = Itineraries.query.filter(
-            Itineraries.trip_name == request.form.get("trip_name")).all()
-    if trip_name:
-        flash(
-            # User feedback: trip name already exists in db
-            "This Trip name is already taken. Please choose again.")
-        #  Reload add trip page
-        return redirect(url_for("add_trip"))
-    #  If trip name is not taken add trip details to database.
+    # If the user created the trip allow the edit
     if request.method == "POST":
         trip.trip_name = request.form.get("trip_name")
         trip.country_name = request.form.get("country_name")
@@ -200,17 +190,7 @@ def edit_document(journal_id):
         flash("You can only edit your own journal enteries!")
         # Return user to journals page
         return redirect(url_for("journal"))
-    # Check if journal name already taken,
-    # prevents allowing edit to be the same as another
-    journal_name = Journal.query.filter(
-            Journal.trip_name == request.form.get("trip_name")).all()
-    if journal_name:
-        flash(
-            # User feedback: journal entry name already exists
-            "This Journal Entry name is already taken. Please choose again.")
-        # Refresh edit document page
-        return redirect(url_for("edit_document"))
-    #  If trip name is not taken add trip details to database
+    #  If trip belongs to user update trip details to database
     if request.method == "POST":
         journal.trip_name = request.form.get("trip_name")
         journal.description = request.form.get("description")
