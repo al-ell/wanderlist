@@ -2,6 +2,13 @@ import os
 from flask import (
     Flask, flash, render_template,
     request, redirect, url_for, session)
+from flask_login import (
+    UserMixin,
+    login_user,
+    LoginManager,
+    login_required,
+    logout_user,
+    current_user)
 from wanderlist import app, db
 from wanderlist.auth import routes
 from wanderlist.models import Itineraries, Journal, User
@@ -19,6 +26,7 @@ def home():
 
 #  Route for trips page
 @app.route("/trips")
+@login_required
 def trips():
     # filter through db entries to display current information
     trips = list(Itineraries.query.order_by(Itineraries.trip_name).all())
@@ -29,6 +37,7 @@ def trips():
 
 # Route for add trip form
 @app.route("/add_trip", methods=["GET", "POST"])
+@login_required
 def add_trip():
     # Check if a user is logged in before allowing them to add a trip.
     if "user" not in session:
@@ -64,6 +73,7 @@ def add_trip():
 
 # Route for edit trip
 @app.route("/edit_trip/<int:trip_id>", methods=["GET", "POST"])
+@login_required
 def edit_trip(trip_id):
     # Filter through trips to pre-populate on form load,
     # Return 404 error if query can't be completed
@@ -98,6 +108,7 @@ def edit_trip(trip_id):
 
 # Route to delete trip
 @app.route("/delete_trip/<int:trip_id>")
+@login_required
 def delete_trip(trip_id):
     # Use trip id to query db
     # Return 404 error if query can't be completed
@@ -119,6 +130,7 @@ def delete_trip(trip_id):
 
 # Route for Journal
 @app.route("/journal")
+@login_required
 def journal():
     # Query db to retrieve journal and trips data
     journal = list(Journal.query.order_by(Journal.id).all())
@@ -129,6 +141,7 @@ def journal():
 
 # Route to add document to db
 @app.route("/document", methods=["GET", "POST"])
+@login_required
 def document():
     # Query db to retrieve trips data for selection in form
     trips = list(Itineraries.query.order_by(Itineraries.trip_name).all())
@@ -170,6 +183,7 @@ def document():
 
 # Route for edit document
 @app.route("/edit_document/<int:journal_id>", methods=["GET", "POST"])
+@login_required
 def edit_document(journal_id):
     # Query db to retrieve journal and trips data,
     # Return 404 error if query can't be completed
@@ -211,6 +225,7 @@ def edit_document(journal_id):
 
 # Route for delete document
 @app.route("/delete_document/<int:journal_id>")
+@login_required
 def delete_document(journal_id):
     # Query db to retrieve journal and trips data,
     # Return 404 error if query can't be completed

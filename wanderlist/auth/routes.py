@@ -99,6 +99,7 @@ def login():
 
 # Route for profile
 @auth.route("/profile")
+@login_required
 def profile():
     # Filter through users in db to display registered name
     user = list(User.query.order_by(User.id).all())
@@ -108,6 +109,7 @@ def profile():
 
 # Route ot logout
 @auth.route("/logout")
+@login_required
 def logout():
     #  User feedback: user logged out
     flash("You are logged out!")
