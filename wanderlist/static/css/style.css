@@ -38,10 +38,6 @@ form {
     height: fit-content;
 }
 
-.collapsible-container,
-.card-container {
-    margin-top: 18vh;
-}
 
 .card-login {
     margin-top: 3vh;
@@ -386,8 +382,6 @@ nav ul li a:hover {
     position: absolute;
     color: #004d40;
     opacity: 1;
-    top: 10vh;
-    left: 50%;
     transform: translate(-50%, 50%);
     /* ensure text sits above image */
     z-index: 450;
@@ -657,6 +651,7 @@ footer {
     .hero-text {
         font-size: 1rem;
         transform: scale(0.8);
+        top: 10vh;
     }
 
     .hero-container {
@@ -734,5 +729,15 @@ footer {
     /* Nav */
     .nav-container {
         height: 30vh;
+    }
+
+    /* make space for banner */
+    .collapsible-container,
+    .card-container {
+        margin-top: 18vh;
+    }
+
+    .hero-text {
+        left: 50%;
     }
 }

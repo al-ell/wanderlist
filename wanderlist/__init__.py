@@ -18,8 +18,10 @@ if os.path.exists("env.py"):
 # Create app
 app = Flask(__name__)
 app.config["SECRET_KEY"] = os.environ.get("SECRET_KEY")
-if os.environ.get("DEVELOPMENT") == True:
-    app.config["SQLALCHEMY_DATABASE_URI"] = os.environ.get("DATABASE_URL") # local
+print(os.environ.get("DEVELOPMENT"))
+print(os.environ.get("DB_URL"))
+if os.environ.get("DEVELOPMENT") == "True":
+    app.config["SQLALCHEMY_DATABASE_URI"] = os.environ.get("DB_URL") # local
 else:
     uri = os.environ.get("DATABASE_URL")
     if uri.startswith("postgres://"):
@@ -28,11 +30,6 @@ else:
 
 
 db = SQLAlchemy(app)
-
-
-login_manager = LoginManager()
-login_manager.init_app(app)
-login_manager.login_view = "login"
 
 
 # Import db after loading frameworks to prevent load error

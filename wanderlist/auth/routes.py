@@ -43,7 +43,8 @@ def register():
     if request.method == "POST":
         #  Check if user already exists in db, filter through existing users
         user = User.query.filter(
-            User.username == request.form.get("username").lower()).all()
+            # User.username == request.form.get("username").lower()).all()
+            User.username == request.form.get("username").lower()).first()
         if user:
             flash(
                 # User feedback: username already
@@ -70,6 +71,7 @@ def register():
 # Route to login
 @auth.route("/login", methods=["GET", "POST"])
 def login():
+    # Filter through users in db to retrieve user info
     if request.method == "POST":
         # Check if user already exists in the database
         exisiting_user = User.query.filter(
@@ -84,7 +86,7 @@ def login():
                 session['logged_in'] = True
                 # Take user to profile after login
                 return redirect(url_for("auth.profile",
-                                username=session["user"]))
+                                        username=session["user"]))
             # If user doesn't exist or username and/or passowrd is incorrect:
             else:
                 # User feedback: invalid password, redirect to login page
@@ -99,18 +101,30 @@ def login():
 
 # Route for profile
 @auth.route("/profile")
-@login_required
 def profile():
     # Filter through users in db to display registered name
-    user = list(User.query.order_by(User.id).all())
+    users = list(User.query.order_by(User.name).all())
+    # Return 404 error if query can't be completed
+    session["user"]
+    # Check if a user is logged in before allowing them to add a trip.
+    if "user" not in session:
+        # User feedback: must be logged in
+        flash("You must be logged in to do that!")
+        #  Return user to login page
+        return redirect(url_for("auth.login"))
     #  Render profile page
-    return render_template("profile.html", user=user)
+    return render_template("profile.html", users=users)
 
 
 # Route ot logout
 @auth.route("/logout")
-@login_required
 def logout():
+    # Check if a user is logged in before allowing them to add a trip.
+    if "user" not in session:
+        # User feedback: must be logged in
+        flash("You must be logged in to do that!")
+        #  Return user to login page
+        return redirect(url_for("auth.login"))
     #  User feedback: user logged out
     flash("You are logged out!")
     # logs user out

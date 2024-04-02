@@ -4,9 +4,9 @@
         <div class="page-heading">
             <div class="row">
                 <div class="col s12 l6 offset-l3 page-title">
-                    {% for users in user %}
-                        {% if sesssion["user"] == users.id %}
-                            <h2>Welcome {{ users.name.capitalize() }} !</h2> 
+                    {% for user in users %}
+                        {% if user == session["user"] %}
+                            <h2>Welcome {{ user.name.capitalize() }} !</h2> 
                         {% endif %}
                     {% endfor %}
                 </div>
