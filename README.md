@@ -13,7 +13,6 @@ Link to deployed site: []()
 * [User Experience](#user-experience)
   * [Project Goals](#project-goals)
   * [User Stories](#user-stories)
-
 * [Design](#design)
   * [Colour Scheme](#colour-scheme)
   * [Typography](#typography)
@@ -34,7 +33,6 @@ Link to deployed site: []()
   * [Frameworks Used](#frameworks-used)
   * [Libraries & Packages Used](#libraries--packages-used)
   * [Programs Used](#programs-used)
-    * [API](api)
     * [Error Handling](#error-handling)
     * [Defensive Programming](#defensive-programming)
 
@@ -58,7 +56,9 @@ Link to deployed site: []()
 
 ### Project Goals
 
+To create a journal style website for people who want to keep a record of the places they have been to.
 
+- - -
 
 ### User Stories
 
@@ -149,10 +149,7 @@ Wireframes were created for mobile, tablet and desktop using Balsamiq.
 
 ![Itinerary/ Trip Page](/documentation/wireframes/Itinerary1.png)
 
-
-#### __Error Page__
-
-to design
+- - -
 
 ### Database Schema & User Journey
 
@@ -160,6 +157,8 @@ to design
 
 ![User Flow Chart](/documentation/design/websiteFlowChart.png)
 
+
+- - -
 
 #### __Database Plan__
 
@@ -197,37 +196,59 @@ to design
 - - -
 
 ### User Logged Out Home Page
+* Limited navbar
+* Login/Signup buttons displayed
+
 ![Home Page](/documentation/features/indexLogOut.png)
 
 ### User Logged In Home Page
+* Full navbar
+* Login/signup buttons hidden
 ![Home Page](/documentation/features/index.png)
-
+- - -
 ### Login Page
+* Form and buttons
+* Link to register page
 ![Log in Page](/documentation/features/login.png)
-
+- - -
 ### Register Page
+* Form and buttons
+* Link to login page
 ![Register Page](/documentation/features/register.png)
-
+- - -
 ### Profile Page
+* Greeting includes username
+* Buttons to add trip and journal
 ![Profile Page](/documentation/features/profile.png)
-
+- - -
 ### Trips Page
+* Cards displaying trip information and associated journal entries
+* Buttons to edit and add trips
+* Delete button trigers modal to confirm
 ![Trips Page](/documentation/features/tripsFull.png)
-
+- --
 ### Add Trip Page
-
+* Form to add details about the trip to the database
+* Trip name must be unique
 ![Add Trip Page](/documentation/features/addTrip.png)
-
+- - -
 ### Journal Page
+* Collapsibles containing journal entry information and associated trips
+* Buttons to edit and add journal entries
+* Delete button trigers modal to confirm
 ![Journal Page](/documentation/features/journal.png)
-
+- - -
 ### Document Page
+* Form to add journal entry to the database
+* Journal entry name must be unique
+* Choose an associated trip from the dropdown
+* Only be able to choose from a date in the past
 ![Document Page](/documentation/features/addJournalEntry.png)
-
+- - -
 ### Delete Modal
-
+* Pops up when a user hits delete on their entry or trip
 ![Delete Modal](/documentation/features/deleteModal.png)
-
+- - -
 ### Error Page
 
 ![Error Page]()
@@ -312,6 +333,7 @@ HTML, CSS, Javascript, Python
 ### Error Handling
 
 
+
 ### Defensive Programming
 
 
@@ -351,6 +373,8 @@ Create ElephantSQL Account:
   * Select Yes for GDPR
   * Provide your email address
   * Click “Create Team”
+
+#### Heroku
 
 Create Database:
 * Click “Create New Instance”
