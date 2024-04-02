@@ -36,6 +36,11 @@ db = SQLAlchemy(app)
 from wanderlist import routes  # noqa
 
 
-# Blueprintsn used to create seperate authenication route for user db
+# Blueprints used to create seperate authenication route for user db
 from wanderlist.auth.routes import auth
+# Blueprints used to create seperate error route
+from wanderlist.error_handlers.routes import error
+
+
 app.register_blueprint(auth)  # noqa
+app.register_blueprint(error) # noqa

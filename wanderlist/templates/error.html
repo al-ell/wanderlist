@@ -1,18 +1,21 @@
 {% extends "base.html" %}
+{% block title %} {{ error_number }} {% endblock %}
 {% block content %}
-    <section class="main-section">
+    <section class="error main-section">
         <div class="row page-heading">
             <div class="col s6 offset-s2">
-                <h2>ERROR</h2> 
-                <h2>error number here?</h2>
+                <h2>ERROR</h2>
+                <p><bold>OH NO!!</bold></p> 
             </div>
         </div>  
         <div class="error-main">
-            <div class="error-message">
-            <h3>OH NO!</h3>
-            <p>The page you're looking for isn't here</p>
+            <div class="error_body">
+                <h3>{{ error_message }}</h3>
+                <h4> {{ error_number }}</h4>
+             </div>
+            <div class="error-message">>
             <p>
-                Click <a href="{{url.for('home')}}">HERE</a> to return
+                Click <a href="{{ url.for('home') }}">HERE</a> to return
                 Home.
             </p>
         </div>
