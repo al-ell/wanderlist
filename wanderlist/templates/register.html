@@ -26,21 +26,21 @@
                                 <div class="row">
                                     <div class="input-field col s12">
                                         <input id="username" name="username" type="text" minlength="5" 
-                                            maxlength="14" title="Five to 14 characters as a mixture of lower case letters and numbers, no spaces" class="validate" required>
+                                            maxlength="14" pattern="^[a-z][a-zA-Z][a-zA-Z0-9]{1,14}$" title="Five to 14 characters as a mixture of lower case letters and numbers, no spaces" class="validate" required>
                                         <label for="username">Username</label>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="input-field col s12">
                                         <input id="name" name="name" type="text" minlength="5" 
-                                            maxlength="14" pattern="^[a-zA-Z -]{5,14}$" title="Five to 14 characters as a mixture of uppercase and lower case letters, including spaces and hiphens" class="validate" required>
+                                            maxlength="14" pattern="[a-zA-Z]{5,14}" title="Five to 14 characters as a mixture of uppercase and lower case letters, no spaces" class="validate" required>
                                         <label for="username">Name:</label>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="input-field col s12">
                                         <input id="password" name="password" type="password" minlength="8" 
-                                            maxlength="14" pattern="^[a-zA-Z0-9]{8,14}$" title="Eight to 14 characters as a mixture of uppercase and lower case letters, and numbers" class="validate" required>
+                                            maxlength="14" pattern="[a-zA-Z0-9]{8,14}" title="Eight to 14 characters as a mixture of uppercase letters, lower case letters and numbers, no spaces" class="validate" required>
                                         <label for="password">Password:</label>
                                     </div>
                                 </div>

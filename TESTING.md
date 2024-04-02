@@ -203,6 +203,8 @@ Wave testing completed on all pages. No contrast errors, aria labels present on 
 | Trip for loop wasn't displaying trip details | Changed variable names to match both jinja templating and python file | |
 | User not allowed to update task or journal entries without changing the name | Removed if statement to check if it is the same as previous entries | |
 | Login/signin buttons showing although user logged in | Jinja syntax changed | |
+| Pattern attribute preventing user from registering or logging in | Adjustment in pattern regex/syntax [Pattern explained](https://en.wikipedia.org/wiki/Regular_expression#Delimiters) | |
+
 
 - - -
 
@@ -210,4 +212,4 @@ Wave testing completed on all pages. No contrast errors, aria labels present on 
 
 | Bug | |
 | :--- | :--- |
-| Had to remove pattern attribute from login page inputs as it was not allowing registered user to login | |
+| | |
