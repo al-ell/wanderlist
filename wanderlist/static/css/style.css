@@ -124,7 +124,7 @@ body {
 .register-link,
 .card-content a {
     font-family: "Quattrocento", sans-serif;
-    font-size: 1rem;
+    font-size: 1.5rem;
     text-decoration: none;
     color:#004d40;
 }
@@ -143,6 +143,12 @@ body {
 .btn-custom,
 form {
     font-family: "Quattrocento", sans-serif;
+}
+
+.btn-custom-dark,
+.btn-custom-light,
+.btn-custom {
+    transform: scale(0.8);
 }
 
 .input-field input[type=text]:focus + label {
@@ -206,6 +212,10 @@ form {
     justify-content: space-between;
 }
 
+.card-action {
+    height:20vh;
+}
+
 .card.large {
     min-height: 40vh;
     max-height: 150vh;
@@ -237,7 +247,6 @@ form {
     font-family: "Quattrocento", sans-serif;
     font-size: 3rem;
     text-transform: uppercase;
-    text-align: center;
     color: #004d40;
     margin-top: 8vh;
     padding: 0.5rem;
@@ -560,11 +569,6 @@ footer {
 /* Mobile */
 @media screen and (max-width:768px) {
     /* Custom buttons */
-    .btn-custom-dark,
-    .btn-custom-light,
-    btn.btn-custom {
-        transform: scale(0.8);
-    }
     .btn-lrg a {
         transform: scale(0.7);
     }
@@ -715,8 +719,13 @@ footer {
         width: -webkit-fill-available;
     }
 
-    .trip-card {
-        height: 34vh;
+    .trip-card .card-content {
+        height: 25vh;
+        overflow: scroll;
+    }
+
+    .card-action {
+        height: 25vh;
     }
 }
 

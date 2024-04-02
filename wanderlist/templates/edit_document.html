@@ -14,7 +14,7 @@
                             <div class="row">
                                 <div class="input-field col s12">
                                     <i class="fas fa-pen prefix"></i>
-                                    <input id="trip_name" name="trip_name" minlength="3" maxlength="30" pattern="^[a-zA-Z0-9 -_.'!]{5,14}$"
+                                    <input id="trip_name" name="trip_name" minlength="3" maxlength="30" pattern="([^\s][A-z0-9À-ž\s]+){5,14}"
                                         title="Five to 14 characters as a mixture of uppercase and lower case letters numbers, 
                                         special characters and spaces" value="{{ journal.trip_name }}" type="text" class="validate" required>
                                     <label for="trip_name">Name it:</label>
@@ -33,7 +33,7 @@
                             <div class="row">
                                 <div class="input-field col s12 m6">
                                     <i class="fas fa-globe prefix"></i>
-                                    <input id="where" name="where" minlength="3" pattern="^[A-Za-z' '-]" 
+                                    <input id="where" name="where" minlength="3" pattern="([^\s][A-z0-9À-ž\s]+)" 
                                         title="A mixture of uppercase and lower case letters, spaces and hiphens"
                                         maxlength="25" value="{{ journal.where }}" type="text" class="validate" required>
                                     <label for="where">Where you went:</label>
@@ -47,7 +47,7 @@
                             <div class="row">
                                 <div class="input-field col s12 m6">
                                     <i class="fas fa-train prefix"></i>
-                                    <input id="how" name="how" value="{{ journal.how }}" pattern="^[a-zA-Z0-9 -_.'!]{5,20}$"
+                                    <input id="how" name="how" value="{{ journal.how }}" pattern="([^\s][A-z0-9À-ž\s]+){5,20}"
                                         title="Five to 20 characters as a mixture of uppercase and lower case letters numbers,
                                         special characters and spaces" minlength="3" maxlength="25" type="text" class="validate" required>
                                     <label for="how">How you travelled:</label>
