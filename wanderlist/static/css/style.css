@@ -188,7 +188,7 @@ form {
     height: fit-content;
 }
 
-/* Overrid Materialize presets */
+/* Override Materialize presets */
 /* Get card-action buttons to sit at bottom of card:  */
 .card {
     overflow: hidden;
@@ -207,7 +207,7 @@ form {
 }
 
 .card.large {
-    min-height: 110vh;
+    min-height: 40vh;
     max-height: 150vh;
 }
 
@@ -715,7 +715,7 @@ footer {
     }
 
     .trip-card {
-        height: 30vh;
+        height: 34vh;
     }
 }
 
@@ -728,7 +728,7 @@ footer {
 
     /* Nav */
     .nav-container {
-        height: 25vh;
+        height: 30vh;
     }
 
     /* make space for banner */
@@ -739,5 +739,11 @@ footer {
 
     .hero-text {
         left: 50%;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .page-heading::before {
+        height: 30vh;
     }
 }
