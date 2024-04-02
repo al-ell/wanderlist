@@ -243,8 +243,12 @@ to design
 
 ### Accessibility
 
-
-
+I used accessability features to make the website accessible for a variety of users. Features include:
+- Use of semantic HTML
+- Aria-labels on all buttons and links
+- All pages of a suitable contrast as advised by WebAIM
+- Descriptive alt attributes
+- providing aria labels for icons without text
 
 - - -
 
