@@ -129,9 +129,11 @@ body {
     color:#004d40;
 }
 
+.error-message h4,
 .trip-card h4,
 .content-heading p,
 .page-heading-blank h3,
+.page-heading h2,
 .page-heading h3 {
     font-family: "Quattrocento", sans-serif;
     font-size: 1.5em;
@@ -161,13 +163,14 @@ form {
     font-family: "Quattrocento", sans-serif;
 }
 
-.profile-section p,
 .dropdown-content li>a, .dropdown-content li>span {
     color: #004d40;
     font-family: "Quattrocento", sans-serif;
     font-size: 2rem;
 }
 
+.error-message h4,
+.page-heading-blank p,
 .journal-entry-details h4 {
     font-size: 3rem;
     font-family: "Caveat Brush", sans-serif;
@@ -397,12 +400,6 @@ nav ul li a:hover {
     z-index: 450;
 }
 
-/* Profile */
-
-.profile-section {
-    padding: 10vh;
-}
-
 
 /* Custom buttons  */
 .btn-custom-dark {
@@ -562,6 +559,9 @@ footer {
     -webkit-transition: all 0.35s ease-in-out;
     -o-transition: all 0.35s ease-in-out;
 }
+
+
+
 
 
 /* Media Queries */

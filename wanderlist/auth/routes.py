@@ -63,7 +63,7 @@ def register():
         # User feedback
         flash("Registration Successful!")
         # send user to login once profile is made
-        return redirect(url_for("auth.login"))
+        return redirect(url_for("home"))
     # Render register page
     return render_template("register.html")
 
@@ -84,8 +84,8 @@ def login():
                 session["user"] = request.form.get("username").lower()
                 # Variable to target to hide register/login from session user
                 session['logged_in'] = True
-                # Take user to profile after login
-                return redirect(url_for("auth.profile",
+                # Take user to trips page after login
+                return redirect(url_for("trips",
                                         username=session["user"]))
             # If user doesn't exist or username and/or passowrd is incorrect:
             else:
@@ -97,23 +97,6 @@ def login():
             flash("Wrong Username and/ or Password")
     # Render login page
     return render_template("login.html")
-
-
-# Route for profile
-@auth.route("/profile")
-def profile():
-    # Filter through users in db to display registered name
-    users = list(User.query.order_by(User.name).all())
-    # Return 404 error if query can't be completed
-    session["user"]
-    # Check if a user is logged in before allowing them to add a trip.
-    if "user" not in session:
-        # User feedback: must be logged in
-        flash("You must be logged in to do that!")
-        #  Return user to login page
-        return redirect(url_for("auth.login"))
-    #  Render profile page
-    return render_template("profile.html", users=users)
 
 
 # Route ot logout

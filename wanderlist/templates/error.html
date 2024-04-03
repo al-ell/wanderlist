@@ -8,17 +8,15 @@
                 <p><bold>OH NO!!</bold></p> 
             </div>
         </div>  
-        <div class="error-main">
+        <div class=" error-message error-main">
             <div class="error_body">
                 <h3>{{ error_message }}</h3>
                 <h4> {{ error_number }}</h4>
+                <p>
+                    Click <a href="{{ url.for('home') }}">HERE</a> to return
+                    Home.
+                </p>
              </div>
-            <div class="error-message">>
-            <p>
-                Click <a href="{{ url.for('home') }}">HERE</a> to return
-                Home.
-            </p>
-        </div>
         </div>
     </section>
 {% endblock %}
