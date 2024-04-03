@@ -117,11 +117,12 @@ body {
 
 .register-link h4 {
     font-size: 2rem;
+    text-decoration: none;
 }
 
 
 .login-link,
-.register-link,
+.register-link a,
 .card-content a {
     font-family: "Quattrocento", sans-serif;
     font-size: 1.5rem;
@@ -133,7 +134,6 @@ body {
 .trip-card h4,
 .content-heading p,
 .page-heading-blank h3,
-.page-heading h2,
 .page-heading h3 {
     font-family: "Quattrocento", sans-serif;
     font-size: 1.5em;
