@@ -1,11 +1,11 @@
 # WanderList
 
+![banner image]()
 
 
+Link to deployed site: [Wanderlist](https://wanderlist-journal-078e8da29bf3.herokuapp.com/)
 
-Link to deployed site: []()
-
-![GitHub last commit]()
+[GitHub last commit](https://github.com/al-ell/wanderlist)
 
 
 ## CONTENTS
@@ -21,12 +21,10 @@ Link to deployed site: []()
   * [Database Schema & User Journey](#database-schema--user-journey)
     * [User Journey](#user-journey)
     * [Database Plan](#database-plan)
-
 * [Features](#features)
   * [Elements Found on Each Page](#elements-found-on-each-page)
   * [Future Implementations](#future-implementations)
   * [Accessibility](#accessibility)
-
 * [Technologies Used](#technologies-used)
   * [Languages Used](#languages-used)
   * [Databases Used](#databases-used)

@@ -2,7 +2,7 @@
 
 
 
-Visit the deployed site: []()
+Visit the deployed site: [Wanderlist](https://wanderlist-journal-078e8da29bf3.herokuapp.com/)
 
 - - -
 
@@ -74,12 +74,30 @@ Visit the deployed site: []()
 
 ### Lighthouse
 
+### Home Page
+![homepage](/documentation/testing/homepage.png)
+
+### Login Page
+![login](/documentation/testing/login.png)
+
+### Trips Page
+![login](/documentation/testing/trips.png)
+
+### Add Trip Page
+![homepage](/documentation/testing/addTrip.png)
+
+### Edit Trip Page
+![login](/documentation/testing/editTrip.png)
+
+### Journal Page
+![homepage](/documentation/testing/journal.png)
 
 
-### Desktop Results
+### Add Document Page
+![add document](/documentation/testing/document.png)
 
-
-### Mobile Results
+### Edit Document Page
+![edit journal](/documentation/testing/edit_document.png)
 
 - - -
 
