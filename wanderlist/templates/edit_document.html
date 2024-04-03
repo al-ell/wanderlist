@@ -40,14 +40,15 @@
                                 </div>
                                 <div class="input-field col s12 m6">
                                     <i class="fa fa-calendar prefix"></i>
-                                    <input id="when" name="when" value="{{ journal.when.strftime('%d %B, %Y') }}" type="date" class="datepicker validate" required>
-                                    <label for="when">When you went:</label>
+                                    <input id="when" name="when" value="{{ journal.when.strftime('%d %b, %Y') }}" 
+                                    type="date" class="datepicker validate" required>
+                                    <label for="when" class="when-label">When you went:</label>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="input-field col s12 m6">
                                     <i class="fas fa-train prefix"></i>
-                                    <input id="how" name="how" value="{{ journal.how }}" pattern="([^\s][A-z0-9À-ž\s]+){5,20}"
+                                    <input id="how" name="how" value="{{ journal.how }}" pattern="([^\s]){3,25}"
                                         title="Five to 20 characters as a mixture of uppercase and lower case letters numbers,
                                         special characters and spaces" minlength="3" maxlength="25" type="text" class="validate" required>
                                     <label for="how">How you travelled:</label>
