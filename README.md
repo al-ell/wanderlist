@@ -1,6 +1,6 @@
 # WanderList
 
-![banner image]()
+![Am I Responsive?](/documentation/testing/amiresponsivelight.png)
 
 
 Link to deployed site: [Wanderlist](https://wanderlist-journal-078e8da29bf3.herokuapp.com/)

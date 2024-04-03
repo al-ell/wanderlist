@@ -1,6 +1,6 @@
 # Wanderlist -  Testing
 
-
+[Am I Responsive?](/documentation/testing/amiresponsivedark.png)
 
 Visit the deployed site: [Wanderlist](https://wanderlist-journal-078e8da29bf3.herokuapp.com/)
 
