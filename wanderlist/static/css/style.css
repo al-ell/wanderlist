@@ -306,7 +306,7 @@ form {
     font-size: 5rem;
     letter-spacing: 0.5rem;
     text-align: center;
-    padding-bottom: 4rem;
+    margin-bottom: 2rem;
 }
 
 /* Nav */
@@ -561,9 +561,6 @@ footer {
 }
 
 
-
-
-
 /* Media Queries */
 
 /* Mobile */
@@ -586,7 +583,7 @@ footer {
 
     /* Nav and Logo */
     .nav-container {
-        height: 20vh;
+        height: 25vh;
     }
 
     nav {
@@ -626,7 +623,7 @@ footer {
         font-size: 2.5rem;
     }
 
-    .logo-container h1 {
+    .logo-container {
         margin-top: 0;
     }
     
