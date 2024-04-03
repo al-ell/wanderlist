@@ -150,40 +150,35 @@ Wave testing completed on all pages. No contrast errors, aria labels present on 
 | `Add Trip Page`|
 | enter invalid valid details into form | user is informed data not valid, form won't submit | entering invalid details | HTML5 messages tell the user data is not valid | pass |
 | leave any details blank or only containt a space in the form | user is informed data is missing, form won't submit | attempting to enter the form with blank details | user is informed data is missing, form won't submit | pass |
-| enter an existing trip name into form | user is informed trip name is taken via flash message, form won't submit | entering an exisiting existing trip | user is informed trip name is taken via flash message, form won't submit |  |
+| enter an existing trip name into form | user is informed trip name is taken via flash message, form won't submit | entering an exisiting existing trip | user is informed trip name is taken via flash message, form won't submit | pass |
 | `Edit Trip Page` |
 | expect form to be pre-populated with correct data on page load | form is pre populated | clicking edit button on trips page | form is pre-populated | pass |
 | enter invalid valid details into form | user is informed data not valid, form won't submit | entering invalid details | HTML5 messages tell the user data is not valid | pass |
 | leave any details blank or only containt a space in the form | user is informed data is missing, form won't submit | attempting to enter the form with blank details | user is informed data is missing, form won't submit | pass |
-| enter an existing trip name into form | user is informed trip name is taken via flash message, form won't submit | entering an exisiting existing trip | user is informed trip name is taken via flash message, form won't submit |  |
+| enter an existing trip name into form | user is informed trip name is taken via flash message, form won't submit | entering an exisiting existing trip | user is informed trip name is taken via flash message, form won't submit | pass |
 | `Journal Page` |
 | Click on "add journal" button | taken to add journal page | clicking on button | taken to add journal page | pass |
 | Click on "edit journal" button | taken to add journal page | clicking on button | taken to add journal page | pass |
 | Click on "delete" button | delete modal pops up | clicking on delete button | delete modal pops up | pass |
-| Click on trip name link | taken to trips page | clicking on button | taken to trips page |  |
+| Click on trip name link | taken to trips page | clicking on button | taken to trips page | pass |
 | `Add Journal Page`|
 | enter invalid valid details into form | user is informed data not valid, form won't submit | entering invalid details | HTML5 messages tell the user data is not valid | pass |
 | leave any details blank or only containt a space in the form | user is informed data is missing, form won't submit | attempting to enter the form with blank details | user is informed data is missing, form won't submit | pass |
 | choose a trip using the dropdown menu | user sees  and can selsect existing trips that the journal entry can be added to | selecting an existing trip from the menu | user sees  and can selsect existing trips that the journal entry can be added to | pass |
-| user is unable to select a date in the future | future dates are inactive in the calendar pop up | attempting to select a date | future dates are inactive in the calendar pop up | |
-| enter an existing journal entry name into form | user is informed journal name is taken via flash message, form won't submit | entering an exisiting existing journal entry name | user is informed journal entry name is taken via flash message, form won't submit |  |
+| user is unable to select a date in the future | future dates are inactive in the calendar pop up | attempting to select a date | future dates are inactive in the calendar pop up | pass |
+| enter an existing journal entry name into form | user is informed journal name is taken via flash message, form won't submit | entering an exisiting existing journal entry name | user is informed journal entry name is taken via flash message, form won't submit | pass |
 | `Edit Journal Page`|
 | expect form to be pre-populated with correct data on page load | form is pre populated | clicking edit button on trips page | form is pre-populated | pass |
 | enter invalid valid details into form | user is informed data not valid, form won't submit | entering invalid details | HTML5 messages tell the user data is not valid | pass |
 | leave any details blank or only containt a space in the form | user is informed data is missing, form won't submit | attempting to enter the form with blank details | user is informed data is missing, form won't submit | pass |
 | choose a trip using the dropdown menu | user sees  and can selsect existing trips that the journal entry can be added to | selecting an existing trip from the menu | user sees  and can selsect existing trips that the journal entry can be added to | pass |
-| user is unable to select a date in the future | future dates are inactive in the calendar pop up | attempting to select a date | future dates are inactive in the calendar pop up | |
-| enter an existing journal entry name into form | user is informed journal name is taken via flash message, form won't submit | entering an exisiting existing journal entry name | user is informed journal entry name is taken via flash message, form won't submit |  |
+| user is unable to select a date in the future | future dates are inactive in the calendar pop up | attempting to select a date | future dates are inactive in the calendar pop up | pass |
+| enter an existing journal entry name into form | user is informed journal name is taken via flash message, form won't submit | entering an exisiting existing journal entry name | user is informed journal entry name is taken via flash message, form won't submit | pass |
 | `Delete Modal` |
 | click on the "cancel" button | taken back to trips or journal pages | clicking cancel | taken back to trips or journal pages | pass |
 |click on the "delete" button | entry is deleted, taken back to trips or journal pages | clicking delete | entry is deleted, taken back to trips or journal pages | pass |
-| `Profile Page` |
-| Click on "add journal" button | taken to add journal page | clicking on button | taken to add journal page | pass |
-| Click on "add trip" button | taken to add trip page | clicking on button | taken to add trip page | pass |
-| `Error Page` |
-|   |   |   |   |   |
 | `Accessability`  |
-| title or alt text for all non-text media | text appears/screenreader will read out                                            | hovering over media     | text appears/screenreader will read out | pass      |
+| title, alt text or aria features for all non-text media | text appears/screenreader will read out                                            | hovering over media     | text appears/screenreader will read out | pass      |
 
  - - -
 
@@ -212,4 +207,4 @@ Wave testing completed on all pages. No contrast errors, aria labels present on 
 
 | Bug | |
 | :--- | :--- |
-| | |
+| Date won't pre-fill on edit journal entry page  | Have reviewed entries on StackOverflow and reviewed the walkthrough project. |

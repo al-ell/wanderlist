@@ -248,10 +248,7 @@ Wireframes were created for mobile, tablet and desktop using Balsamiq.
 ### Delete Modal
 * Pops up when a user hits delete on their entry or trip
 ![Delete Modal](/documentation/features/deleteModal.png)
-- - -
-### Error Page
 
-![Error Page]()
 
 - - -
 
@@ -277,13 +274,15 @@ I used accessability features to make the website accessible for a variety of us
 
 ### Languages Used
 
-HTML, CSS, Javascript, Python
+HTML, CSS, JavaScript, Python
 
 - - -
 
 ### Databases Used
 
 [PostgreSQL](https://www.postgresql.org/) 
+
+[ElephantSQL](https://www.elephantsql.com/) - Database hosting for deployed site
 
 - - -
 
@@ -300,6 +299,8 @@ HTML, CSS, Javascript, Python
 [SQLAlchemy](https://pypi.org/project/SQLAlchemy/) - Database abstraction library, used to interact with PostgreSQL.
 
 [Flask Login](https://flask-login.readthedocs.io/en/latest/)
+
+[Flsk Blueprints](https://flask.palletsprojects.com/en/3.0.x/blueprints/)
 
 - - -
 
@@ -332,9 +333,16 @@ HTML, CSS, Javascript, Python
 
 ### Error Handling
 
-
+I have created an error page that shows information depending on the type of error. I based my code on an article I found [here](https://nrodrig1.medium.com/flask-blueprints-error-handling-and-config-file-example-d1a031070763) which uses Flask Blueprints, which I already had in use for user authentication.
 
 ### Defensive Programming
+
+I have added defensive programming in a number of ways:
+* Only a user that created a journal entry or trip can edit or delete it
+* Users must be signed in to create a journal entry or trip
+* Users must be logged in to access the full navbar
+* Check if a user is in session and if the user is the same user that created the initial data
+* Flash messages provide feedback to the user when they attempt something that is not allowed
 
 
 ## Deployment & Local Development
@@ -491,6 +499,6 @@ To initiate user login with Flask libraries
 
 ### Content
 
-- Homepage image created using [Bing AI Image genetator](https://www.bing.com/images/create?FORM=GENILP)
+- Homepage and banner images created using [Bing AI Image genetator](https://www.bing.com/images/create?FORM=GENILP)
 
 - - -
