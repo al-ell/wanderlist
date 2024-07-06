@@ -11,8 +11,7 @@ from flask_login import (
     current_user)
 from wanderlist import app, db
 from wanderlist.auth import routes
-from wanderlist.models import Itineraries, Journal, User
-import json
+from wanderlist.models import Itineraries, Journal
 
 
 #  Route for homepage

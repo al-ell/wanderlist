@@ -18,7 +18,6 @@ from flask_login import (
     current_user)
 from wanderlist import app, db, routes
 from wanderlist.models import User, Journal, Itineraries
-import json
 
 
 # Blueprint created to allow seperate route for authentication.
@@ -100,6 +99,7 @@ def login():
 
 
 # Route ot logout
+@login_required
 @auth.route("/logout")
 def logout():
     # Check if a user is logged in before allowing them to add a trip.
