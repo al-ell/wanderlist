@@ -1,6 +1,6 @@
 # Wanderlist -  Testing
 
-[Am I Responsive?](/documentation/testing/amiresponsivedark.png)
+![Am I Responsive?](/documentation/testing/amiresponsivedark.png)
 
 Visit the deployed site: [Wanderlist](https://wanderlist-journal-078e8da29bf3.herokuapp.com/)
 
@@ -97,7 +97,7 @@ Visit the deployed site: [Wanderlist](https://wanderlist-journal-078e8da29bf3.he
 ![add document](/documentation/testing/document.png)
 
 ### Edit Document Page
-![edit journal](/documentation/testing/edit_document.png)
+![edit journal](/documentation/testing/editDocument.png)
 
 - - -
 
@@ -110,6 +110,38 @@ Wave testing completed on all pages. No contrast errors, aria labels present on 
 - - -
 
 ## MANUAL TESTING
+
+### Devices Tesed On
+
+Wanderlist was tested on the following devices and browsers:
+- Macbook Pro Pro-Retina 2013 (13inch)
+  * Chrome Web Browser
+  * Microsoft Edge
+  * Mozilla Firefox
+  * Safari
+
+- Lenovo ThinkPad (13inch)
+  * Chrome Web Browser
+  * Microsoft Edge
+  * Mozilla Firefox
+
+- iPad Pro (16inch)
+  * Chrome Web Browser
+  * Mozilla Firefox
+  * Safari
+
+- Motorola Edge 40 Neo
+  * Chrome Web Browser
+  * Microsoft Edge
+  * Mozilla Firefox
+
+- Huawei P20 Pro
+  * Chrome Web Browser
+  * Mozilla Firefox
+
+- iPhone 12 Pro
+  * Chrome Web Browser
+  * Safari
 
 ### Testing User Stories
 
