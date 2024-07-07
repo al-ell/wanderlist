@@ -383,8 +383,9 @@ Create ElephantSQL Account:
 #### Heroku
 
 Create Database:
+* Log in to Heroku (or create account) using two-factor authentication.
 * Click “Create New Instance”
-* Set up your plan
+* Set up your plan:
   * Give your plan a Name (this is commonly the name of the project)
   * Select the Tiny Turtle (Free) plan
   * You can leave the Tags field blank
@@ -392,7 +393,6 @@ Create Database:
 * Then click “Review", check your details are correct and then click “Create instance”
 * Return to the ElephantSQL dashboard and click on the database instance name for this project
 * In the URL section, clicking the copy icon will copy the database URL to your clipboard
-* Leave this tab open, we will come back here later
 
 In IDE Space:
 * Before we can build our application on Heroku, we need to create a few files that Heroku will need to run our application:
