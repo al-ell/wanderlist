@@ -24,7 +24,7 @@
                                     <span><a href="{{ url_for('edit_document', journal_id=journal.id) }}" class="btn right btn-custom-dark" aria-label="Edit">Edit</a></span>
                                     <span>
                                         <!-- Modal Trigger to confirm delete -->
-                                        <a href="{{ url_for('delete_document', journal_id=journal.id) }}" data-target="modal1" class="btn right btn-custom delete-btn modal-trigger" aria-label="Delete">Delete</a>
+                                        <a href="{{ url_for('delete_document', journal_id=journal.id) }}" data-target="modal{{journal.id}}" class="btn right btn-custom delete-btn modal-trigger" aria-label="Delete">Delete</a>
                                     </span>
                                 </div>
                             </div>
@@ -46,7 +46,7 @@
                         </li>
                     </ul>
                     <!-- Delete confirmation modal structure -->
-                    <div id="modal1" class="modal lime lighten-2 delete-modal">
+                    <div id="modal{{journal.id}}" class="modal lime lighten-2 delete-modal">
                         <div class="modal-content lime lighten-2">
                             <h4>Delete Trip?</h4>
                             <p>This will delete any associated journal entries!</p>

@@ -37,12 +37,12 @@
                             <a href="{{ url_for('edit_trip', trip_id=trip.id) }}" class="btn-large btn-custom-dark" aria-label="Edit">Edit</a>
                             
                             <!-- Delete modal Trigger -->
-                            <a href="{{ url_for('delete_trip', trip_id=trip.id) }}" data-target="modal1" class="btn-large btn-custom delete-btn modal-trigger" aria-label="Delete">Delete</a>
+                            <a href="{{ url_for('delete_trip', trip_id=trip.id) }}" data-target="modal{{trip.id}}" class="btn-large btn-custom delete-btn modal-trigger" aria-label="Delete">Delete</a>
                         </div>
                     </div>
                     </div>
                     <!-- Delete confirmation modal tructure -->
-                    <div id="modal1" class="modal delete-modal lime lighten-2">
+                    <div id="modal{{trip.id}}" class="modal delete-modal lime lighten-2">
                         <div class="modal-content lime lighten-2">
                             <h4>Delete Trip?</h4>
                             <p>This will delete any associated journal entries!</p>

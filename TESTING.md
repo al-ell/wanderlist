@@ -249,7 +249,7 @@ Wanderlist was tested on the following devices and browsers:
 | User not allowed to update task or journal entries without changing the name | Removed if statement to check if it is the same as previous entries | |
 | Login/signin buttons showing although user logged in | Jinja syntax changed | |
 | Pattern attribute preventing user from registering or logging in | Adjustment in pattern regex/syntax [Pattern explained](https://en.wikipedia.org/wiki/Regular_expression#Delimiters) | |
-
+| Delete function not always letting user delete entries | ID and data target changed to find correct entry | |
 
 - - -
 

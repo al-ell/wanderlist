@@ -134,10 +134,15 @@ body {
 .trip-card h4,
 .content-heading p,
 .page-heading-blank h3,
+.register-link h4,
 .page-heading h3 {
     font-family: "Quattrocento", sans-serif;
     font-size: 1.5em;
     color: #004d40;
+}
+
+.register-link h4 {
+    color: #000;
 }
 
 .btn-custom-light,
@@ -569,6 +574,10 @@ footer {
 
 /* Mobile */
 @media screen and (max-width:768px) {
+    #main {
+        margin-top: 20vh;
+    }
+
     /* Custom buttons */
     .btn-lrg a {
         transform: scale(0.7);
