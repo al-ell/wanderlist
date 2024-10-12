@@ -226,3 +226,9 @@ def delete_document(journal_id):
     flash("Journal entry deleted!")
     # Return user to journals page
     return redirect(url_for("journal"))
+
+
+# Error route
+@app.errorhandler(404)
+def not_found(e):
+    return render_template("404.html")
