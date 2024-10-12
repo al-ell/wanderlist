@@ -403,7 +403,6 @@ nav ul li a:hover {
     position: absolute;
     color: #004d40;
     opacity: 1;
-    transform: translate(-50%, 30%);
     /* ensure text sits above image */
     z-index: 450;
 }
@@ -716,7 +715,8 @@ footer {
     }
 
     .logo {
-        padding: 1rem;
+    padding: 1rem;
+    top: 6rem;
     }
 
     /* Form adjustments */
@@ -741,12 +741,23 @@ footer {
     .main-nav {
         height: 0
     }
+    .logo {
+        top: 6rem;
+    }
+
+    /* Nav */
+    .nav-container {
+        height: 20vh;
+    }
 }
 
 /* Laptop and Larger */
 @media screen and (min-width: 1024px) {
     #main {
-        margin-top: -10vh;
+        margin-top: -5vh;
+    }
+    .hero-text {
+        transform: translate(-50%, 40%);
     }
     /* Hide mobile side menu */
     .burger-container {
@@ -756,9 +767,14 @@ footer {
         margin: 2rem 0 !important;
     }
 
+    .logo {
+        top: 6rem;
+        position: relative;
+    }
+
     /* Nav */
     .nav-container {
-        height: 30vh;
+        height: 25vh;
     }
 
     /* make space for banner */
