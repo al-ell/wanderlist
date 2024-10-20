@@ -754,7 +754,7 @@ footer {
 /* Laptop and Larger */
 @media screen and (min-width: 1024px) {
     #main {
-        margin-top: -5vh;
+        margin-top: -10vh;
     }
     .hero-text {
         transform: translate(-50%, 40%);
